@@ -1,0 +1,7 @@
+php-horde-turba (3.0.11-1) unstable; urgency=low
+
+  * turba package
+  * Initial packaging (Closes: #nnnnnn)
+  * Copyright file by Soren Stoutner and Jay Barksdale
+
+ -- Mathieu Parent <sathieu@debian.org>  Sat, 11 Feb 2012 15:05:39 +0100
