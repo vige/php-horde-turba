@@ -1,0 +1,1131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>turba</name>
+ <channel>pear.horde.org</channel>
+ <summary>A web based address book</summary>
+ <description>Turba is the Horde contact management application. Leveraging the Horde framework to provide seamless integration with IMP and other Horde applications, it supports storing contacts in SQL, LDAP, Kolab, and IMSP address books.</description>
+ <lead>
+  <name>Michael J Rubinsky</name>
+  <user>mrubinsk</user>
+  <email>mrubinsk@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>Michael Slusarz</name>
+  <user>slusarz</user>
+  <email>slusarz@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>Chuck Hagenbuch</name>
+  <user>chuck</user>
+  <email>chuck@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>Jan Schneider</name>
+  <user>jan</user>
+  <email>jan@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <date>2012-01-17</date>
+ <time>13:21:00</time>
+ <version>
+  <release>3.0.11</release>
+  <api>3.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.horde.org/licenses/asl">ASL</license>
+ <notes>
+* [jan] Set VOICE parameter when exporting phone numbers to vCard (Request #10349).
+* [jan] Fix importing vCards with empty X-ANNIVERSARY attributes (Bug #10557).
+* [jan] Update Japanese translation (Hiromi Kimura &lt;hiromi@tac.tsukuba.ac.jp&gt;).
+ </notes>
+ <contents>
+  <dir baseinstalldir="/" name="/">
+   <file baseinstalldir="/" md5sum="01f441a7de5ec071a59706568ba85e7c" name="addressbooks/create.php" role="horde" />
+   <file baseinstalldir="/" md5sum="4fa4dbf48814d422f8139e15520a5128" name="addressbooks/delete.php" role="horde" />
+   <file baseinstalldir="/" md5sum="bcca79f0abd8dfd9d02036c1578a8474" name="addressbooks/edit.php" role="horde" />
+   <file baseinstalldir="/" md5sum="9a1a6dc7256def5240c818e35a843802" name="addressbooks/index.php" role="horde" />
+   <file baseinstalldir="/" md5sum="a9e8d0bc8d368cf5e555e3005350d9a6" name="bin/turba-convert-datatree-shares-to-sql" role="script" />
+   <file baseinstalldir="/" md5sum="183770cf9a6ede937f5818e8413d763c" name="bin/turba-convert-sql-shares-to-sqlng" role="script" />
+   <file baseinstalldir="/" md5sum="ef640f33f40437c3d14440072706e9f5" name="bin/turba-import-squirrelmail-file-abook" role="script" />
+   <file baseinstalldir="/" md5sum="1128efdc579bd6c4fc0b0402b6df5b1c" name="bin/turba-import-squirrelmail-sql-abook" role="script" />
+   <file baseinstalldir="/" md5sum="4db88b3c5e76b85d91d179691d4ba617" name="bin/turba-import-vcards" role="script" />
+   <file baseinstalldir="/" md5sum="f019d9666f3fc6d2f91d83e8149fee3a" name="bin/turba-public-to-horde-share" role="script" />
+   <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="config/.htaccess" role="horde" />
+   <file baseinstalldir="/" md5sum="1533b5ad36b492efa107d79d7c97adad" name="config/attributes.php" role="horde" />
+   <file baseinstalldir="/" md5sum="f857dd83e053cac49c9be430044b3a46" name="config/backends.php" role="horde" />
+   <file baseinstalldir="/" md5sum="73f1de3e973c1424ad8ae7173de4ddf1" name="config/conf.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="ba255df7f3e606091d15c636155b4f1c" name="config/hooks.php.dist" role="horde" />
+   <file baseinstalldir="/" md5sum="2753faf3b9951a3b44b82149dc41f7eb" name="config/menu.php.dist" role="horde" />
+   <file baseinstalldir="/" md5sum="22ed7f69d8df7026779a63e5a1d3ba89" name="config/mime_drivers.php" role="horde" />
+   <file baseinstalldir="/" md5sum="5cc4f4544ef8c3025b5699a3687ffc4b" name="config/prefs.php" role="horde" />
+   <file baseinstalldir="/" md5sum="6521e55dc88afbd3afdd80d80880b0dc" name="docs/vcf/brad.vcf" role="doc" />
+   <file baseinstalldir="/" md5sum="bb127c85cc456fe8a4d8fda9a7dca67b" name="docs/vcf/dimitris.vcf" role="doc" />
+   <file baseinstalldir="/" md5sum="3e1fae02bbfaa89a347529344c8b6e71" name="docs/vcf/dwalt.vcf" role="doc" />
+   <file baseinstalldir="/" md5sum="94b00a7d8d1a95458011160dcaa046fd" name="docs/vcf/foo.vcf" role="doc" />
+   <file baseinstalldir="/" md5sum="d88f6135cd4f08dc2b2f91c1feae8fd7" name="docs/vcf/larry.vcf" role="doc" />
+   <file baseinstalldir="/" md5sum="e8c8ecbc2411488d6cec0360097f2396" name="docs/vcf/multiple.vcf" role="doc" />
+   <file baseinstalldir="/" md5sum="e8c8ecbc2411488d6cec0360097f2396" name="docs/vcf/palm.vcf" role="doc" />
+   <file baseinstalldir="/" md5sum="576bc1dfe876eb052034042022a8b8cf" name="docs/vcf/README" role="doc" />
+   <file baseinstalldir="/" md5sum="aecb277cc4cc75e910d16904a7dc05e2" name="docs/vcf/sfg.vcf" role="doc" />
+   <file baseinstalldir="/" md5sum="f8c7dc9f4ebb417c02f42320f4e0a49b" name="docs/vcf/test.vcf" role="doc" />
+   <file baseinstalldir="/" md5sum="45b4dbbf348239fbd6edd05f7611d83e" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="4a144b6eca3c703fba9ba1c76768b388" name="docs/CREDITS" role="doc" />
+   <file baseinstalldir="/" md5sum="01622ac34cd40a6b9497cce87b708886" name="docs/INSTALL" role="doc" />
+   <file baseinstalldir="/" md5sum="90cfcfb21bfa7bb5531cb162f6f514c7" name="docs/LDAP" role="doc" />
+   <file baseinstalldir="/" md5sum="e1b8ba23fd24e64b4fbbbe180bac8f2f" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="c2dc06a9db2e57762913311e26618870" name="docs/UPGRADING" role="doc" />
+   <file baseinstalldir="/" md5sum="6008fcc6f2b4f9c99fa04987a8a2fb53" name="js/browse.js" role="horde" />
+   <file baseinstalldir="/" md5sum="a48761fd6c721f251b2c9bd77815c546" name="js/columnprefs.js" role="horde" />
+   <file baseinstalldir="/" md5sum="aad9d44b24a69956b569b04427728848" name="js/contact_tabs.js" role="horde" />
+   <file baseinstalldir="/" md5sum="1d1f4a900b2d44fc75fc78d0530dbd3e" name="js/search.js" role="horde" />
+   <file baseinstalldir="/" md5sum="5e5218110cdea6a53bbc5b4a16da7ca2" name="lib/Block/Minisearch.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e3fa5dca96a9c5981cf62bf63f102576" name="lib/Data/Ldif.php" role="horde" />
+   <file baseinstalldir="/" md5sum="f1c8e46ca84847ccd5da94e2144b5bfd" name="lib/Driver/Facebook.php" role="horde" />
+   <file baseinstalldir="/" md5sum="7788e7ee629666fc92e0ef977fb42949" name="lib/Driver/Favourites.php" role="horde" />
+   <file baseinstalldir="/" md5sum="632d3ce9c4d9fb9261e30fcb7b017913" name="lib/Driver/Group.php" role="horde" />
+   <file baseinstalldir="/" md5sum="1226b85bf303581febf423172905bc68" name="lib/Driver/Imsp.php" role="horde" />
+   <file baseinstalldir="/" md5sum="24462f62853e7d365b206702b7d8031a" name="lib/Driver/Kolab.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8f8d9d4f7fd40953953c6c64ed554a3f" name="lib/Driver/Ldap.php" role="horde" />
+   <file baseinstalldir="/" md5sum="4e70a935640bed0b7d0d3a7c50aaa759" name="lib/Driver/Prefs.php" role="horde" />
+   <file baseinstalldir="/" md5sum="a9e62b9f72d6cdea97ea1f0ced46e7bd" name="lib/Driver/Share.php" role="horde" />
+   <file baseinstalldir="/" md5sum="722129ab548b5088a9e9cc2889affc7d" name="lib/Driver/Sql.php" role="horde" />
+   <file baseinstalldir="/" md5sum="9539a529ac16a453d54ffa4d9c85e344" name="lib/Driver/Vbook.php" role="horde" />
+   <file baseinstalldir="/" md5sum="fcc7c62ea6d681dc68295be208464995" name="lib/Exception/NotSupported.php" role="horde" />
+   <file baseinstalldir="/" md5sum="04b27b18fd81e02fbf9ad1f969eb40b1" name="lib/Factory/Driver.php" role="horde" />
+   <file baseinstalldir="/" md5sum="53270aad17fa578c062449e34dacb3ad" name="lib/Form/AddContact.php" role="horde" />
+   <file baseinstalldir="/" md5sum="7b3f8fc7957521a5068cf5bb3d0b8e7d" name="lib/Form/Contact.php" role="horde" />
+   <file baseinstalldir="/" md5sum="93800bfc7c084d7384fdf0c4d727cd5c" name="lib/Form/ContactBase.php" role="horde" />
+   <file baseinstalldir="/" md5sum="832a5eec59ed43b9808bacc367c72c82" name="lib/Form/CreateAddressBook.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e579d3d0565246d1be4605f403a84d97" name="lib/Form/DeleteAddressBook.php" role="horde" />
+   <file baseinstalldir="/" md5sum="1cedd4e22ba38568c391e8fdc00f8978" name="lib/Form/EditAddressBook.php" role="horde" />
+   <file baseinstalldir="/" md5sum="3a755a415ba2aa46e5981d0ea88b8fd6" name="lib/Form/EditContact.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8c0e38f476884a3545c0e16474722c2f" name="lib/Form/EditContactGroup.php" role="horde" />
+   <file baseinstalldir="/" md5sum="56e97681bcd859164b0c73ad6065a190" name="lib/LoginTasks/SystemTask/Upgrade.php" role="horde" />
+   <file baseinstalldir="/" md5sum="cf3990293a1bf07966c8c6bcc1943598" name="lib/Object/Group.php" role="horde" />
+   <file baseinstalldir="/" md5sum="60e3748b7efaa3d8d3c513780ccf0f65" name="lib/View/List/AlphaFilter.php" role="horde" />
+   <file baseinstalldir="/" md5sum="ed4d91094103734ca858fe65ef30054e" name="lib/View/List/PageFilter.php" role="horde" />
+   <file baseinstalldir="/" md5sum="f80d90cf269159e72f3b3faba7982393" name="lib/View/Browse.php" role="horde" />
+   <file baseinstalldir="/" md5sum="48941dc0e3640e77bc17250900090539" name="lib/View/Contact.php" role="horde" />
+   <file baseinstalldir="/" md5sum="29a0f3863576cce96a1fa308ffbb5676" name="lib/View/DeleteContact.php" role="horde" />
+   <file baseinstalldir="/" md5sum="26078e9a94bba40a45307abbe99029bb" name="lib/View/Duplicates.php" role="horde" />
+   <file baseinstalldir="/" md5sum="78c3dbbf39f23cf40272626ebd9d215e" name="lib/View/EditContact.php" role="horde" />
+   <file baseinstalldir="/" md5sum="5d6b06ab8f4fa7533d24f026a3c1d7ed" name="lib/View/List.php" role="horde" />
+   <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="lib/.htaccess" role="horde" />
+   <file baseinstalldir="/" md5sum="be8152ec5d5080cb76e7a3efed860dca" name="lib/Api.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8c4b9395240982f1917fcb93606651a0" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="666ca34e0d2b962afd3e9a0984bbfa98" name="lib/Driver.php" role="horde" />
+   <file baseinstalldir="/" md5sum="f92a9c6237be2bbb84c01cd635ce0e0c" name="lib/Exception.php" role="horde" />
+   <file baseinstalldir="/" md5sum="3f8500ade8c765552603db2e138f18bf" name="lib/List.php" role="horde" />
+   <file baseinstalldir="/" md5sum="853251eecff5d98a6abe7c28bf7a908c" name="lib/Object.php" role="horde" />
+   <file baseinstalldir="/" md5sum="c7a06fa8ac76804402a065365d230df1" name="lib/Test.php" role="horde" />
+   <file baseinstalldir="/" md5sum="2a66105ca10c9657ba3dc34828c7e74d" name="lib/Turba.php" role="horde" />
+   <file baseinstalldir="/" md5sum="560ebb064cd0f1bf27f33a1c9ac6c369" name="locale/ar/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="d713ffa67d023657193983f6a5dfb912" name="locale/ar/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="dc5736dfc688800547111a98591fc556" name="locale/bg/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="9114208f678e9347ca7a5ce47a4a73f9" name="locale/bg/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="24902654758f381814f701b94dae26c0" name="locale/ca/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="b1f179352be74d55678d9a70d2eb6235" name="locale/ca/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="b780c94834697a8435d6842691a691f1" name="locale/ca/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="0f3cf10910ad66ec2f6a30a280414aa9" name="locale/cs/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="c20403a3a6bb59555f43f375f4967d1d" name="locale/cs/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="90286fa287b1c6df0328c614ade62ab7" name="locale/da/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="13e91fc31340ec5d2173f0055c9cc2ee" name="locale/da/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="a0d82022297ec704f9ca6a2a85c352a9" name="locale/de/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="f4a467371f799366c671176c3032cbcc" name="locale/de/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="bd7ec42268aa8d88ac4945ced0c237a4" name="locale/de/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="e04cb4d130c2d1341770c3abd23412f5" name="locale/el/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="cbff16d545dc8075ece97ecb1b17aef7" name="locale/el/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="4d4608149655b3adac86a20df6590f5d" name="locale/en/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="24f81b103eb39ac62730a70fffc6d868" name="locale/es/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="4bb52363609a0ce74bd5c372bc31f146" name="locale/es/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="ebe2c2abae8bc05ee25f4c24f19df8ee" name="locale/es/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="15b0e3386d2095b18f31eeb3da4bf73b" name="locale/et/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="31579da51e1d4b08a8f6827bf16c8d0d" name="locale/et/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="e01e8bbcf00820d644a623784bc507f7" name="locale/eu/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="67843bb11d27c82b7f89f3dea82b1ac4" name="locale/eu/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="abdf9da49e1f953c9a6b7b05c2f5fd61" name="locale/eu/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="ed31807c858b7457c6b973faf02279b8" name="locale/fa/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="d0d8789be83f79e7d96f9e6ddd156ff0" name="locale/fa/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="24e2c31a66e29883e553b839bc417f4c" name="locale/fa/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="d152fb0ca9508dce83a0cb92f509274a" name="locale/fi/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="6cc59f2a64882e44ca68682d0677a88d" name="locale/fi/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="430d11e723a29503c03b2817febf075d" name="locale/fi/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="09f8798cc51e33cd466516141cf00096" name="locale/fr/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="2872cea9ce0d05e703eb0bfd70f2b61c" name="locale/fr/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="6e3d4b55a624b1230b8e4ac55184a6bb" name="locale/fr/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="cb8add1ba42b3d1dcafef993b444e8b6" name="locale/gl/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="aaabde0f2c7f635e2042ae976e369ff6" name="locale/gl/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="430ad90b79e7b166824c4d14855c9199" name="locale/hr/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="fb84088feb7f6b456841151d423021f6" name="locale/hr/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="66ad9643c514b5ba6eac76fed1494089" name="locale/hr/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="be7a784e433f04c5c4a68e4c111a0a3a" name="locale/hu/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="a2f59a49470058e5237bc1a3207cbddb" name="locale/hu/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="d30a5f973aae95bfc381124cbe106fc6" name="locale/is/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="c47b6eb540ee455eb469faf499a19a05" name="locale/is/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="af33368688beb6c8313169aaea614102" name="locale/it/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="5fbb0bf2383cfe92ccd9193ab28424fc" name="locale/it/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="43c49b4a4fa5856d85afd0e12e4fd9c2" name="locale/ja/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="c0e5be57c99fe54538aec9f9c6181482" name="locale/ja/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="a24d4cb8c1587291ce0e87262e0e407e" name="locale/ko/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="630609682f4bca1c85664981e5737f49" name="locale/ko/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="df5c7a6a6484ac1e379d1a09294b9049" name="locale/lt/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="f3910fcb7866b57ab6c16c34ca39e055" name="locale/lt/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="472f44d84388765ee6487b6783aa1724" name="locale/lv/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="e794be447f32b605460003897858459d" name="locale/lv/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="a77eda83734b24eac8537e52b11c4c6a" name="locale/lv/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="5ee6e9645da71a8c95a635e7614bafaf" name="locale/mk/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="3773fe605284951afc3f75189954dc9d" name="locale/mk/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="f9e1a737587e7b84fa417e918832ea8f" name="locale/nb/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="75fc90c814f4988e2b127f375a36b286" name="locale/nb/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="01b21bc68adf2ca9691b621f3f561195" name="locale/nl/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="778e13bddccacc3287db2882ce48cd94" name="locale/nl/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="0ecb9c3d4655d8ff2d989181a10d2f0d" name="locale/nn/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="7f2e48f5fee92fa75529f083787ded14" name="locale/nn/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="de5967bc4f541f1eba29616dff0ce757" name="locale/pl/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="4ac2e119d772f97b02fcf0585f6666ee" name="locale/pl/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="34ae48c5aa340f946a1b69a2bb9d8d0b" name="locale/pt/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="6df5e1e53383128e24c0658eccdf814d" name="locale/pt/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="c425b1c6db6b6f9df5c03afcf1100545" name="locale/pt/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="ae5664c9c9c04c61d6ec5fbe2bd10d6d" name="locale/pt_BR/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="76c93a69b1be94bd443db1858860b42e" name="locale/pt_BR/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="18671f8e2caa81f75d7fc1344649e35b" name="locale/pt_BR/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="f46c4d8175280d2bdace13037d089864" name="locale/ro/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="ed35755e08d4e4a88defabb605eaa46e" name="locale/ro/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="53c8d6cbd0d5c60287fbb1d021eb5de8" name="locale/ru/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="049f119030f142b9be4005dd34e52553" name="locale/ru/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="8311e75cd54a43988da562ebcbe6be23" name="locale/sk/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="665c398e1bcc3fc6032fa913ef330221" name="locale/sk/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="58c36a7ffcaf5bae32b4b1c5db3ad3d4" name="locale/sk/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="5855ce5c3d3e36f9e7ebdd99cec9555a" name="locale/sl/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="27e57fa13fb3488ac71684356c16c47f" name="locale/sl/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="d81ac17d6346d179e5dce61649a8cc80" name="locale/sv/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="861fdfcc1042c8287e764492556693a3" name="locale/sv/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="68f329d14d47675a2a27a9d59f29f6a0" name="locale/tr/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="da90c8c224e0d0356f765430aed654c2" name="locale/tr/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="75e71bfd25f3f43a4a12b021f90e3b23" name="locale/tr/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="dbc7475bf7a68f1766a6de3d9c8d104e" name="locale/uk/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="8cc3c2c64b44516a92defcd39c63492a" name="locale/uk/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="6df266132874fa259f8ea7a09c9157aa" name="locale/zh_CN/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="f32a0c1178bec846a71fb7937221fb64" name="locale/zh_CN/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="e9141750c1bd2d4d15f309e1f7ff613f" name="locale/zh_TW/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="0ee94f10f423c078f719c9ed86f407d2" name="locale/zh_TW/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="locale/.htaccess" role="horde" />
+   <file baseinstalldir="/" md5sum="4c25cb4f3f5d49464db5114b3d6b89fb" name="locale/turba.pot" role="horde" />
+   <file baseinstalldir="/" md5sum="89bfc073a44aec6270c53fa92514a4bd" name="migration/1_turba_base_tables.php" role="horde" />
+   <file baseinstalldir="/" md5sum="98bfe847d392f05906a958444a7a16bb" name="migration/2_turba_upgrade_autoincrement.php" role="horde" />
+   <file baseinstalldir="/" md5sum="cba8f98c9778ab4f287e666810e93df1" name="migration/3_turba_upgrade_sqlng.php" role="horde" />
+   <file baseinstalldir="/" md5sum="b4aafbbb205276796fb516e559015ff0" name="migration/4_turba_upgrade_sqlhierarchical.php" role="horde" />
+   <file baseinstalldir="/" md5sum="561528f679973ea1054464824c82492e" name="migration/5_turba_upgrade_sqlnghierarchical.php" role="horde" />
+   <file baseinstalldir="/" md5sum="95a0950aa08d97325a64f1a8b1078678" name="migration/6_turba_upgrade_updateschema.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8c028d32bcadb7fff0ba49f0eb238dee" name="scripts/ldap/addou" role="data" />
+   <file baseinstalldir="/" md5sum="9e2d4277bdf3b75383fa40003b05c4af" name="scripts/ldap/addou.pl" role="data" />
+   <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="scripts/.htaccess" role="data" />
+   <file baseinstalldir="/" md5sum="4aef6e57b80955d5531c417a262b9624" name="scripts/Turba.reg" role="data" />
+   <file baseinstalldir="/" md5sum="6d1ed650ba416f8a5b4922fb07c73c7f" name="templates/block/minisearch.inc" role="horde" />
+   <file baseinstalldir="/" md5sum="382f4380b89058d5a4b46bd2faa03e3f" name="templates/browse/actions.inc" role="horde" />
+   <file baseinstalldir="/" md5sum="a78003121681abce1655c2e0709efa8c" name="templates/browse/column_footers.inc" role="horde" />
+   <file baseinstalldir="/" md5sum="e37cc2cbe27ca28847e5b4428ff0c198" name="templates/browse/column_headers.inc" role="horde" />
+   <file baseinstalldir="/" md5sum="145cc7ebab09e02902ee254fba1b56e1" name="templates/browse/header.inc" role="horde" />
+   <file baseinstalldir="/" md5sum="d02e49619e0afe607954725785eef46b" name="templates/browse/row.inc" role="horde" />
+   <file baseinstalldir="/" md5sum="64694ef99d9172e6335b5cb97fac973d" name="templates/data/export.inc" role="horde" />
+   <file baseinstalldir="/" md5sum="6f93e624ed33ac7ceadc42f4e5fa256e" name="templates/data/import.inc" role="horde" />
+   <file baseinstalldir="/" md5sum="0f88ddd64c8726a5c9a2cc6829d3c04c" name="templates/list/alphaPager.inc" role="horde" />
+   <file baseinstalldir="/" md5sum="a06fb586419f7973614e8076427bca7c" name="templates/list/numPager.inc" role="horde" />
+   <file baseinstalldir="/" md5sum="a6c7b762311929c4277ffc356d1be628" name="templates/prefs/column.html" role="horde" />
+   <file baseinstalldir="/" md5sum="7e7acd0117eeb58b8f1fc7c2e95ebd27" name="templates/search/duplicate/contact_footer.html.php" role="horde" />
+   <file baseinstalldir="/" md5sum="d8b6da4021a0a34b11ce44ed8e330675" name="templates/search/duplicate/contact_header.html.php" role="horde" />
+   <file baseinstalldir="/" md5sum="7e7acd0117eeb58b8f1fc7c2e95ebd27" name="templates/search/duplicate/footer.html.php" role="horde" />
+   <file baseinstalldir="/" md5sum="d262fd772dd419f5a91319a11a4a5cdb" name="templates/search/duplicate/header.html.php" role="horde" />
+   <file baseinstalldir="/" md5sum="844da59d5f71d8fa0e5d80ac23314e47" name="templates/search/duplicate/list.html.php" role="horde" />
+   <file baseinstalldir="/" md5sum="15fae4f491cae9c42e4741d00ba7bf1d" name="templates/search/advanced.html.php" role="horde" />
+   <file baseinstalldir="/" md5sum="636d7b20c122dee992113b7e009b6463" name="templates/search/basic.html.php" role="horde" />
+   <file baseinstalldir="/" md5sum="7a4f9d658298d89f4034934f1b636a1e" name="templates/search/duplicate.html.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e20397d2a5db500e175912fa246acca4" name="templates/search/header.html.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8f2b027a037b17e957abb85eb52f9afb" name="templates/search/vbook.html.php" role="horde" />
+   <file baseinstalldir="/" md5sum="713b7caf180a4316fa7509adc61746db" name="templates/test/ldapserver.inc" role="horde" />
+   <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="templates/.htaccess" role="horde" />
+   <file baseinstalldir="/" md5sum="469ad51422876de05026732d6fa61a1b" name="templates/addressbook_list.php" role="horde" />
+   <file baseinstalldir="/" md5sum="90c1568d6e7536dc7f7d1764fb02a3e6" name="templates/menu.inc" role="horde" />
+   <file baseinstalldir="/" md5sum="f008ca055b833e73da6f644532cd88f9" name="test/Turba/fixtures/az.png" role="test" />
+   <file baseinstalldir="/" md5sum="e1ef0f1375d05b7e61a23957d85e7032" name="test/Turba/ToDo/ApiTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="0e2ee5ef54b86a0a6e08037d1d53b900" name="test/Turba/ToDo/BrowsePageTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="411ec7254d94e05c53b21b546851e5f8" name="test/Turba/ToDo/bug_6518.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="d2b648cfd4ce906b895efb85525f2e81" name="test/Turba/ToDo/DriverTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="3e8b15cf815c8a23b9b4b816ddb1c6aa" name="test/Turba/ToDo/GroupTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="cd2fecffdac770aba8d55a262d5aceb3" name="test/Turba/ToDo/import.ldif" role="test" />
+   <file baseinstalldir="/" md5sum="c4609a5a5a0c20b88c160ac07eebbba8" name="test/Turba/ToDo/importCRLF.ldif" role="test" />
+   <file baseinstalldir="/" md5sum="13fad0b906645091373e386511cc79cd" name="test/Turba/ToDo/KolabTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="99438dbb30ea22e88f63d295d1c8798e" name="test/Turba/ToDo/KolabTestBase.php" role="test" />
+   <file baseinstalldir="/" md5sum="3097de878d0b690dff83e1c824a79a0b" name="test/Turba/ToDo/ldif_exportFile.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="fe73fa567ab4e847924fe912d8c104d3" name="test/Turba/ToDo/ldif_importFile.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="2bbecb31b2d1c508209ab601e0909f2a" name="test/Turba/ToDo/ldif_importFileCRLF.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="24933996fced2946d223fbf613d5ab26" name="test/Turba/ToDo/ListTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="3365a5af5487107ece5085992c7f821b" name="test/Turba/ToDo/ListViewTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="1fded02f80deebb36560a39125aa86cc" name="test/Turba/ToDo/TestBase.php" role="test" />
+   <file baseinstalldir="/" md5sum="a26370c7f77df68da5dbc34f7752a100" name="test/Turba/ToDo/tohash.phpt" role="test" />
+   <file baseinstalldir="/" md5sum="3fe401e5da46ef4eb56b7babcf3f0065" name="test/Turba/ToDo/ViewBrowseTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="29ffdae4e57f4dc5f9716b5e423b4c49" name="test/Turba/ToDo/ViewListTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="f4665076b7287ce8994a86ef088b699c" name="test/Turba/Unit/Driver/Sql/Pdo/SqliteTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="053c1dc4dc48b64344d8146f0c215bbf" name="test/Turba/Unit/Driver/Sql/Base.php" role="test" />
+   <file baseinstalldir="/" md5sum="63980dace54cc24902afe57554fa2b49" name="test/Turba/Unit/Driver/Base.php" role="test" />
+   <file baseinstalldir="/" md5sum="59decb162e6adb99ef684cd65d2becd8" name="test/Turba/Unit/Driver/KolabTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="43d151bf5b702ce3c0889d47376dcde3" name="test/Turba/Unit/Turba/Sql/Pdo/SqliteTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="8daaa2134b97a9d740d94aeea4277ceb" name="test/Turba/Unit/Turba/Sql/Base.php" role="test" />
+   <file baseinstalldir="/" md5sum="6b1a61d0ab494ff790f364280a0d50e8" name="test/Turba/Unit/Turba/Base.php" role="test" />
+   <file baseinstalldir="/" md5sum="a4e6546f426f8d685f8fd5ab460c40d8" name="test/Turba/Unit/Turba/KolabTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="cb6b35518696e71ff3535fcf0b93b2cc" name="test/Turba/Unit/DriverTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="15e98f4c5beacb6537753a704fb1fcc1" name="test/Turba/AllTests.php" role="test" />
+   <file baseinstalldir="/" md5sum="1d55478958bafc99b700bb784c0ff229" name="test/Turba/Autoload.php" role="test" />
+   <file baseinstalldir="/" md5sum="c8e1f4488b025068fc609f6a0db6075f" name="test/Turba/phpunit.xml" role="test" />
+   <file baseinstalldir="/" md5sum="7532bd880988c8f3d098cd35c7b49a9c" name="test/Turba/TestCase.php" role="test" />
+   <file baseinstalldir="/" md5sum="c3af55b42d4d3331fa70db3cf15569cf" name="themes/bluewhite/screen.css" role="horde" />
+   <file baseinstalldir="/" md5sum="52b2d9575fc99a812e5d2ef5f4ec9e54" name="themes/default/graphics/menu/browse.png" role="horde" />
+   <file baseinstalldir="/" md5sum="ed4f39d14a925b2554c25c167943a09e" name="themes/default/graphics/menu/new.png" role="horde" />
+   <file baseinstalldir="/" md5sum="eae565f20b42f8239892b28cdf03a826" name="themes/default/graphics/mime/vcard.png" role="horde" />
+   <file baseinstalldir="/" md5sum="f008ca055b833e73da6f644532cd88f9" name="themes/default/graphics/az.png" role="horde" />
+   <file baseinstalldir="/" md5sum="4fee3bf658b745207626895de3a9b4e5" name="themes/default/graphics/az_secondary.png" role="horde" />
+   <file baseinstalldir="/" md5sum="9c8a572b3a708123e2281caf7ff3b84d" name="themes/default/graphics/contact.png" role="horde" />
+   <file baseinstalldir="/" md5sum="8932d7e30454f32ca3f6b448107b06ef" name="themes/default/graphics/edit.png" role="horde" />
+   <file baseinstalldir="/" md5sum="ff260e80f5f9ca4b779fbd34087f13cf" name="themes/default/graphics/favicon.ico" role="horde" />
+   <file baseinstalldir="/" md5sum="7bfd0a1a1df84c8a14afbc61f21dfddb" name="themes/default/graphics/group.png" role="horde" />
+   <file baseinstalldir="/" md5sum="ed4f39d14a925b2554c25c167943a09e" name="themes/default/graphics/new.png" role="horde" />
+   <file baseinstalldir="/" md5sum="8ac6aa5056b300941a930a43472435bd" name="themes/default/graphics/search.png" role="horde" />
+   <file baseinstalldir="/" md5sum="9c8a572b3a708123e2281caf7ff3b84d" name="themes/default/graphics/turba.png" role="horde" />
+   <file baseinstalldir="/" md5sum="92e42e96d4574921c61eb2c2996f2104" name="themes/default/graphics/za.png" role="horde" />
+   <file baseinstalldir="/" md5sum="16ac4232282a4cb5760f92a3d94674b7" name="themes/default/graphics/za_secondary.png" role="horde" />
+   <file baseinstalldir="/" md5sum="4ecbb2cf5acb6b1aa6d160af5a400fae" name="themes/default/ie6_or_less.css" role="horde" />
+   <file baseinstalldir="/" md5sum="9b2f1fde2371236bb43ea92a1edf1120" name="themes/default/ie7.css" role="horde" />
+   <file baseinstalldir="/" md5sum="5dd2b85737d8acff6ecb7fc0468aff97" name="themes/default/screen.css" role="horde" />
+   <file baseinstalldir="/" md5sum="6e214070768d546c6a93686147377a05" name="themes/ideas/screen.css" role="horde" />
+   <file baseinstalldir="/" md5sum="3ea3e4a17e91bcf6766e98f4717b161e" name="themes/silver/graphics/menu/browse.png" role="horde" />
+   <file baseinstalldir="/" md5sum="ee982eb5319c27d7b85bfb148d99af67" name="themes/silver/graphics/menu/new.png" role="horde" />
+   <file baseinstalldir="/" md5sum="151823b90ad370105db8ffdbaaabf39f" name="themes/silver/graphics/mime/vcard.png" role="horde" />
+   <file baseinstalldir="/" md5sum="b86ca55277eeb255888162fb8c9bf42d" name="themes/silver/graphics/az.png" role="horde" />
+   <file baseinstalldir="/" md5sum="be26d8ea432c3097a246f35ad3ffc620" name="themes/silver/graphics/az_secondary.png" role="horde" />
+   <file baseinstalldir="/" md5sum="151823b90ad370105db8ffdbaaabf39f" name="themes/silver/graphics/contact.png" role="horde" />
+   <file baseinstalldir="/" md5sum="47370a0500cb9048a5110bd04047bdab" name="themes/silver/graphics/edit.png" role="horde" />
+   <file baseinstalldir="/" md5sum="3995c585b76bd5aa67cb6385431d378a" name="themes/silver/graphics/favicon.ico" role="horde" />
+   <file baseinstalldir="/" md5sum="51940bc002d2e71f77fdf98aeb0b2034" name="themes/silver/graphics/group.png" role="horde" />
+   <file baseinstalldir="/" md5sum="ee982eb5319c27d7b85bfb148d99af67" name="themes/silver/graphics/new.png" role="horde" />
+   <file baseinstalldir="/" md5sum="15163d5d604336b4363e27bfc0f7137a" name="themes/silver/graphics/search.png" role="horde" />
+   <file baseinstalldir="/" md5sum="3ea3e4a17e91bcf6766e98f4717b161e" name="themes/silver/graphics/turba.png" role="horde" />
+   <file baseinstalldir="/" md5sum="d9cf645badd586fa4bb0ba3154d502c9" name="themes/silver/graphics/za.png" role="horde" />
+   <file baseinstalldir="/" md5sum="e2af44b1c0bbc08b5a47f5ee04bfeea5" name="themes/silver/graphics/za_secondary.png" role="horde" />
+   <file baseinstalldir="/" md5sum="ab782dd2296566ce4e650e7f660bf53f" name="themes/silver/screen.css" role="horde" />
+   <file baseinstalldir="/" md5sum="e2b63f9d9c744041a090eb6aa1ecb7d5" name="themes/tango-blue/graphics/menu/browse.png" role="horde" />
+   <file baseinstalldir="/" md5sum="9a0db1262eae8f598bd8fe12c6e16bcb" name="themes/tango-blue/graphics/menu/new.png" role="horde" />
+   <file baseinstalldir="/" md5sum="4fee3bf658b745207626895de3a9b4e5" name="themes/tango-blue/graphics/az_secondary.png" role="horde" />
+   <file baseinstalldir="/" md5sum="bff8be0fbb0cb1dd4a67495891409b8a" name="themes/tango-blue/graphics/contact.png" role="horde" />
+   <file baseinstalldir="/" md5sum="ef411caacb6461e32e5b2709039129fe" name="themes/tango-blue/graphics/favicon.ico" role="horde" />
+   <file baseinstalldir="/" md5sum="b67f03b1ec86d7a7f45e451a5c7d01fb" name="themes/tango-blue/graphics/group.png" role="horde" />
+   <file baseinstalldir="/" md5sum="9a0db1262eae8f598bd8fe12c6e16bcb" name="themes/tango-blue/graphics/new.png" role="horde" />
+   <file baseinstalldir="/" md5sum="a805a6d7ed78e5eb4954553965507c54" name="themes/tango-blue/graphics/turba.png" role="horde" />
+   <file baseinstalldir="/" md5sum="16ac4232282a4cb5760f92a3d94674b7" name="themes/tango-blue/graphics/za_secondary.png" role="horde" />
+   <file baseinstalldir="/" md5sum="ae78244208aebd69ad9a343b635586c4" name="add.php" role="horde" />
+   <file baseinstalldir="/" md5sum="03f107900aad2cc6cae919da045b5a0d" name="browse.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8bbfdb9d234ba5dfb6e59f080792f863" name="contact.php" role="horde" />
+   <file baseinstalldir="/" md5sum="f8860e9739f8d7dd7b5a56e5272513da" name="data.php" role="horde" />
+   <file baseinstalldir="/" md5sum="4a8f239055a6aafbeb0221ff955c55e5" name="delete.php" role="horde" />
+   <file baseinstalldir="/" md5sum="354148ccaf559732901f7a305425f14b" name="deletefile.php" role="horde" />
+   <file baseinstalldir="/" md5sum="fcf40da373ce0f2fa4ed6ae84a7d68d2" name="edit.php" role="horde" />
+   <file baseinstalldir="/" md5sum="bfb2471793e927fcec444e126b408900" name="index.php" role="horde" />
+   <file baseinstalldir="/" md5sum="f5e05cdf140945a93dd261f8865ea692" name="LICENSE" role="doc" />
+   <file baseinstalldir="/" md5sum="e150e9ec94463cb0e52142f976d22b0f" name="merge.php" role="horde" />
+   <file baseinstalldir="/" md5sum="57ba06e84492edaff873abc4f9935cb9" name="minisearch.php" role="horde" />
+   <file baseinstalldir="/" md5sum="6257cc90d1cef691c71faae596a4e128" name="README" role="doc" />
+   <file baseinstalldir="/" md5sum="de5c0e6a56e5260ab1aba11f15d25211" name="search.php" role="horde" />
+   <file baseinstalldir="/" md5sum="d7134c9149362cbb7a21a0ff59a6391a" name="vcard.php" role="horde" />
+   <file baseinstalldir="/" md5sum="977a0a9913daff1978e9bb6b8c54ebe3" name="view.php" role="horde" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.7.0</min>
+   </pearinstaller>
+   <package>
+    <name>horde</name>
+    <channel>pear.horde.org</channel>
+    <min>4.0.0</min>
+    <max>5.0.0</max>
+    <exclude>5.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Auth</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.4</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Core</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Data</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Date</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Exception</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Form</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Group</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_History</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Icalendar</name>
+    <channel>pear.horde.org</channel>
+    <min>1.1.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Mail</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Mime</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Nls</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Perms</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Prefs</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Serialize</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Share</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Support</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Url</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Util</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_View</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <extension>
+    <name>gettext</name>
+   </extension>
+   <extension>
+    <name>hash</name>
+   </extension>
+   <extension>
+    <name>json</name>
+   </extension>
+  </required>
+  <optional>
+   <package>
+    <name>Horde_ActiveSync</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Db</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Imsp</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Ldap</name>
+    <channel>pear.horde.org</channel>
+    <min>1.1.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+   <package>
+    <name>Horde_Service_Facebook</name>
+    <channel>pear.horde.org</channel>
+    <min>1.0.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+  </optional>
+ </dependencies>
+ <usesrole>
+  <role>horde</role>
+  <package>Role</package>
+  <channel>pear.horde.org</channel>
+ </usesrole>
+ <phprelease>
+  <filelist>
+   <install as="turba/addressbooks/create.php" name="addressbooks/create.php" />
+   <install as="turba/addressbooks/delete.php" name="addressbooks/delete.php" />
+   <install as="turba/addressbooks/edit.php" name="addressbooks/edit.php" />
+   <install as="turba/addressbooks/index.php" name="addressbooks/index.php" />
+   <install as="turba-convert-datatree-shares-to-sql" name="bin/turba-convert-datatree-shares-to-sql" />
+   <install as="turba-convert-sql-shares-to-sqlng" name="bin/turba-convert-sql-shares-to-sqlng" />
+   <install as="turba-import-squirrelmail-file-abook" name="bin/turba-import-squirrelmail-file-abook" />
+   <install as="turba-import-squirrelmail-sql-abook" name="bin/turba-import-squirrelmail-sql-abook" />
+   <install as="turba-import-vcards" name="bin/turba-import-vcards" />
+   <install as="turba-public-to-horde-share" name="bin/turba-public-to-horde-share" />
+   <install as="turba/config/.htaccess" name="config/.htaccess" />
+   <install as="turba/config/attributes.php" name="config/attributes.php" />
+   <install as="turba/config/backends.php" name="config/backends.php" />
+   <install as="turba/config/conf.xml" name="config/conf.xml" />
+   <install as="turba/config/hooks.php.dist" name="config/hooks.php.dist" />
+   <install as="turba/config/menu.php.dist" name="config/menu.php.dist" />
+   <install as="turba/config/mime_drivers.php" name="config/mime_drivers.php" />
+   <install as="turba/config/prefs.php" name="config/prefs.php" />
+   <install as="CHANGES" name="docs/CHANGES" />
+   <install as="CREDITS" name="docs/CREDITS" />
+   <install as="INSTALL" name="docs/INSTALL" />
+   <install as="LDAP" name="docs/LDAP" />
+   <install as="RELEASE_NOTES" name="docs/RELEASE_NOTES" />
+   <install as="UPGRADING" name="docs/UPGRADING" />
+   <install as="vcf/brad.vcf" name="docs/vcf/brad.vcf" />
+   <install as="vcf/dimitris.vcf" name="docs/vcf/dimitris.vcf" />
+   <install as="vcf/dwalt.vcf" name="docs/vcf/dwalt.vcf" />
+   <install as="vcf/foo.vcf" name="docs/vcf/foo.vcf" />
+   <install as="vcf/larry.vcf" name="docs/vcf/larry.vcf" />
+   <install as="vcf/multiple.vcf" name="docs/vcf/multiple.vcf" />
+   <install as="vcf/palm.vcf" name="docs/vcf/palm.vcf" />
+   <install as="vcf/README" name="docs/vcf/README" />
+   <install as="vcf/sfg.vcf" name="docs/vcf/sfg.vcf" />
+   <install as="vcf/test.vcf" name="docs/vcf/test.vcf" />
+   <install as="turba/js/browse.js" name="js/browse.js" />
+   <install as="turba/js/columnprefs.js" name="js/columnprefs.js" />
+   <install as="turba/js/contact_tabs.js" name="js/contact_tabs.js" />
+   <install as="turba/js/search.js" name="js/search.js" />
+   <install as="turba/lib/.htaccess" name="lib/.htaccess" />
+   <install as="turba/lib/Api.php" name="lib/Api.php" />
+   <install as="turba/lib/Application.php" name="lib/Application.php" />
+   <install as="turba/lib/Driver.php" name="lib/Driver.php" />
+   <install as="turba/lib/Exception.php" name="lib/Exception.php" />
+   <install as="turba/lib/List.php" name="lib/List.php" />
+   <install as="turba/lib/Object.php" name="lib/Object.php" />
+   <install as="turba/lib/Test.php" name="lib/Test.php" />
+   <install as="turba/lib/Turba.php" name="lib/Turba.php" />
+   <install as="turba/lib/Block/Minisearch.php" name="lib/Block/Minisearch.php" />
+   <install as="turba/lib/Data/Ldif.php" name="lib/Data/Ldif.php" />
+   <install as="turba/lib/Driver/Facebook.php" name="lib/Driver/Facebook.php" />
+   <install as="turba/lib/Driver/Favourites.php" name="lib/Driver/Favourites.php" />
+   <install as="turba/lib/Driver/Group.php" name="lib/Driver/Group.php" />
+   <install as="turba/lib/Driver/Imsp.php" name="lib/Driver/Imsp.php" />
+   <install as="turba/lib/Driver/Kolab.php" name="lib/Driver/Kolab.php" />
+   <install as="turba/lib/Driver/Ldap.php" name="lib/Driver/Ldap.php" />
+   <install as="turba/lib/Driver/Prefs.php" name="lib/Driver/Prefs.php" />
+   <install as="turba/lib/Driver/Share.php" name="lib/Driver/Share.php" />
+   <install as="turba/lib/Driver/Sql.php" name="lib/Driver/Sql.php" />
+   <install as="turba/lib/Driver/Vbook.php" name="lib/Driver/Vbook.php" />
+   <install as="turba/lib/Exception/NotSupported.php" name="lib/Exception/NotSupported.php" />
+   <install as="turba/lib/Factory/Driver.php" name="lib/Factory/Driver.php" />
+   <install as="turba/lib/Form/AddContact.php" name="lib/Form/AddContact.php" />
+   <install as="turba/lib/Form/Contact.php" name="lib/Form/Contact.php" />
+   <install as="turba/lib/Form/ContactBase.php" name="lib/Form/ContactBase.php" />
+   <install as="turba/lib/Form/CreateAddressBook.php" name="lib/Form/CreateAddressBook.php" />
+   <install as="turba/lib/Form/DeleteAddressBook.php" name="lib/Form/DeleteAddressBook.php" />
+   <install as="turba/lib/Form/EditAddressBook.php" name="lib/Form/EditAddressBook.php" />
+   <install as="turba/lib/Form/EditContact.php" name="lib/Form/EditContact.php" />
+   <install as="turba/lib/Form/EditContactGroup.php" name="lib/Form/EditContactGroup.php" />
+   <install as="turba/lib/LoginTasks/SystemTask/Upgrade.php" name="lib/LoginTasks/SystemTask/Upgrade.php" />
+   <install as="turba/lib/Object/Group.php" name="lib/Object/Group.php" />
+   <install as="turba/lib/View/Browse.php" name="lib/View/Browse.php" />
+   <install as="turba/lib/View/Contact.php" name="lib/View/Contact.php" />
+   <install as="turba/lib/View/DeleteContact.php" name="lib/View/DeleteContact.php" />
+   <install as="turba/lib/View/Duplicates.php" name="lib/View/Duplicates.php" />
+   <install as="turba/lib/View/EditContact.php" name="lib/View/EditContact.php" />
+   <install as="turba/lib/View/List.php" name="lib/View/List.php" />
+   <install as="turba/lib/View/List/AlphaFilter.php" name="lib/View/List/AlphaFilter.php" />
+   <install as="turba/lib/View/List/PageFilter.php" name="lib/View/List/PageFilter.php" />
+   <install as="turba/locale/.htaccess" name="locale/.htaccess" />
+   <install as="turba/locale/turba.pot" name="locale/turba.pot" />
+   <install as="turba/locale/ar/LC_MESSAGES/turba.mo" name="locale/ar/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/ar/LC_MESSAGES/turba.po" name="locale/ar/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/bg/LC_MESSAGES/turba.mo" name="locale/bg/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/bg/LC_MESSAGES/turba.po" name="locale/bg/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/ca/help.xml" name="locale/ca/help.xml" />
+   <install as="turba/locale/ca/LC_MESSAGES/turba.mo" name="locale/ca/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/ca/LC_MESSAGES/turba.po" name="locale/ca/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/cs/LC_MESSAGES/turba.mo" name="locale/cs/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/cs/LC_MESSAGES/turba.po" name="locale/cs/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/da/LC_MESSAGES/turba.mo" name="locale/da/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/da/LC_MESSAGES/turba.po" name="locale/da/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/de/help.xml" name="locale/de/help.xml" />
+   <install as="turba/locale/de/LC_MESSAGES/turba.mo" name="locale/de/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/de/LC_MESSAGES/turba.po" name="locale/de/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/el/LC_MESSAGES/turba.mo" name="locale/el/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/el/LC_MESSAGES/turba.po" name="locale/el/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/en/help.xml" name="locale/en/help.xml" />
+   <install as="turba/locale/es/help.xml" name="locale/es/help.xml" />
+   <install as="turba/locale/es/LC_MESSAGES/turba.mo" name="locale/es/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/es/LC_MESSAGES/turba.po" name="locale/es/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/et/LC_MESSAGES/turba.mo" name="locale/et/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/et/LC_MESSAGES/turba.po" name="locale/et/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/eu/help.xml" name="locale/eu/help.xml" />
+   <install as="turba/locale/eu/LC_MESSAGES/turba.mo" name="locale/eu/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/eu/LC_MESSAGES/turba.po" name="locale/eu/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/fa/help.xml" name="locale/fa/help.xml" />
+   <install as="turba/locale/fa/LC_MESSAGES/turba.mo" name="locale/fa/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/fa/LC_MESSAGES/turba.po" name="locale/fa/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/fi/help.xml" name="locale/fi/help.xml" />
+   <install as="turba/locale/fi/LC_MESSAGES/turba.mo" name="locale/fi/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/fi/LC_MESSAGES/turba.po" name="locale/fi/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/fr/help.xml" name="locale/fr/help.xml" />
+   <install as="turba/locale/fr/LC_MESSAGES/turba.mo" name="locale/fr/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/fr/LC_MESSAGES/turba.po" name="locale/fr/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/gl/LC_MESSAGES/turba.mo" name="locale/gl/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/gl/LC_MESSAGES/turba.po" name="locale/gl/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/hr/help.xml" name="locale/hr/help.xml" />
+   <install as="turba/locale/hr/LC_MESSAGES/turba.mo" name="locale/hr/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/hr/LC_MESSAGES/turba.po" name="locale/hr/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/hu/LC_MESSAGES/turba.mo" name="locale/hu/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/hu/LC_MESSAGES/turba.po" name="locale/hu/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/is/LC_MESSAGES/turba.mo" name="locale/is/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/is/LC_MESSAGES/turba.po" name="locale/is/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/it/LC_MESSAGES/turba.mo" name="locale/it/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/it/LC_MESSAGES/turba.po" name="locale/it/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/ja/LC_MESSAGES/turba.mo" name="locale/ja/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/ja/LC_MESSAGES/turba.po" name="locale/ja/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/ko/LC_MESSAGES/turba.mo" name="locale/ko/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/ko/LC_MESSAGES/turba.po" name="locale/ko/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/lt/LC_MESSAGES/turba.mo" name="locale/lt/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/lt/LC_MESSAGES/turba.po" name="locale/lt/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/lv/help.xml" name="locale/lv/help.xml" />
+   <install as="turba/locale/lv/LC_MESSAGES/turba.mo" name="locale/lv/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/lv/LC_MESSAGES/turba.po" name="locale/lv/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/mk/LC_MESSAGES/turba.mo" name="locale/mk/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/mk/LC_MESSAGES/turba.po" name="locale/mk/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/nb/LC_MESSAGES/turba.mo" name="locale/nb/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/nb/LC_MESSAGES/turba.po" name="locale/nb/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/nl/LC_MESSAGES/turba.mo" name="locale/nl/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/nl/LC_MESSAGES/turba.po" name="locale/nl/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/nn/LC_MESSAGES/turba.mo" name="locale/nn/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/nn/LC_MESSAGES/turba.po" name="locale/nn/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/pl/LC_MESSAGES/turba.mo" name="locale/pl/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/pl/LC_MESSAGES/turba.po" name="locale/pl/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/pt/help.xml" name="locale/pt/help.xml" />
+   <install as="turba/locale/pt/LC_MESSAGES/turba.mo" name="locale/pt/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/pt/LC_MESSAGES/turba.po" name="locale/pt/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/pt_BR/help.xml" name="locale/pt_BR/help.xml" />
+   <install as="turba/locale/pt_BR/LC_MESSAGES/turba.mo" name="locale/pt_BR/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/pt_BR/LC_MESSAGES/turba.po" name="locale/pt_BR/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/ro/LC_MESSAGES/turba.mo" name="locale/ro/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/ro/LC_MESSAGES/turba.po" name="locale/ro/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/ru/LC_MESSAGES/turba.mo" name="locale/ru/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/ru/LC_MESSAGES/turba.po" name="locale/ru/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/sk/help.xml" name="locale/sk/help.xml" />
+   <install as="turba/locale/sk/LC_MESSAGES/turba.mo" name="locale/sk/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/sk/LC_MESSAGES/turba.po" name="locale/sk/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/sl/LC_MESSAGES/turba.mo" name="locale/sl/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/sl/LC_MESSAGES/turba.po" name="locale/sl/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/sv/LC_MESSAGES/turba.mo" name="locale/sv/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/sv/LC_MESSAGES/turba.po" name="locale/sv/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/tr/help.xml" name="locale/tr/help.xml" />
+   <install as="turba/locale/tr/LC_MESSAGES/turba.mo" name="locale/tr/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/tr/LC_MESSAGES/turba.po" name="locale/tr/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/uk/LC_MESSAGES/turba.mo" name="locale/uk/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/uk/LC_MESSAGES/turba.po" name="locale/uk/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/zh_CN/LC_MESSAGES/turba.mo" name="locale/zh_CN/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/zh_CN/LC_MESSAGES/turba.po" name="locale/zh_CN/LC_MESSAGES/turba.po" />
+   <install as="turba/locale/zh_TW/LC_MESSAGES/turba.mo" name="locale/zh_TW/LC_MESSAGES/turba.mo" />
+   <install as="turba/locale/zh_TW/LC_MESSAGES/turba.po" name="locale/zh_TW/LC_MESSAGES/turba.po" />
+   <install as="turba/migration/1_turba_base_tables.php" name="migration/1_turba_base_tables.php" />
+   <install as="turba/migration/2_turba_upgrade_autoincrement.php" name="migration/2_turba_upgrade_autoincrement.php" />
+   <install as="turba/migration/3_turba_upgrade_sqlng.php" name="migration/3_turba_upgrade_sqlng.php" />
+   <install as="turba/migration/4_turba_upgrade_sqlhierarchical.php" name="migration/4_turba_upgrade_sqlhierarchical.php" />
+   <install as="turba/migration/5_turba_upgrade_sqlnghierarchical.php" name="migration/5_turba_upgrade_sqlnghierarchical.php" />
+   <install as="turba/migration/6_turba_upgrade_updateschema.php" name="migration/6_turba_upgrade_updateschema.php" />
+   <install as="scripts/.htaccess" name="scripts/.htaccess" />
+   <install as="scripts/Turba.reg" name="scripts/Turba.reg" />
+   <install as="scripts/ldap/addou" name="scripts/ldap/addou" />
+   <install as="scripts/ldap/addou.pl" name="scripts/ldap/addou.pl" />
+   <install as="turba/templates/.htaccess" name="templates/.htaccess" />
+   <install as="turba/templates/addressbook_list.php" name="templates/addressbook_list.php" />
+   <install as="turba/templates/menu.inc" name="templates/menu.inc" />
+   <install as="turba/templates/block/minisearch.inc" name="templates/block/minisearch.inc" />
+   <install as="turba/templates/browse/actions.inc" name="templates/browse/actions.inc" />
+   <install as="turba/templates/browse/column_footers.inc" name="templates/browse/column_footers.inc" />
+   <install as="turba/templates/browse/column_headers.inc" name="templates/browse/column_headers.inc" />
+   <install as="turba/templates/browse/header.inc" name="templates/browse/header.inc" />
+   <install as="turba/templates/browse/row.inc" name="templates/browse/row.inc" />
+   <install as="turba/templates/data/export.inc" name="templates/data/export.inc" />
+   <install as="turba/templates/data/import.inc" name="templates/data/import.inc" />
+   <install as="turba/templates/list/alphaPager.inc" name="templates/list/alphaPager.inc" />
+   <install as="turba/templates/list/numPager.inc" name="templates/list/numPager.inc" />
+   <install as="turba/templates/prefs/column.html" name="templates/prefs/column.html" />
+   <install as="turba/templates/search/advanced.html.php" name="templates/search/advanced.html.php" />
+   <install as="turba/templates/search/basic.html.php" name="templates/search/basic.html.php" />
+   <install as="turba/templates/search/duplicate.html.php" name="templates/search/duplicate.html.php" />
+   <install as="turba/templates/search/header.html.php" name="templates/search/header.html.php" />
+   <install as="turba/templates/search/vbook.html.php" name="templates/search/vbook.html.php" />
+   <install as="turba/templates/search/duplicate/contact_footer.html.php" name="templates/search/duplicate/contact_footer.html.php" />
+   <install as="turba/templates/search/duplicate/contact_header.html.php" name="templates/search/duplicate/contact_header.html.php" />
+   <install as="turba/templates/search/duplicate/footer.html.php" name="templates/search/duplicate/footer.html.php" />
+   <install as="turba/templates/search/duplicate/header.html.php" name="templates/search/duplicate/header.html.php" />
+   <install as="turba/templates/search/duplicate/list.html.php" name="templates/search/duplicate/list.html.php" />
+   <install as="turba/templates/test/ldapserver.inc" name="templates/test/ldapserver.inc" />
+   <install as="Turba/AllTests.php" name="test/Turba/AllTests.php" />
+   <install as="Turba/Autoload.php" name="test/Turba/Autoload.php" />
+   <install as="Turba/phpunit.xml" name="test/Turba/phpunit.xml" />
+   <install as="Turba/TestCase.php" name="test/Turba/TestCase.php" />
+   <install as="Turba/fixtures/az.png" name="test/Turba/fixtures/az.png" />
+   <install as="Turba/ToDo/ApiTest.php" name="test/Turba/ToDo/ApiTest.php" />
+   <install as="Turba/ToDo/BrowsePageTest.php" name="test/Turba/ToDo/BrowsePageTest.php" />
+   <install as="Turba/ToDo/bug_6518.phpt" name="test/Turba/ToDo/bug_6518.phpt" />
+   <install as="Turba/ToDo/DriverTest.php" name="test/Turba/ToDo/DriverTest.php" />
+   <install as="Turba/ToDo/GroupTest.php" name="test/Turba/ToDo/GroupTest.php" />
+   <install as="Turba/ToDo/import.ldif" name="test/Turba/ToDo/import.ldif" />
+   <install as="Turba/ToDo/importCRLF.ldif" name="test/Turba/ToDo/importCRLF.ldif" />
+   <install as="Turba/ToDo/KolabTest.php" name="test/Turba/ToDo/KolabTest.php" />
+   <install as="Turba/ToDo/KolabTestBase.php" name="test/Turba/ToDo/KolabTestBase.php" />
+   <install as="Turba/ToDo/ldif_exportFile.phpt" name="test/Turba/ToDo/ldif_exportFile.phpt" />
+   <install as="Turba/ToDo/ldif_importFile.phpt" name="test/Turba/ToDo/ldif_importFile.phpt" />
+   <install as="Turba/ToDo/ldif_importFileCRLF.phpt" name="test/Turba/ToDo/ldif_importFileCRLF.phpt" />
+   <install as="Turba/ToDo/ListTest.php" name="test/Turba/ToDo/ListTest.php" />
+   <install as="Turba/ToDo/ListViewTest.php" name="test/Turba/ToDo/ListViewTest.php" />
+   <install as="Turba/ToDo/TestBase.php" name="test/Turba/ToDo/TestBase.php" />
+   <install as="Turba/ToDo/tohash.phpt" name="test/Turba/ToDo/tohash.phpt" />
+   <install as="Turba/ToDo/ViewBrowseTest.php" name="test/Turba/ToDo/ViewBrowseTest.php" />
+   <install as="Turba/ToDo/ViewListTest.php" name="test/Turba/ToDo/ViewListTest.php" />
+   <install as="Turba/Unit/DriverTest.php" name="test/Turba/Unit/DriverTest.php" />
+   <install as="Turba/Unit/Driver/Base.php" name="test/Turba/Unit/Driver/Base.php" />
+   <install as="Turba/Unit/Driver/KolabTest.php" name="test/Turba/Unit/Driver/KolabTest.php" />
+   <install as="Turba/Unit/Driver/Sql/Base.php" name="test/Turba/Unit/Driver/Sql/Base.php" />
+   <install as="Turba/Unit/Driver/Sql/Pdo/SqliteTest.php" name="test/Turba/Unit/Driver/Sql/Pdo/SqliteTest.php" />
+   <install as="Turba/Unit/Turba/Base.php" name="test/Turba/Unit/Turba/Base.php" />
+   <install as="Turba/Unit/Turba/KolabTest.php" name="test/Turba/Unit/Turba/KolabTest.php" />
+   <install as="Turba/Unit/Turba/Sql/Base.php" name="test/Turba/Unit/Turba/Sql/Base.php" />
+   <install as="Turba/Unit/Turba/Sql/Pdo/SqliteTest.php" name="test/Turba/Unit/Turba/Sql/Pdo/SqliteTest.php" />
+   <install as="turba/themes/bluewhite/screen.css" name="themes/bluewhite/screen.css" />
+   <install as="turba/themes/default/ie6_or_less.css" name="themes/default/ie6_or_less.css" />
+   <install as="turba/themes/default/ie7.css" name="themes/default/ie7.css" />
+   <install as="turba/themes/default/screen.css" name="themes/default/screen.css" />
+   <install as="turba/themes/default/graphics/az.png" name="themes/default/graphics/az.png" />
+   <install as="turba/themes/default/graphics/az_secondary.png" name="themes/default/graphics/az_secondary.png" />
+   <install as="turba/themes/default/graphics/contact.png" name="themes/default/graphics/contact.png" />
+   <install as="turba/themes/default/graphics/edit.png" name="themes/default/graphics/edit.png" />
+   <install as="turba/themes/default/graphics/favicon.ico" name="themes/default/graphics/favicon.ico" />
+   <install as="turba/themes/default/graphics/group.png" name="themes/default/graphics/group.png" />
+   <install as="turba/themes/default/graphics/new.png" name="themes/default/graphics/new.png" />
+   <install as="turba/themes/default/graphics/search.png" name="themes/default/graphics/search.png" />
+   <install as="turba/themes/default/graphics/turba.png" name="themes/default/graphics/turba.png" />
+   <install as="turba/themes/default/graphics/za.png" name="themes/default/graphics/za.png" />
+   <install as="turba/themes/default/graphics/za_secondary.png" name="themes/default/graphics/za_secondary.png" />
+   <install as="turba/themes/default/graphics/menu/browse.png" name="themes/default/graphics/menu/browse.png" />
+   <install as="turba/themes/default/graphics/menu/new.png" name="themes/default/graphics/menu/new.png" />
+   <install as="turba/themes/default/graphics/mime/vcard.png" name="themes/default/graphics/mime/vcard.png" />
+   <install as="turba/themes/ideas/screen.css" name="themes/ideas/screen.css" />
+   <install as="turba/themes/silver/screen.css" name="themes/silver/screen.css" />
+   <install as="turba/themes/silver/graphics/az.png" name="themes/silver/graphics/az.png" />
+   <install as="turba/themes/silver/graphics/az_secondary.png" name="themes/silver/graphics/az_secondary.png" />
+   <install as="turba/themes/silver/graphics/contact.png" name="themes/silver/graphics/contact.png" />
+   <install as="turba/themes/silver/graphics/edit.png" name="themes/silver/graphics/edit.png" />
+   <install as="turba/themes/silver/graphics/favicon.ico" name="themes/silver/graphics/favicon.ico" />
+   <install as="turba/themes/silver/graphics/group.png" name="themes/silver/graphics/group.png" />
+   <install as="turba/themes/silver/graphics/new.png" name="themes/silver/graphics/new.png" />
+   <install as="turba/themes/silver/graphics/search.png" name="themes/silver/graphics/search.png" />
+   <install as="turba/themes/silver/graphics/turba.png" name="themes/silver/graphics/turba.png" />
+   <install as="turba/themes/silver/graphics/za.png" name="themes/silver/graphics/za.png" />
+   <install as="turba/themes/silver/graphics/za_secondary.png" name="themes/silver/graphics/za_secondary.png" />
+   <install as="turba/themes/silver/graphics/menu/browse.png" name="themes/silver/graphics/menu/browse.png" />
+   <install as="turba/themes/silver/graphics/menu/new.png" name="themes/silver/graphics/menu/new.png" />
+   <install as="turba/themes/silver/graphics/mime/vcard.png" name="themes/silver/graphics/mime/vcard.png" />
+   <install as="turba/themes/tango-blue/graphics/az_secondary.png" name="themes/tango-blue/graphics/az_secondary.png" />
+   <install as="turba/themes/tango-blue/graphics/contact.png" name="themes/tango-blue/graphics/contact.png" />
+   <install as="turba/themes/tango-blue/graphics/favicon.ico" name="themes/tango-blue/graphics/favicon.ico" />
+   <install as="turba/themes/tango-blue/graphics/group.png" name="themes/tango-blue/graphics/group.png" />
+   <install as="turba/themes/tango-blue/graphics/new.png" name="themes/tango-blue/graphics/new.png" />
+   <install as="turba/themes/tango-blue/graphics/turba.png" name="themes/tango-blue/graphics/turba.png" />
+   <install as="turba/themes/tango-blue/graphics/za_secondary.png" name="themes/tango-blue/graphics/za_secondary.png" />
+   <install as="turba/themes/tango-blue/graphics/menu/browse.png" name="themes/tango-blue/graphics/menu/browse.png" />
+   <install as="turba/themes/tango-blue/graphics/menu/new.png" name="themes/tango-blue/graphics/menu/new.png" />
+   <install as="turba/add.php" name="add.php" />
+   <install as="turba/browse.php" name="browse.php" />
+   <install as="turba/contact.php" name="contact.php" />
+   <install as="turba/data.php" name="data.php" />
+   <install as="turba/delete.php" name="delete.php" />
+   <install as="turba/deletefile.php" name="deletefile.php" />
+   <install as="turba/edit.php" name="edit.php" />
+   <install as="turba/index.php" name="index.php" />
+   <install as="LICENSE" name="LICENSE" />
+   <install as="turba/merge.php" name="merge.php" />
+   <install as="turba/minisearch.php" name="minisearch.php" />
+   <install as="README" name="README" />
+   <install as="turba/search.php" name="search.php" />
+   <install as="turba/vcard.php" name="vcard.php" />
+   <install as="turba/view.php" name="view.php" />
+  </filelist>
+ </phprelease>
+ <changelog>
+  <release>
+   <version>
+    <release>3.0.0alpha1</release>
+    <api>3.0.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2011-03-09</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* First alpha release for Horde 4.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.0beta1</release>
+    <api>3.0.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2011-03-16</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* Fix the listTimeObjects API for shared sources (Bug #9649).
+* Fix importing contacts with SyncML (Simon Bühler, Bug #9641).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.0RC1</release>
+    <api>3.0.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2011-03-23</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* First release candidate for Horde 4.
+* [gwr] Adapted the Kolab driver to Horde 4.
+* [mjr] Fix issue that caused erroneous file listings for objects in sources without a __uid value.
+* [cjh] Fix storing of binary fields.
+* [mjr] Fix/refactor IMSP driver.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.0RC2</release>
+    <api>3.0.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2011-03-29</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* Second release candidate for Horde 4.
+* [mjr] Fix issue that caused the inability to preview contact images while uploading (Bug #9702).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.0</release>
+    <api>3.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2011-04-06</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* First stable release for Horde 4.
+* [mjr] Fix deletion of virtual address books (Bug # 9779).
+* [jan] Fix saving searches to virtual address books (Bug #9776).
+* [mjr] Datatree share to SQL upgrade script refactored for Horde 4.
+* [jan] Move all executable scripts to bin/ and prefix with turba-.
+* [jan] Add fields to all addresses if multiple passed to addField() API method (Request #3482).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.1</release>
+    <api>3.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2011-04-20</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* [jan] Fix LDAP schema checking (Bug #9826).
+* [jan] Fix creating temporary files with open_basedir restrictions.
+* [mjr] Fix merging duplicate contacts (Bug #9828).
+* [mjr] Allow unsetting the GAL and Client Address Book settings (Bug #9843).
+* [mjr] Fix importing objects with categories (Bug #9841).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.2</release>
+    <api>3.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2011-05-03</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* [jan] Fix exporting department attribute over ActiveSync.
+* [mjr] Fix adding contacts with a category selected.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.3</release>
+    <api>3.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2011-06-01</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* [rla] Support multiple address books in search portal block (Request #8786).
+* [mjr] Fix importing LDIF files (Bug #10139).
+* [mjr] Fix issue introduced in 3.0.1 that caused contact images to not display (Bug #10050).
+* [jan] Fix editing of multiple contacts at once (Bug #10085).
+* [jan] Enable homeAdress and workAdress composite fields by default.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.4</release>
+    <api>3.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2011-07-05</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* [jan] Pass contact object to decode_attribute hook (kd@tu-cottbus.de, Bug #10287).
+* [jan] Complete fix for importing LDIF files (Bug #10139).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.5</release>
+    <api>3.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2011-08-02</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* [mjr] Fix obtaining default share via Turba&apos;s API (vilius@lnk.lt, Bug #10393).
+* [mjr] Force ActiveSync device reset after sync_books pref is changed (Request #10342).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.6</release>
+    <api>3.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2011-08-17</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* [mjr] Fix issue with synchronizing deleted contacts (Bug #10422).
+* [jan] Fix searching for duplicates on some databases (Bug #10383).
+* [mjr] Add and support more attributes by default.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.7</release>
+    <api>3.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2011-08-17</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* [jan] Add missing migration script (Bug #10436).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.8</release>
+    <api>3.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2011-08-30</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* [jan] Fix attribute name for assistant phone (Bug #10449).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.9</release>
+    <api>3.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2011-09-22</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* [rla] Turba LDAP Driver now only rewrites changed attributes (Bug #9343).
+* [mjr] Run attribute values through decode_attribute hook when exporting.
+* [mjr] Ensure encode_attribute hook is called on imported objects.
+* [mjr] Improve handling of removeUserData.
+* [mjr] Honor auto_create configuration setting (qoole.horde@lillimoth.com, Bug #10452)
+* [jan] Don&apos;t allow to search binary fields.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.10</release>
+    <api>3.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2011-11-02</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* [mjr] Add the ability to specify the fields to return from contacts/search.
+* [jan] Fix importing contacts with composite fields.
+* [jan] Fix LDAP connection test (Bug #10554).
+* [gwr] Avoid including the owner name into the default share (Kolab backend).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.11</release>
+    <api>3.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-01-17</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* [jan] Set VOICE parameter when exporting phone numbers to vCard (Request #10349).
+* [jan] Fix importing vCards with empty X-ANNIVERSARY attributes (Bug #10557).
+* [jan] Update Japanese translation (Hiromi Kimura &lt;hiromi@tac.tsukuba.ac.jp&gt;).
+   </notes>
+  </release>
+ </changelog>
+</package>
