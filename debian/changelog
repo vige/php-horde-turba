@@ -1,3 +1,9 @@
+php-horde-turba (3.0.11-2) UNRELEASED; urgency=low
+
+  * Fixed watchfile
+
+ -- Mathieu Parent <sathieu@debian.org>  Wed, 29 Feb 2012 18:37:20 +0100
+
 php-horde-turba (3.0.11-1) unstable; urgency=low
 
   * turba package
