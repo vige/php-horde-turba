@@ -3,5 +3,6 @@ php-horde-turba (3.0.11-1) UNRELEASED; urgency=low
   * turba package
   * Initial packaging (Closes: #657376)
   * Copyright file by Soren Stoutner and Jay Barksdale
+  * Updated Vcs-* fields
 
- -- Mathieu Parent <sathieu@debian.org>  Sat, 11 Feb 2012 15:05:39 +0100
+ -- Mathieu Parent <sathieu@debian.org>  Thu, 07 Jun 2012 18:13:07 +0200
