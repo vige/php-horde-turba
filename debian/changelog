@@ -1,9 +1,10 @@
-php-horde-turba (3.0.14-1) UNRELEASED; urgency=low
+php-horde-turba (4.0.1-1) UNRELEASED; urgency=low
 
   * turba package
   * Initial packaging (Closes: #657376)
   * Copyright file by Soren Stoutner and Jay Barksdale
   * Updated Vcs-* fields
   * New upstream version 3.0.14
+  * New upstream version 4.0.1
 
- -- Mathieu Parent <sathieu@debian.org>  Fri, 08 Jun 2012 17:21:44 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Fri, 30 Nov 2012 20:01:35 +0100
