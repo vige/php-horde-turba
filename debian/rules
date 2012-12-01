@@ -14,3 +14,9 @@ binary: build
 	dh_link etc/horde/$(HORDENAME) usr/share/horde/$(HORDENAME)/config
 	# back to debhelper:
 	dh binary --buildsystem=phppear --with phppear --after dh_install
+
+override_dh_auto_install:
+	dh_auto_install -O--buildsystem=phppear
+	# Remove extra license file
+	rm $(DESTDIR)/usr/share/doc/php-horde-turba/LICENSE
+
