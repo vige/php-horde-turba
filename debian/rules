@@ -18,5 +18,5 @@ binary: build
 override_dh_auto_install:
 	dh_auto_install -O--buildsystem=phppear
 	# Remove extra license file
-	rm $(DESTDIR)/usr/share/doc/php-horde-turba/LICENSE
+	rm -f $(DESTDIR)/usr/share/doc/php-horde-turba/LICENSE
 

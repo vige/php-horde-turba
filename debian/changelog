@@ -4,6 +4,8 @@ php-horde-turba (4.0.1-2) UNRELEASED; urgency=low
   * Updated Standards-Version to 3.9.4, no changes
   * Replace horde4 by PEAR in git reporitory path
   * Fix Horde Homepage
+  * Fix FTBFS due to rm failure with older pkg-php-tools (Closes: #697774).
+    Thanks to Chris J Arges.
 
  -- Mathieu Parent <sathieu@debian.org>  Sun, 06 Jan 2013 21:45:53 +0100
 
