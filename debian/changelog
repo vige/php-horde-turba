@@ -6,6 +6,7 @@ php-horde-turba (4.0.1-2) UNRELEASED; urgency=low
   * Fix Horde Homepage
   * Fix FTBFS due to rm failure with older pkg-php-tools (Closes: #697774).
     Thanks to Chris J Arges.
+  * Remove debian/pearrc, not needed with latest php-horde-role
 
  -- Mathieu Parent <sathieu@debian.org>  Sun, 06 Jan 2013 21:45:53 +0100
 
