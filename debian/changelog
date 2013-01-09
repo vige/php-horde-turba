@@ -1,4 +1,4 @@
-php-horde-turba (4.0.1-2) UNRELEASED; urgency=low
+php-horde-turba (4.0.1-2) unstable; urgency=low
 
   * Add a description of Horde in long description
   * Updated Standards-Version to 3.9.4, no changes
@@ -8,7 +8,7 @@ php-horde-turba (4.0.1-2) UNRELEASED; urgency=low
     Thanks to Chris J Arges.
   * Remove debian/pearrc, not needed with latest php-horde-role
 
- -- Mathieu Parent <sathieu@debian.org>  Sun, 06 Jan 2013 21:45:53 +0100
+ -- Mathieu Parent <sathieu@debian.org>  Wed, 09 Jan 2013 21:17:14 +0100
 
 php-horde-turba (4.0.1-1) unstable; urgency=low
 
