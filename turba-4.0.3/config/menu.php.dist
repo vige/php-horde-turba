@@ -33,7 +33,7 @@
  *
  *  $_menu[] = 'separator';
  *
- * $Id: 03c587778eaf7838197ae70231ec6bde90a1ea70 $
+ * $Id$
  */
 
 $_menu = array();
