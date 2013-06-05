@@ -28,10 +28,10 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2013-02-12</date>
- <time>16:13:52</time>
+ <date>2013-06-04</date>
+ <time>23:58:52</time>
  <version>
-  <release>4.0.3</release>
+  <release>4.1.0</release>
   <api>4.0.0</api>
  </version>
  <stability>
@@ -40,9 +40,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/asl">ASL</license>
  <notes>
-* [jan] Update French translation (Paul De Vlieger &lt;paul.de_vlieger@moniut.univ-bpclermont.fr&gt;).
-* [jan] Fix emptying shared address books.
-* [jan] Fix importing of LDIF data (Bug #11972).
+* [jan] Fix searching in LDAP address books (Bug #12297).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -69,8 +67,8 @@
     <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
    </file>
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="config/.htaccess" role="horde" />
-   <file baseinstalldir="/" md5sum="97e1fbc819f920433b8272da54b2f67f" name="config/attributes.php" role="horde" />
-   <file baseinstalldir="/" md5sum="23e2d1f3c02b7062de33df5f6e83716b" name="config/backends.php" role="horde" />
+   <file baseinstalldir="/" md5sum="19f00acaa99d6317827df3a5436eb598" name="config/attributes.php" role="horde" />
+   <file baseinstalldir="/" md5sum="fb6b3c3e9a0a70643cace3d7b6f5987b" name="config/backends.php" role="horde" />
    <file baseinstalldir="/" md5sum="dff4af09ad06e4d64450248344b26f8c" name="config/conf.xml" role="horde" />
    <file baseinstalldir="/" md5sum="988dbcc250e8853edd7a715dda9ca5bc" name="config/hooks.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="535f3db34b1825de6b4deb2294d335f4" name="config/menu.php.dist" role="horde" />
@@ -86,29 +84,29 @@
    <file baseinstalldir="/" md5sum="576bc1dfe876eb052034042022a8b8cf" name="docs/vcf/README" role="doc" />
    <file baseinstalldir="/" md5sum="aecb277cc4cc75e910d16904a7dc05e2" name="docs/vcf/sfg.vcf" role="doc" />
    <file baseinstalldir="/" md5sum="f8c7dc9f4ebb417c02f42320f4e0a49b" name="docs/vcf/test.vcf" role="doc" />
-   <file baseinstalldir="/" md5sum="ffd9eca6d40c3f6edaa71b5ab14d0c0c" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="492f5f4ed0c2813de7d8a063cc9a238f" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="75844434f98fefca5fb45654bb33f3fb" name="docs/CREDITS" role="doc" />
-   <file baseinstalldir="/" md5sum="4f5505ab1b8aeb019d4994bf921e3214" name="docs/INSTALL" role="doc" />
+   <file baseinstalldir="/" md5sum="d51f1691fa3ed8e2b66fba046765c8a3" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="90cfcfb21bfa7bb5531cb162f6f514c7" name="docs/LDAP" role="doc" />
-   <file baseinstalldir="/" md5sum="5803c0327360531cbaca2c914d6c45d5" name="docs/RELEASE_NOTES" role="doc" />
-   <file baseinstalldir="/" md5sum="28f31368b6eddd23578158c03120593a" name="docs/UPGRADING" role="doc" />
+   <file baseinstalldir="/" md5sum="5d060998ff2875e6cdc5fa1d2ca8fa46" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="59073dcf45b92c59b8d74040bebeb2c3" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="6008fcc6f2b4f9c99fa04987a8a2fb53" name="js/browse.js" role="horde" />
    <file baseinstalldir="/" md5sum="f0575c2b7acf19de1083ef20de90797e" name="js/columnprefs.js" role="horde" />
    <file baseinstalldir="/" md5sum="f0c4c98bbf2ee2f52fb31192de5e96d0" name="js/contact_tabs.js" role="horde" />
    <file baseinstalldir="/" md5sum="a9418f7c4f109b78c1a78e1bde38c501" name="js/minisearch.js" role="horde" />
    <file baseinstalldir="/" md5sum="8bebe226b97c4975c1f9fb13329828b8" name="js/search.js" role="horde" />
-   <file baseinstalldir="/" md5sum="e70ed223bb67c227ad053a13af13af6b" name="js/smartmobile.js" role="horde" />
+   <file baseinstalldir="/" md5sum="3477ccd4884b07f2160d3d57e5321449" name="js/smartmobile.js" role="horde" />
    <file baseinstalldir="/" md5sum="e429dd28dbd1e8dbc6fc27a134ea9edc" name="lib/Ajax/Application/Handler/Minisearch.php" role="horde" />
-   <file baseinstalldir="/" md5sum="3c0306526b7d71a6d1ca6f134695f92b" name="lib/Ajax/Application/Handler/Smartmobile.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e895ca8152e8fc745627f3abac967d22" name="lib/Ajax/Application/Handler/Smartmobile.php" role="horde" />
    <file baseinstalldir="/" md5sum="7591f0cca6663bc2c67a68189c8e83fe" name="lib/Ajax/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="a99951d42a3e3c681742a2d4da23b526" name="lib/Block/Minisearch.php" role="horde" />
-   <file baseinstalldir="/" md5sum="fc0e855aa5d2a25ad956aa8421d09adc" name="lib/Data/Ldif.php" role="horde" />
+   <file baseinstalldir="/" md5sum="6f5711bdab3bd4e7dbe7f01ecf1b740c" name="lib/Data/Ldif.php" role="horde" />
    <file baseinstalldir="/" md5sum="3bdfcc7cf9ddc7a7eab0856aa07bbd97" name="lib/Driver/Facebook.php" role="horde" />
    <file baseinstalldir="/" md5sum="80f2f68e0f7f19b8b8a232334a28373a" name="lib/Driver/Favourites.php" role="horde" />
    <file baseinstalldir="/" md5sum="bd89d54bb16d79bf3a2061210a140c49" name="lib/Driver/Group.php" role="horde" />
    <file baseinstalldir="/" md5sum="45922847382c86109d794f2d283e4a28" name="lib/Driver/Imsp.php" role="horde" />
    <file baseinstalldir="/" md5sum="980eaa6d987e8efdeb2c29903f50f6c4" name="lib/Driver/Kolab.php" role="horde" />
-   <file baseinstalldir="/" md5sum="b7f03290d23ab5c7ce0799f86699c761" name="lib/Driver/Ldap.php" role="horde" />
+   <file baseinstalldir="/" md5sum="f0bda4513d20f5ec937b6ef095bc1703" name="lib/Driver/Ldap.php" role="horde" />
    <file baseinstalldir="/" md5sum="59034eee54015626ef73c3d44a103c2c" name="lib/Driver/Prefs.php" role="horde" />
    <file baseinstalldir="/" md5sum="831cace4575a0b4b428e167e3a9be9e2" name="lib/Driver/Share.php" role="horde" />
    <file baseinstalldir="/" md5sum="051d06facfa86242b75e7b0018da808c" name="lib/Driver/Sql.php" role="horde" />
@@ -117,33 +115,33 @@
    <file baseinstalldir="/" md5sum="b5115e4e7d439fcba5bb5896fd27087c" name="lib/Exception/ObjectExists.php" role="horde" />
    <file baseinstalldir="/" md5sum="42d21f9a5c97f6693ec9b58835af3f1b" name="lib/Factory/Driver.php" role="horde" />
    <file baseinstalldir="/" md5sum="243c1cdf1b27d46ca1c149719bf48800" name="lib/Factory/Shares.php" role="horde" />
-   <file baseinstalldir="/" md5sum="1dcd42a7ea1d164d70e573584922b969" name="lib/Form/AddContact.php" role="horde" />
+   <file baseinstalldir="/" md5sum="fe3b4c745b5425d50b8190029d352fa9" name="lib/Form/AddContact.php" role="horde" />
    <file baseinstalldir="/" md5sum="f67797ab8176b891cea9bd1941718467" name="lib/Form/Contact.php" role="horde" />
    <file baseinstalldir="/" md5sum="93800bfc7c084d7384fdf0c4d727cd5c" name="lib/Form/ContactBase.php" role="horde" />
    <file baseinstalldir="/" md5sum="faca32e117d4ed7a4591da7892308619" name="lib/Form/CreateAddressBook.php" role="horde" />
    <file baseinstalldir="/" md5sum="2987f7c5186a8297e39b7b9c1b090b06" name="lib/Form/DeleteAddressBook.php" role="horde" />
-   <file baseinstalldir="/" md5sum="1974976c32ee1d55515d66ed2a9d4e54" name="lib/Form/EditAddressBook.php" role="horde" />
+   <file baseinstalldir="/" md5sum="11a2195c57f4f7d854d1ec09bc7ac21c" name="lib/Form/EditAddressBook.php" role="horde" />
    <file baseinstalldir="/" md5sum="18f7703591a7bc98c6a5cda9d95e6646" name="lib/Form/EditContact.php" role="horde" />
    <file baseinstalldir="/" md5sum="532daaad5d23aeb5290be96bcd905469" name="lib/Form/EditContactGroup.php" role="horde" />
    <file baseinstalldir="/" md5sum="96308050a68a52f9351614c3bf610f34" name="lib/LoginTasks/SystemTask/Upgrade.php" role="horde" />
-   <file baseinstalldir="/" md5sum="cf3990293a1bf07966c8c6bcc1943598" name="lib/Object/Group.php" role="horde" />
+   <file baseinstalldir="/" md5sum="089a4ba51cb95c173055723c32cf9fab" name="lib/Object/Group.php" role="horde" />
    <file baseinstalldir="/" md5sum="dfebb4005e5bb3032212bff6b3630e5f" name="lib/Prefs/Special/Columnselect.php" role="horde" />
    <file baseinstalldir="/" md5sum="60e3748b7efaa3d8d3c513780ccf0f65" name="lib/View/List/AlphaFilter.php" role="horde" />
    <file baseinstalldir="/" md5sum="ed4d91094103734ca858fe65ef30054e" name="lib/View/List/PageFilter.php" role="horde" />
-   <file baseinstalldir="/" md5sum="d90fc916ac595fc13d333eb1ea513f8f" name="lib/View/Browse.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8f2adccdc7d33e7add0ba1b7da07387b" name="lib/View/Browse.php" role="horde" />
    <file baseinstalldir="/" md5sum="647404198f1a61196c689ae8aba63674" name="lib/View/Contact.php" role="horde" />
    <file baseinstalldir="/" md5sum="90bee097bb4e0a1cdbb8c2c08a5034de" name="lib/View/DeleteContact.php" role="horde" />
    <file baseinstalldir="/" md5sum="91adf909844f45c674f3c10ebe72a5e9" name="lib/View/Duplicates.php" role="horde" />
    <file baseinstalldir="/" md5sum="afd5e559be79dda9cfa07297975f0db4" name="lib/View/EditContact.php" role="horde" />
    <file baseinstalldir="/" md5sum="fac96e6b33c1c9fca641c3c1a8dfcb6f" name="lib/View/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="lib/.htaccess" role="horde" />
-   <file baseinstalldir="/" md5sum="69bb10383ece505664530d57ad1feb17" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="64993e7c69ddc03830ff34ad4447a5d7" name="lib/Application.php" role="horde" />
-   <file baseinstalldir="/" md5sum="d441335789b8b60944386061dca5ac98" name="lib/Driver.php" role="horde" />
+   <file baseinstalldir="/" md5sum="65ae2b6e3b72fd3116095cb7024df86f" name="lib/Api.php" role="horde" />
+   <file baseinstalldir="/" md5sum="957d5fb7ec9f68001965c0a5705f48e9" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="67ccc05dc2c25a8cb99621a9727f33a7" name="lib/Driver.php" role="horde" />
    <file baseinstalldir="/" md5sum="3c4618b9fbf4a24c99452edc2b31cecf" name="lib/Exception.php" role="horde" />
-   <file baseinstalldir="/" md5sum="246f26ec8108f8a9a9081e66eac8c770" name="lib/List.php" role="horde" />
+   <file baseinstalldir="/" md5sum="20b52f6d8bd577ebc5cf35422c1c0811" name="lib/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="fbff2a021f0e2f431aad635638ad8c66" name="lib/Object.php" role="horde" />
-   <file baseinstalldir="/" md5sum="485615a02a93ab356365064a3e6a7f8d" name="lib/Smartmobile.php" role="horde" />
+   <file baseinstalldir="/" md5sum="a5ab7867430024defaa26a097d24de4c" name="lib/Smartmobile.php" role="horde" />
    <file baseinstalldir="/" md5sum="3ef2ae0ac06c7ff2177e83b8c4a5ec5a" name="lib/Test.php" role="horde" />
    <file baseinstalldir="/" md5sum="a108d5748b1b0086df9fb54e1c0f58e5" name="lib/Turba.php" role="horde" />
    <file baseinstalldir="/" md5sum="560ebb064cd0f1bf27f33a1c9ac6c369" name="locale/ar/LC_MESSAGES/turba.mo" role="horde" />
@@ -157,8 +155,8 @@
    <file baseinstalldir="/" md5sum="26c567eb470acb7106832c165393e15c" name="locale/cs/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="90286fa287b1c6df0328c614ade62ab7" name="locale/da/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="cc42aaa62fd544a981ea2e6dc5c3d15b" name="locale/da/LC_MESSAGES/turba.po" role="horde" />
-   <file baseinstalldir="/" md5sum="de8191b00aaa9e5c9b5f824503b98ca4" name="locale/de/LC_MESSAGES/turba.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="b6b9598f2dfa7dfbe0e70a55e3668b72" name="locale/de/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="e1ba4d0b85584508aefce26d01b30582" name="locale/de/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="4bf02945f2ea6a6ed7d61c033938cc60" name="locale/de/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="bd7ec42268aa8d88ac4945ced0c237a4" name="locale/de/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="e04cb4d130c2d1341770c3abd23412f5" name="locale/el/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="cbff16d545dc8075ece97ecb1b17aef7" name="locale/el/LC_MESSAGES/turba.po" role="horde" />
@@ -168,8 +166,8 @@
    <file baseinstalldir="/" md5sum="ebe2c2abae8bc05ee25f4c24f19df8ee" name="locale/es/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="15b0e3386d2095b18f31eeb3da4bf73b" name="locale/et/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="31579da51e1d4b08a8f6827bf16c8d0d" name="locale/et/LC_MESSAGES/turba.po" role="horde" />
-   <file baseinstalldir="/" md5sum="54795184c89f0f66519510c251c4e32d" name="locale/eu/LC_MESSAGES/turba.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="6cee308b03fe551f1039468d3b842000" name="locale/eu/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="9a4de06337fd3476faa68e3d0285d651" name="locale/eu/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="073adb2038fc473f5d3e34562931582a" name="locale/eu/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="3db45352926d30c380037171c806acf4" name="locale/eu/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="ed31807c858b7457c6b973faf02279b8" name="locale/fa/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="d0d8789be83f79e7d96f9e6ddd156ff0" name="locale/fa/LC_MESSAGES/turba.po" role="horde" />
@@ -197,8 +195,8 @@
    <file baseinstalldir="/" md5sum="8fbb0fa11638e521fa7f2035c23cfcbe" name="locale/ko/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="df5c7a6a6484ac1e379d1a09294b9049" name="locale/lt/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="9e25a722932ba912ad94bb728784791f" name="locale/lt/LC_MESSAGES/turba.po" role="horde" />
-   <file baseinstalldir="/" md5sum="95d8197101ee382990b06bb9d760f3e6" name="locale/lv/LC_MESSAGES/turba.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="b3d435425cb2c1b47ac36404b15ca854" name="locale/lv/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="38c7365f7f199c0934ec7dd1fdd0a87d" name="locale/lv/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="6153a4c12cdd8bcf46fdf89295eae0d0" name="locale/lv/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="a77eda83734b24eac8537e52b11c4c6a" name="locale/lv/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="5ee6e9645da71a8c95a635e7614bafaf" name="locale/mk/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="3773fe605284951afc3f75189954dc9d" name="locale/mk/LC_MESSAGES/turba.po" role="horde" />
@@ -213,8 +211,8 @@
    <file baseinstalldir="/" md5sum="34ae48c5aa340f946a1b69a2bb9d8d0b" name="locale/pt/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="6df5e1e53383128e24c0658eccdf814d" name="locale/pt/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="c425b1c6db6b6f9df5c03afcf1100545" name="locale/pt/help.xml" role="horde" />
-   <file baseinstalldir="/" md5sum="e11d27ca0ec6c5d12d72e38d3ed8f09a" name="locale/pt_BR/LC_MESSAGES/turba.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="a4632c1b76f5cf199361ce0747f973b7" name="locale/pt_BR/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="ed1084157eea8cd3d0ef538589b84349" name="locale/pt_BR/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="94d4f859af4431eecff0cda7fc70ec4d" name="locale/pt_BR/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="18671f8e2caa81f75d7fc1344649e35b" name="locale/pt_BR/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="f46c4d8175280d2bdace13037d089864" name="locale/ro/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="b28eb09f9d04856318b63b53d94e4bc0" name="locale/ro/LC_MESSAGES/turba.po" role="horde" />
@@ -230,20 +228,23 @@
    <file baseinstalldir="/" md5sum="a869353169d8736900d545ab48086152" name="locale/tr/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="24b3b3a3944363f9e10468191f45121f" name="locale/tr/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="75e71bfd25f3f43a4a12b021f90e3b23" name="locale/tr/help.xml" role="horde" />
-   <file baseinstalldir="/" md5sum="dbc7475bf7a68f1766a6de3d9c8d104e" name="locale/uk/LC_MESSAGES/turba.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="8cc3c2c64b44516a92defcd39c63492a" name="locale/uk/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="a0947eb6f52bb0ee03d3e0313f438183" name="locale/uk/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="63d3b48029d7ace6e97d2313f73035aa" name="locale/uk/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="6df266132874fa259f8ea7a09c9157aa" name="locale/zh_CN/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="f32a0c1178bec846a71fb7937221fb64" name="locale/zh_CN/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="e9141750c1bd2d4d15f309e1f7ff613f" name="locale/zh_TW/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="0ee94f10f423c078f719c9ed86f407d2" name="locale/zh_TW/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="locale/.htaccess" role="horde" />
-   <file baseinstalldir="/" md5sum="69c286b0637bdb660658711ef28c3321" name="locale/turba.pot" role="horde" />
+   <file baseinstalldir="/" md5sum="f7268d611e1522685fc2d718bc59e0b2" name="locale/turba.pot" role="horde" />
    <file baseinstalldir="/" md5sum="cdd485c78d89d315fbfa42b6a5878194" name="migration/1_turba_base_tables.php" role="horde" />
    <file baseinstalldir="/" md5sum="f339e049f4b6461b150dcafc6c64b890" name="migration/2_turba_upgrade_autoincrement.php" role="horde" />
    <file baseinstalldir="/" md5sum="cb81cbadb841f6d160804b1abeaa7b9e" name="migration/3_turba_upgrade_sqlng.php" role="horde" />
    <file baseinstalldir="/" md5sum="d53f581998ab052de136d9ccbb914add" name="migration/4_turba_upgrade_sqlhierarchical.php" role="horde" />
    <file baseinstalldir="/" md5sum="e31755f0aafa978a24beabad4cca45ad" name="migration/5_turba_upgrade_sqlnghierarchical.php" role="horde" />
    <file baseinstalldir="/" md5sum="9d38bc2e2f421f0911196464f1bbca3c" name="migration/6_turba_upgrade_updateschema.php" role="horde" />
+   <file baseinstalldir="/" md5sum="7cfe2425712bfc7f67c4ab29dbf6e084" name="migration/7_turba_upgrade_activesyncschema.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8afde7a2330ff75f36f7727dcc956497" name="migration/8_turba_fix_blob_length.php" role="horde" />
+   <file baseinstalldir="/" md5sum="4472a5058d5b2a3f4165f3eb0cf853f6" name="migration/9_turba_upgrade_schema.php" role="horde" />
    <file baseinstalldir="/" md5sum="8c028d32bcadb7fff0ba49f0eb238dee" name="scripts/ldap/addou" role="data" />
    <file baseinstalldir="/" md5sum="9e2d4277bdf3b75383fa40003b05c4af" name="scripts/ldap/addou.pl" role="data" />
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="scripts/.htaccess" role="data" />
@@ -265,15 +266,15 @@
    <file baseinstalldir="/" md5sum="d262fd772dd419f5a91319a11a4a5cdb" name="templates/search/duplicate/header.html.php" role="horde" />
    <file baseinstalldir="/" md5sum="1c2254423a27fd2553f656aef2c357a2" name="templates/search/duplicate/list.html.php" role="horde" />
    <file baseinstalldir="/" md5sum="7bdbbbdba34333d7835fc9827c6a189b" name="templates/search/advanced.html.php" role="horde" />
-   <file baseinstalldir="/" md5sum="4549fe09b84de08622cc0aa96e414f86" name="templates/search/basic.html.php" role="horde" />
+   <file baseinstalldir="/" md5sum="2dd070f164f8f3f267b346f2d44e754a" name="templates/search/basic.html.php" role="horde" />
    <file baseinstalldir="/" md5sum="8a0c211350d91432cf6c7fe1ddcf3552" name="templates/search/duplicate.html.php" role="horde" />
    <file baseinstalldir="/" md5sum="e20397d2a5db500e175912fa246acca4" name="templates/search/header.html.php" role="horde" />
    <file baseinstalldir="/" md5sum="079e53b254453c8ef5cedb0a729c3553" name="templates/search/vbook.html.php" role="horde" />
-   <file baseinstalldir="/" md5sum="d989f3929d1c9b52c0416ee7aaf3d70b" name="templates/smartmobile/browse.html.php" role="horde" />
+   <file baseinstalldir="/" md5sum="64532e0e9f267dcc512cc8fc5e1a2954" name="templates/smartmobile/browse.html.php" role="horde" />
    <file baseinstalldir="/" md5sum="aea5363f449bca9b57c74d4bb91735f8" name="templates/smartmobile/entry.html.php" role="horde" />
    <file baseinstalldir="/" md5sum="713b7caf180a4316fa7509adc61746db" name="templates/test/ldapserver.inc" role="horde" />
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="templates/.htaccess" role="horde" />
-   <file baseinstalldir="/" md5sum="f008ca055b833e73da6f644532cd88f9" name="test/Turba/fixtures/az.png" role="test" />
+   <file baseinstalldir="/" md5sum="7ec469adfe37ba6ca58e7889b80c69d9" name="test/Turba/fixtures/az.png" role="test" />
    <file baseinstalldir="/" md5sum="9e07646ffb52e3aae983e9673858208b" name="test/Turba/ToDo/ApiTest.php" role="test" />
    <file baseinstalldir="/" md5sum="22682df03783b515a742a21dd8da77a0" name="test/Turba/ToDo/BrowsePageTest.php" role="test" />
    <file baseinstalldir="/" md5sum="4e32fdd5269697166ddf2401207bb4d5" name="test/Turba/ToDo/bug_6518.phpt" role="test" />
@@ -281,7 +282,7 @@
    <file baseinstalldir="/" md5sum="553ec6e814693324176482a84b90a2d2" name="test/Turba/ToDo/GroupTest.php" role="test" />
    <file baseinstalldir="/" md5sum="cd2fecffdac770aba8d55a262d5aceb3" name="test/Turba/ToDo/import.ldif" role="test" />
    <file baseinstalldir="/" md5sum="c4609a5a5a0c20b88c160ac07eebbba8" name="test/Turba/ToDo/importCRLF.ldif" role="test" />
-   <file baseinstalldir="/" md5sum="0e54ef64a277c7e0f00376f8c04c8132" name="test/Turba/ToDo/KolabTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="0a713ec2b8896a2dd22cccf5b17443d3" name="test/Turba/ToDo/KolabTest.php" role="test" />
    <file baseinstalldir="/" md5sum="c289fa3359a56bc4dde891e44c9fd768" name="test/Turba/ToDo/KolabTestBase.php" role="test" />
    <file baseinstalldir="/" md5sum="7592e36cf8956ae8218ac15a950a4148" name="test/Turba/ToDo/ldif_exportFile.phpt" role="test" />
    <file baseinstalldir="/" md5sum="0c302384fd9ddeb108f3284f306cdbbf" name="test/Turba/ToDo/ldif_importFile.phpt" role="test" />
@@ -289,57 +290,56 @@
    <file baseinstalldir="/" md5sum="7111e9905738c9adeb17e7184bd0ad5e" name="test/Turba/ToDo/ListTest.php" role="test" />
    <file baseinstalldir="/" md5sum="06cb8a22978cfb082b32aee30c11209e" name="test/Turba/ToDo/ListViewTest.php" role="test" />
    <file baseinstalldir="/" md5sum="eb9c93af36628d94f9872c2c3757fb50" name="test/Turba/ToDo/TestBase.php" role="test" />
-   <file baseinstalldir="/" md5sum="d7301f866e18cc474d1e4d57934f7513" name="test/Turba/ToDo/tohash.phpt" role="test" />
    <file baseinstalldir="/" md5sum="97bf940a893c0037312910988a13a866" name="test/Turba/ToDo/ViewBrowseTest.php" role="test" />
    <file baseinstalldir="/" md5sum="287c3ecd3fd6b44f44286e035d7b959f" name="test/Turba/ToDo/ViewListTest.php" role="test" />
    <file baseinstalldir="/" md5sum="77f8b313b068071698248b48f5d2ed25" name="test/Turba/Unit/Driver/Sql/Pdo/SqliteTest.php" role="test" />
    <file baseinstalldir="/" md5sum="31acd43b48cf063aa4df9237f09e612d" name="test/Turba/Unit/Driver/Sql/Base.php" role="test" />
    <file baseinstalldir="/" md5sum="a96879652d44a94caf8e7edcfe9ac9be" name="test/Turba/Unit/Driver/Base.php" role="test" />
-   <file baseinstalldir="/" md5sum="0ee138b010457049b62cb81b0803eff0" name="test/Turba/Unit/Driver/KolabTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="49c67a3dcd994e23958dd185e1be7ffd" name="test/Turba/Unit/Driver/KolabTest.php" role="test" />
    <file baseinstalldir="/" md5sum="fbf8f680f316b80ae794953a435681d3" name="test/Turba/Unit/Turba/Sql/Pdo/SqliteTest.php" role="test" />
    <file baseinstalldir="/" md5sum="d82dc8dbe3804e2103cdd4d99b026235" name="test/Turba/Unit/Turba/Sql/Base.php" role="test" />
-   <file baseinstalldir="/" md5sum="e96de55e2d15fb0018f5dec595a327fe" name="test/Turba/Unit/Turba/Base.php" role="test" />
-   <file baseinstalldir="/" md5sum="91c481f2ef9308d1f55fbfe7259c6188" name="test/Turba/Unit/Turba/KolabTest.php" role="test" />
-   <file baseinstalldir="/" md5sum="4c24964558e247dc580bff5e4159ad8c" name="test/Turba/Unit/DriverTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="37b897e99806c309a2e4267972297191" name="test/Turba/Unit/Turba/Base.php" role="test" />
+   <file baseinstalldir="/" md5sum="ac467138a25669ecd63ca8f1df099f92" name="test/Turba/Unit/Turba/KolabTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="e500642b258d7e33a8dd02033abfbbdd" name="test/Turba/Unit/ExportTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="0d2929b3b939613139cea190fbdd7a12" name="test/Turba/Unit/ImportTest.php" role="test" />
    <file baseinstalldir="/" md5sum="8bc9518b9c0576806c82d9413489d099" name="test/Turba/AllTests.php" role="test" />
-   <file baseinstalldir="/" md5sum="f0609e27fb7b2734b2b52bd7c3fefeaf" name="test/Turba/Autoload.php" role="test" />
+   <file baseinstalldir="/" md5sum="c66854bc5b5942ef5881082bc809659a" name="test/Turba/Autoload.php" role="test" />
    <file baseinstalldir="/" md5sum="0a5018f0726d4673850fece3ad4d72c0" name="test/Turba/bootstrap.php" role="test" />
    <file baseinstalldir="/" md5sum="fbe4252ae686d7a73d94512be32e7f23" name="test/Turba/phpunit.xml" role="test" />
-   <file baseinstalldir="/" md5sum="0f0568d08de38888fd5e5e0b153939aa" name="test/Turba/TestCase.php" role="test" />
+   <file baseinstalldir="/" md5sum="e34d13500b5fd1f1bbfc87870bfe588b" name="test/Turba/TestCase.php" role="test" />
    <file baseinstalldir="/" md5sum="36df13bed6e0f70dc47d4b612a2ad95d" name="themes/default/block/screen.css" role="horde" />
-   <file baseinstalldir="/" md5sum="04d2f2a4703e5d13421e27524f2c0f45" name="themes/default/graphics/menu/browse.png" role="horde" />
-   <file baseinstalldir="/" md5sum="1d193f287cffb22a28eac8235e6a6f45" name="themes/default/graphics/menu/new.png" role="horde" />
-   <file baseinstalldir="/" md5sum="de2ce55a43d05f2fb0777f2c07173469" name="themes/default/graphics/mime/vcard.png" role="horde" />
-   <file baseinstalldir="/" md5sum="f008ca055b833e73da6f644532cd88f9" name="themes/default/graphics/az.png" role="horde" />
-   <file baseinstalldir="/" md5sum="4fee3bf658b745207626895de3a9b4e5" name="themes/default/graphics/az_secondary.png" role="horde" />
-   <file baseinstalldir="/" md5sum="9c6c70d715439b5c2c2e380dbecb3548" name="themes/default/graphics/contact.png" role="horde" />
-   <file baseinstalldir="/" md5sum="75843f882b00192c71adda411019e169" name="themes/default/graphics/delete.png" role="horde" />
-   <file baseinstalldir="/" md5sum="876aacbd4f791f6aac9346f789b4d5ef" name="themes/default/graphics/edit.png" role="horde" />
+   <file baseinstalldir="/" md5sum="350cf36904b5730f02346a8af1b441b7" name="themes/default/graphics/menu/browse.png" role="horde" />
+   <file baseinstalldir="/" md5sum="35ff2c413310582df1216c14b9d2fd01" name="themes/default/graphics/menu/new.png" role="horde" />
+   <file baseinstalldir="/" md5sum="70c9409b91506f02d6f6b572b807ebbb" name="themes/default/graphics/mime/vcard.png" role="horde" />
+   <file baseinstalldir="/" md5sum="7ec469adfe37ba6ca58e7889b80c69d9" name="themes/default/graphics/az.png" role="horde" />
+   <file baseinstalldir="/" md5sum="e6dc586d7121cef77038ebd5b65dd45e" name="themes/default/graphics/az_secondary.png" role="horde" />
+   <file baseinstalldir="/" md5sum="f786d4760055136f6021edf658cea931" name="themes/default/graphics/contact.png" role="horde" />
+   <file baseinstalldir="/" md5sum="f24f830890928f3ace861b1bcf20250a" name="themes/default/graphics/delete.png" role="horde" />
+   <file baseinstalldir="/" md5sum="2095ea5f205d8f30ec79a61af280c312" name="themes/default/graphics/edit.png" role="horde" />
    <file baseinstalldir="/" md5sum="6a9552a1615ae1e953b527664ce279cc" name="themes/default/graphics/favicon.ico" role="horde" />
-   <file baseinstalldir="/" md5sum="5ead4f5054d7c14e3420776878be422c" name="themes/default/graphics/group.png" role="horde" />
+   <file baseinstalldir="/" md5sum="a67e47418b54b5b34d4c82de8c548b03" name="themes/default/graphics/group.png" role="horde" />
    <file baseinstalldir="/" md5sum="dd6b7b0bf5c3af22499abc0a9ee1e1b2" name="themes/default/graphics/loading.gif" role="horde" />
-   <file baseinstalldir="/" md5sum="1d193f287cffb22a28eac8235e6a6f45" name="themes/default/graphics/new.png" role="horde" />
-   <file baseinstalldir="/" md5sum="87a7303b2c4a9964a8c86b8d1c3b85b4" name="themes/default/graphics/search.png" role="horde" />
-   <file baseinstalldir="/" md5sum="410104e3774d14376816a4ac905e236b" name="themes/default/graphics/turba.png" role="horde" />
-   <file baseinstalldir="/" md5sum="92e42e96d4574921c61eb2c2996f2104" name="themes/default/graphics/za.png" role="horde" />
-   <file baseinstalldir="/" md5sum="16ac4232282a4cb5760f92a3d94674b7" name="themes/default/graphics/za_secondary.png" role="horde" />
+   <file baseinstalldir="/" md5sum="35ff2c413310582df1216c14b9d2fd01" name="themes/default/graphics/new.png" role="horde" />
+   <file baseinstalldir="/" md5sum="da28189e71172e802316c4c2ceff1917" name="themes/default/graphics/search.png" role="horde" />
+   <file baseinstalldir="/" md5sum="406119c5b15d9951b8dea160bcb5e092" name="themes/default/graphics/turba.png" role="horde" />
+   <file baseinstalldir="/" md5sum="2615204dabeab01bf35f0f1474a16e53" name="themes/default/graphics/za.png" role="horde" />
+   <file baseinstalldir="/" md5sum="0bcd1154d31cd5d8d0589b963974225a" name="themes/default/graphics/za_secondary.png" role="horde" />
    <file baseinstalldir="/" md5sum="4180736821e54f9aa213942fb96b7dfc" name="themes/default/smartmobile/screen.css" role="horde" />
-   <file baseinstalldir="/" md5sum="9b2f1fde2371236bb43ea92a1edf1120" name="themes/default/ie7.css" role="horde" />
    <file baseinstalldir="/" md5sum="ac076a0e2f81d0873e8db2e94d39b87c" name="themes/default/screen.css" role="horde" />
    <file baseinstalldir="/" md5sum="3e2ca8831a34b2c962a292c53442675a" name="add.php" role="horde" />
    <file baseinstalldir="/" md5sum="67406216531d90e98e5738d4ade1165d" name="browse.php" role="horde" />
-   <file baseinstalldir="/" md5sum="93c6e1c4d3abd2a3aafc4367a9bd63c6" name="contact.php" role="horde" />
-   <file baseinstalldir="/" md5sum="e190d19389e59d2f0a6afd8afb5eb664" name="data.php" role="horde" />
-   <file baseinstalldir="/" md5sum="2bbd72fbd3cad49757bbc12d1c976bc0" name="delete.php" role="horde" />
-   <file baseinstalldir="/" md5sum="031f0a998451fe2e218a4340b205c599" name="deletefile.php" role="horde" />
-   <file baseinstalldir="/" md5sum="c056d8cb0e53162faaa88708e000fbb5" name="edit.php" role="horde" />
+   <file baseinstalldir="/" md5sum="37872f867a866399405aad6b1aa6eb51" name="contact.php" role="horde" />
+   <file baseinstalldir="/" md5sum="d29a5a64d7682a67322c1a80f0ad09eb" name="data.php" role="horde" />
+   <file baseinstalldir="/" md5sum="418cdea70ad3e194c5daebf62151d239" name="delete.php" role="horde" />
+   <file baseinstalldir="/" md5sum="b2cc519569de2848d5ec03bbf31c46f2" name="deletefile.php" role="horde" />
+   <file baseinstalldir="/" md5sum="b91665be5f16c7787009fad4a6c59202" name="edit.php" role="horde" />
    <file baseinstalldir="/" md5sum="5d249b648685608c4245306b4a8ab291" name="index.php" role="horde" />
    <file baseinstalldir="/" md5sum="35f61483bc07645250513ef791d4d3c8" name="LICENSE" role="doc" />
-   <file baseinstalldir="/" md5sum="69927e7a7e94b515dbc23035579115ad" name="merge.php" role="horde" />
-   <file baseinstalldir="/" md5sum="6257cc90d1cef691c71faae596a4e128" name="README" role="doc" />
-   <file baseinstalldir="/" md5sum="9f4ff8ad643aaadfbb1d5922254385c4" name="search.php" role="horde" />
+   <file baseinstalldir="/" md5sum="2798b1456774b63c2dbc326481994ece" name="merge.php" role="horde" />
+   <file baseinstalldir="/" md5sum="eba018807448206d823f10cdc4a3a41d" name="README" role="doc" />
+   <file baseinstalldir="/" md5sum="38cd8e4b0a9677f50d244768585a09b8" name="search.php" role="horde" />
    <file baseinstalldir="/" md5sum="f42ad91bafc13d05cb112d0856d3bfac" name="smartmobile.php" role="horde" />
-   <file baseinstalldir="/" md5sum="266574e8b657417c4e01e5af4ca0ace1" name="vcard.php" role="horde" />
+   <file baseinstalldir="/" md5sum="7587425fa2dbe5a9e26039bfe30dd0dc" name="vcard.php" role="horde" />
    <file baseinstalldir="/" md5sum="10670afaba32c2bc579d6dbe9b27907e" name="view.php" role="horde" />
   </dir>
  </contents>
@@ -368,7 +368,7 @@
    <package>
     <name>Horde_Core</name>
     <channel>pear.horde.org</channel>
-    <min>2.0.0</min>
+    <min>2.5.0</min>
     <max>3.0.0alpha1</max>
     <exclude>3.0.0alpha1</exclude>
    </package>
@@ -512,14 +512,14 @@
    <package>
     <name>Horde_ActiveSync</name>
     <channel>pear.horde.org</channel>
-    <min>2.0.0</min>
+    <min>2.4.0</min>
     <max>3.0.0alpha1</max>
     <exclude>3.0.0alpha1</exclude>
    </package>
    <package>
     <name>Horde_Db</name>
     <channel>pear.horde.org</channel>
-    <min>2.0.0</min>
+    <min>2.0.3</min>
     <max>3.0.0alpha1</max>
     <exclude>3.0.0alpha1</exclude>
    </package>
@@ -739,6 +739,9 @@
    <install as="turba/migration/4_turba_upgrade_sqlhierarchical.php" name="migration/4_turba_upgrade_sqlhierarchical.php" />
    <install as="turba/migration/5_turba_upgrade_sqlnghierarchical.php" name="migration/5_turba_upgrade_sqlnghierarchical.php" />
    <install as="turba/migration/6_turba_upgrade_updateschema.php" name="migration/6_turba_upgrade_updateschema.php" />
+   <install as="turba/migration/7_turba_upgrade_activesyncschema.php" name="migration/7_turba_upgrade_activesyncschema.php" />
+   <install as="turba/migration/8_turba_fix_blob_length.php" name="migration/8_turba_fix_blob_length.php" />
+   <install as="turba/migration/9_turba_upgrade_schema.php" name="migration/9_turba_upgrade_schema.php" />
    <install as="scripts/.htaccess" name="scripts/.htaccess" />
    <install as="scripts/Turba.reg" name="scripts/Turba.reg" />
    <install as="scripts/ldap/addou" name="scripts/ldap/addou" />
@@ -789,10 +792,10 @@
    <install as="Turba/ToDo/ListTest.php" name="test/Turba/ToDo/ListTest.php" />
    <install as="Turba/ToDo/ListViewTest.php" name="test/Turba/ToDo/ListViewTest.php" />
    <install as="Turba/ToDo/TestBase.php" name="test/Turba/ToDo/TestBase.php" />
-   <install as="Turba/ToDo/tohash.phpt" name="test/Turba/ToDo/tohash.phpt" />
    <install as="Turba/ToDo/ViewBrowseTest.php" name="test/Turba/ToDo/ViewBrowseTest.php" />
    <install as="Turba/ToDo/ViewListTest.php" name="test/Turba/ToDo/ViewListTest.php" />
-   <install as="Turba/Unit/DriverTest.php" name="test/Turba/Unit/DriverTest.php" />
+   <install as="Turba/Unit/ExportTest.php" name="test/Turba/Unit/ExportTest.php" />
+   <install as="Turba/Unit/ImportTest.php" name="test/Turba/Unit/ImportTest.php" />
    <install as="Turba/Unit/Driver/Base.php" name="test/Turba/Unit/Driver/Base.php" />
    <install as="Turba/Unit/Driver/KolabTest.php" name="test/Turba/Unit/Driver/KolabTest.php" />
    <install as="Turba/Unit/Driver/Sql/Base.php" name="test/Turba/Unit/Driver/Sql/Base.php" />
@@ -801,7 +804,6 @@
    <install as="Turba/Unit/Turba/KolabTest.php" name="test/Turba/Unit/Turba/KolabTest.php" />
    <install as="Turba/Unit/Turba/Sql/Base.php" name="test/Turba/Unit/Turba/Sql/Base.php" />
    <install as="Turba/Unit/Turba/Sql/Pdo/SqliteTest.php" name="test/Turba/Unit/Turba/Sql/Pdo/SqliteTest.php" />
-   <install as="turba/themes/default/ie7.css" name="themes/default/ie7.css" />
    <install as="turba/themes/default/screen.css" name="themes/default/screen.css" />
    <install as="turba/themes/default/block/screen.css" name="themes/default/block/screen.css" />
    <install as="turba/themes/default/graphics/az.png" name="themes/default/graphics/az.png" />
@@ -1354,6 +1356,91 @@
 * [jan] Update French translation (Paul De Vlieger &lt;paul.de_vlieger@moniut.univ-bpclermont.fr&gt;).
 * [jan] Fix emptying shared address books.
 * [jan] Fix importing of LDIF data (Bug #11972).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.0.4</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-05-29</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* [mms] SECURITY: Fix XSS vulnerability on smartmobile contacts details page (João Machado &lt;geral@jpaulo.eu&gt;).
+* [jan] Fix importing certain phone fields from vCard (Bug #12178).
+* [mjr] Fix issues with importing contacts via ActiveSync when no default_dir pref is set (Thomas Jarosch &lt;thomas.jarosch@intra2net.com&gt;, Bug #12188)
+* [mjr] Fix ActiveSync global address book searches when using LDAP as backend (Bug #12089).
+   </notes>
+  </release>
+  <release>
+   <date>2013-05-07</date>
+   <time>00:20:30</time>
+   <version>
+    <release>4.1.0beta1</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>stable</api>
+   </stability>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* [jan] Add CardDAV server support.
+* [mjr] Update the default SQL source schema (Request #11993).
+* [mms] Add links to group members on smartmobile entry page.
+* [mms] Add group icon to group contacts in smartmobile browse view.
+* [jan] Allow to search all search fields at once in basic searching.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.1.0beta2</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-05-14</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* [mjr] Update the default SQL schema.
+* [jan] Fix incorrect dependencies.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.1.0RC1</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-05-29</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* [mms] Back button in smartmobile view for group member returns to group entry, not browse list.
+* [mms] Fix resetting smartmobile entry page when viewing more than 1 contact.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.1.0</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2013-06-04</date>
+   <license uri="http://www.horde.org/licenses/asl">ASL</license>
+   <notes>
+* [jan] Fix searching in LDAP address books (Bug #12297).
    </notes>
   </release>
  </changelog>
