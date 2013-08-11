@@ -1,3 +1,9 @@
+php-horde-turba (4.1.1-1) UNRELEASED; urgency=low
+
+  * New upstream version 4.1.1
+
+ -- Mathieu Parent <sathieu@debian.org>  Sun, 11 Aug 2013 12:40:33 +0200
+
 php-horde-turba (4.1.0-1) unstable; urgency=low
 
   * New upstream version 4.1.0
