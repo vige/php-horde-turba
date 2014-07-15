@@ -28,19 +28,19 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2014-06-04</date>
- <time>18:50:06</time>
+ <date>2014-07-08</date>
+ <time>18:16:09</time>
  <version>
-  <release>4.2.0beta1</release>
+  <release>4.2.0</release>
   <api>4.0.0</api>
  </version>
  <stability>
-  <release>beta</release>
+  <release>stable</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.horde.org/licenses/apache">ASL</license>
  <notes>
-* [jan] Export composite attributes to vCard too.
+* [jan] Fix fatal error if importing CSV data with date fields.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -85,11 +85,11 @@
    <file baseinstalldir="/" md5sum="576bc1dfe876eb052034042022a8b8cf" name="docs/vcf/README" role="doc" />
    <file baseinstalldir="/" md5sum="aecb277cc4cc75e910d16904a7dc05e2" name="docs/vcf/sfg.vcf" role="doc" />
    <file baseinstalldir="/" md5sum="f8c7dc9f4ebb417c02f42320f4e0a49b" name="docs/vcf/test.vcf" role="doc" />
-   <file baseinstalldir="/" md5sum="49fe10853c198acf0eb8ab9b14c539e0" name="docs/CHANGES" role="doc" />
-   <file baseinstalldir="/" md5sum="33be1b788119d395cb39074ea7aa920d" name="docs/CREDITS" role="doc" />
+   <file baseinstalldir="/" md5sum="e10adf71ceb7c42efd0643e0fc306f59" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="bf8069edf8b05fc5662c21d33d9e8c6a" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="d51f1691fa3ed8e2b66fba046765c8a3" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="90cfcfb21bfa7bb5531cb162f6f514c7" name="docs/LDAP" role="doc" />
-   <file baseinstalldir="/" md5sum="3122db3ec683c81c13df612ac42133be" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="636f6a1bbc4887a60d4584a06e2dfebd" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="7da4234d688921c98adf0b97a72c82a3" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="72a21d175ba190cba9494b0f2d05d8fa" name="js/browse.js" role="horde" />
    <file baseinstalldir="/" md5sum="be761d3a17920d614d1ac43a02e71671" name="js/columnprefs.js" role="horde" />
@@ -141,8 +141,8 @@
    <file baseinstalldir="/" md5sum="d6f122508b5cf6b47f883f459c8786b3" name="lib/View/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="lib/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="43df6c6b712ac3d11b468bca94eed05b" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="e7b3ccb6ab586e6bcacf1678180ec091" name="lib/Application.php" role="horde" />
-   <file baseinstalldir="/" md5sum="828f51ae699ed48a2a3866efeb1025c9" name="lib/Driver.php" role="horde" />
+   <file baseinstalldir="/" md5sum="fffe32867a5add5163558a6e2a426415" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="7cc7c9b35ed3d3bcf55b9bc01b074ddb" name="lib/Driver.php" role="horde" />
    <file baseinstalldir="/" md5sum="f886b9fa5b438ea78214feae86bcf3bc" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="5f25f46f54e31782102d4fea5c210c47" name="lib/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="1f19756e02376bc3c4e61fb13964f71f" name="lib/Object.php" role="horde" />
@@ -161,15 +161,15 @@
    <file baseinstalldir="/" md5sum="818507587a065add2d112bc684747301" name="locale/cs/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="27a12898048c2d6324e0d3b9487707c3" name="locale/da/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="22deb95d371f85858dcf64652432982b" name="locale/da/LC_MESSAGES/turba.po" role="horde" />
-   <file baseinstalldir="/" md5sum="51408a881e747acba1951fa7cec4bdc4" name="locale/de/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="844a91b8f07f24a394831d32ba9b0f3f" name="locale/de/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="cb9d4281fe3f4ee2f06e0b37e979790f" name="locale/de/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="bd7ec42268aa8d88ac4945ced0c237a4" name="locale/de/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="e04cb4d130c2d1341770c3abd23412f5" name="locale/el/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="cbff16d545dc8075ece97ecb1b17aef7" name="locale/el/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="4d4608149655b3adac86a20df6590f5d" name="locale/en/help.xml" role="horde" />
-   <file baseinstalldir="/" md5sum="e37f478f4cd11aef2b7bedb9ed6e2ab5" name="locale/es/LC_MESSAGES/turba.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="28054668da20ebaf3b6e4a12e5e2fb30" name="locale/es/LC_MESSAGES/turba.po" role="horde" />
-   <file baseinstalldir="/" md5sum="265e2f457d9ca73c796e42fe5bde506b" name="locale/es/help.xml" role="horde" />
+   <file baseinstalldir="/" md5sum="ce1d76f6637da6b59530e93d5c1fa118" name="locale/es/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="d4c98f82dd829b0593714364599f1e11" name="locale/es/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="3b53f5b5fe771e377fa02cdcdaf64464" name="locale/es/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="15b0e3386d2095b18f31eeb3da4bf73b" name="locale/et/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="31579da51e1d4b08a8f6827bf16c8d0d" name="locale/et/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="9a4de06337fd3476faa68e3d0285d651" name="locale/eu/LC_MESSAGES/turba.mo" role="horde" />
@@ -195,8 +195,8 @@
    <file baseinstalldir="/" md5sum="bd7d07a8b85b98a29a06bb857153c641" name="locale/is/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="94b98882a848bcf4f7b826fe8f09e2a7" name="locale/it/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="4a86969487822f32eec04a0c0b58f618" name="locale/it/LC_MESSAGES/turba.po" role="horde" />
-   <file baseinstalldir="/" md5sum="50a94d8beb3560e538877fafc97ccedb" name="locale/ja/LC_MESSAGES/turba.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="ec79fe3bf4f198a1e7435bcc50f06074" name="locale/ja/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="52853b8a769a97333cd89f43d8edda74" name="locale/ja/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="255542770130ab8bd45823a391a35542" name="locale/ja/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="fa6899c167f15d4b65b89f5a702b30ae" name="locale/ko/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="51618b7f574d2cf18689493ce575a93c" name="locale/ko/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="df5c7a6a6484ac1e379d1a09294b9049" name="locale/lt/LC_MESSAGES/turba.mo" role="horde" />
@@ -212,8 +212,8 @@
    <file baseinstalldir="/" md5sum="522d3f5d8a0ad547107108c540094841" name="locale/nl/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="0ecb9c3d4655d8ff2d989181a10d2f0d" name="locale/nn/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="7f2e48f5fee92fa75529f083787ded14" name="locale/nn/LC_MESSAGES/turba.po" role="horde" />
-   <file baseinstalldir="/" md5sum="04608066fb83f7c87259d852fa1f7e6a" name="locale/pl/LC_MESSAGES/turba.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="75e4ee6b527e5d97b81cf9fc177af90a" name="locale/pl/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="f93a08a91275d28f4e465e1d6965664e" name="locale/pl/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="a1cfe14e6c7a14ecbb1f534c2a59f90e" name="locale/pl/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="34ae48c5aa340f946a1b69a2bb9d8d0b" name="locale/pt/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="6df5e1e53383128e24c0658eccdf814d" name="locale/pt/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="c425b1c6db6b6f9df5c03afcf1100545" name="locale/pt/help.xml" role="horde" />
@@ -338,7 +338,7 @@
    <file baseinstalldir="/" md5sum="c09469bcdb74103d8f5aa71010ea60dd" name="add.php" role="horde" />
    <file baseinstalldir="/" md5sum="67d0bb49a460bc04d8099a38bd5716fd" name="browse.php" role="horde" />
    <file baseinstalldir="/" md5sum="410f129dfd19451a7c255ed8ddcf404a" name="contact.php" role="horde" />
-   <file baseinstalldir="/" md5sum="8b24c384329ed2aa56f6f57db44dab8c" name="data.php" role="horde" />
+   <file baseinstalldir="/" md5sum="ceb7f968b74135bfabe5fab8e5df4ebb" name="data.php" role="horde" />
    <file baseinstalldir="/" md5sum="1a7e7bda9fc9887022aae4c49ffbac85" name="delete.php" role="horde" />
    <file baseinstalldir="/" md5sum="0080907b59e1e762b70ad08b3d88ba99" name="deletefile.php" role="horde" />
    <file baseinstalldir="/" md5sum="a210b74721f4ca5449d4784b170b58f7" name="edit.php" role="horde" />
@@ -386,7 +386,7 @@
    <package>
     <name>Horde_Core</name>
     <channel>pear.horde.org</channel>
-    <min>2.12.0alpha1</min>
+    <min>2.12.0</min>
     <max>3.0.0alpha1</max>
     <exclude>3.0.0alpha1</exclude>
    </package>
@@ -1586,9 +1586,11 @@
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2014-03-10</date>
+   <date>2014-07-07</date>
    <license uri="http://www.horde.org/licenses/asl">ASL</license>
    <notes>
+* [mjr] Fix pagination of search results (Bug #13047).
+* [mjr] Don&apos;t output empty properties for CardDAV requests (Bug #12782).
 * [jan] Update Korean translation (Deokgon Kim &lt;dgkim@dgkim.net&gt;).
 * [jan] Fix portal serach block response when no contacts have been found (dulinux &lt;lfbm.andamentos@gmail.com&gt;, Bug #13044).
    </notes>
@@ -1605,7 +1607,7 @@
    <date>2014-05-05</date>
    <license uri="http://www.horde.org/licenses/apache">ASL</license>
    <notes>
-* [jan] Don&apos;t extport binary fields to CSV/TSV.
+* [jan] Don&apos;t export binary fields to CSV/TSV.
 * [mms] Fix search in Facebook driver.
 * [jan] Add script to import contacts from Open-Xchange.
 * [jan] Don&apos;t remove missing contacts from distributions lists in Kolab backends (Bug #12861).
@@ -1632,6 +1634,53 @@
    <license uri="http://www.horde.org/licenses/apache">ASL</license>
    <notes>
 * [jan] Export composite attributes to vCard too.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.0RC1</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>stable</api>
+   </stability>
+   <date>2014-06-17</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [mjr] Fix regression with exporting photos in vCard when we are ignoring empty values.
+* [jan] Update Polish translation (Maciej Uhlig &lt;maciej.uhlig@us.edu.pl&gt;).
+* [jan] Update Japanese translation (Hiromi Kimura &lt;hiromi@tac.tsukuba.ac.jp&gt;).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.0RC2</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>stable</api>
+   </stability>
+   <date>2014-07-01</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [mjr] Fix another regression with exporting photos in vCard when we are ignoring empty values.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.0</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2014-07-08</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [jan] Fix fatal error if importing CSV data with date fields.
    </notes>
   </release>
  </changelog>
