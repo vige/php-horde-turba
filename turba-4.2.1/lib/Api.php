@@ -190,7 +190,7 @@ class Turba_Api extends Horde_Registry_Api
     public function browse($path = '',
                           $properties = array('name', 'icon', 'browseable'))
     {
-        global $injector, $session;
+        global $injector, $registry, $session;
 
         // Strip off the application name if present
         if (substr($path, 0, 5) == 'turba') {
@@ -269,17 +269,14 @@ class Turba_Api extends Horde_Registry_Api
                     // No backends are configured to provide shares
                     return array();
                 }
-                $addressbooks = $injector->getInstance('Turba_Shares')->listShares($parts[0], array(
-                    'attributes' => $parts[0],
-                    'perm' => Horde_Perms::READ
-                ));
-
-                /* The last check returns all addressbooks for the requested
-                 * user, but that does not mean the requesting user has access
-                 * to them.
-                 * Filter out those address books for which the requesting
-                 * user has no access. */
-                $addressbooks = Turba::permissionsFilter($addressbooks);
+                $addressbooks = $injector->getInstance('Turba_Shares')
+                    ->listShares(
+                        $registry->getAuth(),
+                        array(
+                            'attributes' => $parts[0],
+                            'perm' => Horde_Perms::READ
+                        )
+                    );
             }
 
             $curpath = 'turba/' . $parts[0] . '/';
@@ -1257,20 +1254,30 @@ class Turba_Api extends Horde_Registry_Api
 
                         $email = new Horde_Mail_Rfc822_List();
 
+                        $display_name = ($ob->hasValue('name') || !isset($ob->driver->alternativeName))
+                            ? Turba::formatName($ob)
+                            : $ob->getValue($ob->driver->alternativeName);
+
                         foreach (array_keys($att) as $key) {
                             if ($ob->getValue($key) &&
                                 isset($attributes[$key]) &&
                                 ($attributes[$key]['type'] == 'email')) {
-                                // Multiple addresses support
-                                $email->add($rfc822->parseAddressList($ob->getValue($key), array(
-                                    'limit' => (isset($attributes[$key]['params']) && is_array($attributes[$key]['params']) && !empty($attributes[$key]['params']['allow_multi'])) ? 0 : 1
-                                )));
+                                $e_val = $ob->getValue($key);
+
+                                /* Bug #12480: Don't return email if it
+                                 * doesn't contain the search string, since
+                                 * an entry can contain multiple e-mail
+                                 * fields. Return all e-mails if it
+                                 * occurrs in the name. */
+                                if ((stripos($e_val, $name) !== false) ||
+                                    (stripos($display_name, $name) !== false)) {
+                                    // Multiple addresses support
+                                    $email->add($rfc822->parseAddressList($e_val, array(
+                                        'limit' => (isset($attributes[$key]['params']) && is_array($attributes[$key]['params']) && !empty($attributes[$key]['params']['allow_multi'])) ? 0 : 1
+                                    )));
+                                }
                             }
                         }
-
-                        $display_name = ($ob->hasValue('name') || !isset($ob->driver->alternativeName))
-                            ? Turba::formatName($ob)
-                            : $ob->getValue($ob->driver->alternativeName);
 
                         if (count($email)) {
                             foreach ($email as $val) {
@@ -2113,6 +2120,10 @@ class Turba_Api extends Horde_Registry_Api
      *
      * @param string $name   The display name for the addressbook.
      * @param array  $params Any addtional parameters needed.
+     *     - synchronize:   (boolean) If true, add address book to the list of
+     *                                address books to syncronize.
+     *                      DEFAULT: false (do not add to the list).
+     *                      @since 4.2.1
      *
      * @return string  The new addressbook's id (share name).
      * @since 4.2.0
@@ -2121,8 +2132,14 @@ class Turba_Api extends Horde_Registry_Api
     {
         $share_name = strval(new Horde_Support_Randomid());
         $share = Turba::createShare($share_name, array('name' => $name));
+        $name = $share->getName();
+        if (!empty($params['synchronize'])) {
+            $sync = @unserialize($prefs->getValue('sync_books'));
+            $sync[] = $name;
+            $prefs->setValue('sync_books', serialize($sync));
+        }
 
-        return $share->getName();
+        return $name;
     }
 
     /**
@@ -2204,6 +2221,110 @@ class Turba_Api extends Horde_Registry_Api
         }
 
         return $sources;
+    }
+
+    /**
+     * Retrieve the list of used tag_names, tag_ids and the total number
+     * of resources that are linked to that tag.
+     *
+     * @param array $tags  An optional array of tag_ids. If omitted, all tags
+     *                     will be included.
+     *
+     * @return array  An array containing tag_name, and total
+     */
+    public function listTagInfo($tags = null, $user = null)
+    {
+        return $GLOBALS['injector']->getInstance('Turba_Tagger')
+            ->getTagInfo($tags, 500, null, $user);
+    }
+
+    /**
+     * SearchTags API:
+     * Returns an application-agnostic array (useful for when doing a tag search
+     * across multiple applications)
+     *
+     * The 'raw' results array can be returned instead by setting $raw = true.
+     *
+     * @param array $names           An array of tag_names to search for.
+     * @param integer $max           The maximum number of resources to return.
+     * @param integer $from          The number of the resource to start with.
+     * @param string $resource_type  The resource type [bookmark, '']
+     * @param string $user           Restrict results to resources owned by $user.
+     * @param boolean $raw           Return the raw data?
+     *
+     * @return array An array of results:
+     * <pre>
+     *  'title'    - The title for this resource.
+     *  'desc'     - A terse description of this resource.
+     *  'view_url' - The URL to view this resource.
+     *  'app'      - The Horde application this resource belongs to.
+     *  'icon'     - URL to an image.
+     * </pre>
+     */
+    public function searchTags($names, $max = 10, $from = 0,
+                               $resource_type = '', $user = null, $raw = false)
+    {
+        global $injector, $registry;
+
+        $results = $injector
+            ->getInstance('Turba_Tagger')
+            ->search(
+                $names,
+                array('user' => $user));
+
+        // Check for error or if we requested the raw data array.
+        if ($raw) {
+            return $results;
+        }
+        $return = array();
+        foreach ($results as $contact_uid) {
+            try {
+                $driver = $injector->getInstance('Turba_Factory_Driver');
+                foreach ($this->_getSources($sources) as $source) {
+                    $sdriver = $driver->create($source);
+                    if (!$sdriver->hasPermission(Horde_Perms::READ)) {
+                        continue;
+                    }
+                    $result = $sdriver->search(array('__uid' => $contact_uid));
+                    if (count($result) == 0) {
+                        continue;
+                    } elseif (count($result) > 1) {
+                        throw new Turba_Exception(sprintf("Internal Horde Error: multiple Turba objects with same objectId %s.", $uid));
+                    }
+                    foreach ($result->objects as $obj) {
+                        $return[] = array(
+                            'title' => $obj->getValue('name'),
+                            'desc' => $obj->getValue('name'),
+                            'view_url' => $obj->url,
+                            'app' => 'turba',
+                            'icon' => $this->_getContactImageUrl($obj)
+                        );
+                    }
+                }
+            } catch (Exception $e) {
+            }
+        }
+
+        return $return;
+    }
+
+
+    protected function _getContactImageUrl($obj)
+    {
+        if ($photo = $obj->getValue('photo')) {
+            try {
+                $img = $GLOBALS['injector']->getInstance('Horde_Core_Factory_Image')->create();
+                $img->loadString($photo['load']['data']);
+                $img->resize(50, 50, true);
+                $data = $img->raw(true);
+                $type = $img->getContentType();
+            } catch (Horde_Image_Exception $e) {
+                $data = $photo['load']['data'];
+                $type = $obj->getValue('phototype');
+            }
+
+            return Horde_Url_Data::create($type, $data);
+        }
     }
 
 }

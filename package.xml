@@ -28,10 +28,10 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2014-07-08</date>
- <time>18:16:09</time>
+ <date>2014-08-04</date>
+ <time>18:14:07</time>
  <version>
-  <release>4.2.0</release>
+  <release>4.2.1</release>
   <api>4.0.0</api>
  </version>
  <stability>
@@ -40,7 +40,13 @@
  </stability>
  <license uri="http://www.horde.org/licenses/apache">ASL</license>
  <notes>
-* [jan] Fix fatal error if importing CSV data with date fields.
+* [jan] Display correct address books in WebDAV folders.
+* [jan] Fix displayed CardDAV URLs for shared address books (Bug #12380).
+* [mms] Only include e-mail addresses that match the search string in the return from the search() API call (Request #12480).
+* [mjr] Fix exporting tags via vCard and ActiveSync (Bug #13393).
+* [mjr] Add EAS client created shares to the sync_books preference (Bug #13359).
+* [mjr] Add missing API support for searchTags API (Bug #13362).
+* [mjr] Fix issue that caused contacts to be tagged with a broken username.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -54,7 +60,9 @@
    <file baseinstalldir="/" md5sum="e5416a729b34008c01550d84e7a3617d" name="bin/turba-convert-sql-shares-to-sqlng" role="script">
     <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
    </file>
-   <file baseinstalldir="/" md5sum="56876bc74e89e9bc03730f08fa1527ce" name="bin/turba-import-openxchange" role="script" />
+   <file baseinstalldir="/" md5sum="56876bc74e89e9bc03730f08fa1527ce" name="bin/turba-import-openxchange" role="script">
+    <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
+   </file>
    <file baseinstalldir="/" md5sum="6007372746ac03c1506aaf01e4b0520b" name="bin/turba-import-squirrelmail-file-abook" role="script">
     <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
    </file>
@@ -85,11 +93,11 @@
    <file baseinstalldir="/" md5sum="576bc1dfe876eb052034042022a8b8cf" name="docs/vcf/README" role="doc" />
    <file baseinstalldir="/" md5sum="aecb277cc4cc75e910d16904a7dc05e2" name="docs/vcf/sfg.vcf" role="doc" />
    <file baseinstalldir="/" md5sum="f8c7dc9f4ebb417c02f42320f4e0a49b" name="docs/vcf/test.vcf" role="doc" />
-   <file baseinstalldir="/" md5sum="e10adf71ceb7c42efd0643e0fc306f59" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="454e8a4495ec2f5f5d1c4f111d0bcb2c" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="bf8069edf8b05fc5662c21d33d9e8c6a" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="d51f1691fa3ed8e2b66fba046765c8a3" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="90cfcfb21bfa7bb5531cb162f6f514c7" name="docs/LDAP" role="doc" />
-   <file baseinstalldir="/" md5sum="636f6a1bbc4887a60d4584a06e2dfebd" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="79165c6ba61e296fda3a082296b8b5a2" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="7da4234d688921c98adf0b97a72c82a3" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="72a21d175ba190cba9494b0f2d05d8fa" name="js/browse.js" role="horde" />
    <file baseinstalldir="/" md5sum="be761d3a17920d614d1ac43a02e71671" name="js/columnprefs.js" role="horde" />
@@ -124,7 +132,7 @@
    <file baseinstalldir="/" md5sum="8e6dd56372efe22b76360917391be724" name="lib/Form/ContactBase.php" role="horde" />
    <file baseinstalldir="/" md5sum="faca32e117d4ed7a4591da7892308619" name="lib/Form/CreateAddressBook.php" role="horde" />
    <file baseinstalldir="/" md5sum="05eabc31846027b316977e0946d1c4d0" name="lib/Form/DeleteAddressBook.php" role="horde" />
-   <file baseinstalldir="/" md5sum="1908b8b91309f8d681e990b2b44c757b" name="lib/Form/EditAddressBook.php" role="horde" />
+   <file baseinstalldir="/" md5sum="d7d5b68c905655e7ef36a24d25fc15e4" name="lib/Form/EditAddressBook.php" role="horde" />
    <file baseinstalldir="/" md5sum="bd03123332610b2d14b5db37f70daab0" name="lib/Form/EditContact.php" role="horde" />
    <file baseinstalldir="/" md5sum="b13eb41fa0d27670c371a0a21c6e5a38" name="lib/Form/EditContactGroup.php" role="horde" />
    <file baseinstalldir="/" md5sum="379857a559feb53f728e445673a073ca" name="lib/LoginTasks/SystemTask/Upgrade.php" role="horde" />
@@ -140,9 +148,9 @@
    <file baseinstalldir="/" md5sum="220bfca7815bc0d67f6b6030511bd3ed" name="lib/View/EditContact.php" role="horde" />
    <file baseinstalldir="/" md5sum="d6f122508b5cf6b47f883f459c8786b3" name="lib/View/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="lib/.htaccess" role="horde" />
-   <file baseinstalldir="/" md5sum="43df6c6b712ac3d11b468bca94eed05b" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="fffe32867a5add5163558a6e2a426415" name="lib/Application.php" role="horde" />
-   <file baseinstalldir="/" md5sum="7cc7c9b35ed3d3bcf55b9bc01b074ddb" name="lib/Driver.php" role="horde" />
+   <file baseinstalldir="/" md5sum="9a87e2440c59bdd3834d166fbb3bdd3c" name="lib/Api.php" role="horde" />
+   <file baseinstalldir="/" md5sum="9f1d6c0a4ddc4826a7ae9499f00ce40c" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="3ecf301cb4b10f881812b0a18868d24b" name="lib/Driver.php" role="horde" />
    <file baseinstalldir="/" md5sum="f886b9fa5b438ea78214feae86bcf3bc" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="5f25f46f54e31782102d4fea5c210c47" name="lib/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="1f19756e02376bc3c4e61fb13964f71f" name="lib/Object.php" role="horde" />
@@ -338,7 +346,7 @@
    <file baseinstalldir="/" md5sum="c09469bcdb74103d8f5aa71010ea60dd" name="add.php" role="horde" />
    <file baseinstalldir="/" md5sum="67d0bb49a460bc04d8099a38bd5716fd" name="browse.php" role="horde" />
    <file baseinstalldir="/" md5sum="410f129dfd19451a7c255ed8ddcf404a" name="contact.php" role="horde" />
-   <file baseinstalldir="/" md5sum="ceb7f968b74135bfabe5fab8e5df4ebb" name="data.php" role="horde" />
+   <file baseinstalldir="/" md5sum="42fb8bb43b50f0147ab2cf354fe17d82" name="data.php" role="horde" />
    <file baseinstalldir="/" md5sum="1a7e7bda9fc9887022aae4c49ffbac85" name="delete.php" role="horde" />
    <file baseinstalldir="/" md5sum="0080907b59e1e762b70ad08b3d88ba99" name="deletefile.php" role="horde" />
    <file baseinstalldir="/" md5sum="a210b74721f4ca5449d4784b170b58f7" name="edit.php" role="horde" />
@@ -1681,6 +1689,27 @@
    <license uri="http://www.horde.org/licenses/apache">ASL</license>
    <notes>
 * [jan] Fix fatal error if importing CSV data with date fields.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.1</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2014-08-04</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [jan] Display correct address books in WebDAV folders.
+* [jan] Fix displayed CardDAV URLs for shared address books (Bug #12380).
+* [mms] Only include e-mail addresses that match the search string in the return from the search() API call (Request #12480).
+* [mjr] Fix exporting tags via vCard and ActiveSync (Bug #13393).
+* [mjr] Add EAS client created shares to the sync_books preference (Bug #13359).
+* [mjr] Add missing API support for searchTags API (Bug #13362).
+* [mjr] Fix issue that caused contacts to be tagged with a broken username.
    </notes>
   </release>
  </changelog>

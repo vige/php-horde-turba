@@ -914,7 +914,7 @@ class Turba_Driver implements Countable
             $GLOBALS['injector']->getInstance('Turba_Tagger')->tag(
                 $uid,
                 $attributes['__tags'],
-                $this->getContactOwner(),
+                $GLOBALS['registry']->getAuth(),
                 'contact'
             );
         }
@@ -1129,6 +1129,10 @@ class Turba_Driver implements Countable
 
         $hooks = $injector->getInstance('Horde_Core_Hooks');
         $decode_hook = $hooks->hookExists('decode_attribute', 'turba');
+
+        // Tags are stored externally to Turba, so they don't appear in the
+        // source map.
+        $attributes[] = '__tags';
 
         foreach ($attributes as $key) {
             $val = $object->getValue($key);
@@ -1651,9 +1655,9 @@ class Turba_Driver implements Countable
                 }
                 $vcard->setAttribute('NOTE', $val, Horde_Mime::is8bit($val) ? $charset : array());
                 break;
-
-            case 'businessCategory':
             case '__tags':
+                $val = explode(',', $val);
+            case 'businessCategory':
                 // No CATEGORIES in vCard 2.1
                 if ($version == '2.1' ||
                     ($fields && !isset($fields['CATEGORIES']))) {
@@ -2629,10 +2633,6 @@ class Turba_Driver implements Countable
                 }
                 break;
 
-            case '__tags':
-                $message->categories = $value;
-                break;
-
             case 'children':
                 // Children FROM horde are a simple string value. Even though EAS
                 // uses an array stucture to pass them, we pass as a single
@@ -2687,6 +2687,9 @@ class Turba_Driver implements Countable
                 break;
             }
         }
+
+        /* Get tags. */
+        $message->categories = $object->getValue('__tags');
 
         if (empty($this->fileas)) {
             $message->fileas = Turba::formatName($object);
