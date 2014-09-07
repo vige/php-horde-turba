@@ -1165,6 +1165,8 @@ class Turba_Api extends Horde_Registry_Api
             foreach ($names as $name) {
                 $trimname = trim($name);
                 $out = $criteria = array();
+                unset($tname);
+
                 if (strlen($trimname)) {
                     if (isset($opts['fields'][$source])) {
                         foreach ($opts['fields'][$source] as $field) {
@@ -1257,6 +1259,7 @@ class Turba_Api extends Horde_Registry_Api
                         $display_name = ($ob->hasValue('name') || !isset($ob->driver->alternativeName))
                             ? Turba::formatName($ob)
                             : $ob->getValue($ob->driver->alternativeName);
+                        unset($tdisplay_name);
 
                         foreach (array_keys($att) as $key) {
                             if ($ob->getValue($key) &&
@@ -1264,13 +1267,26 @@ class Turba_Api extends Horde_Registry_Api
                                 ($attributes[$key]['type'] == 'email')) {
                                 $e_val = $ob->getValue($key);
 
-                                /* Bug #12480: Don't return email if it
-                                 * doesn't contain the search string, since
-                                 * an entry can contain multiple e-mail
-                                 * fields. Return all e-mails if it
-                                 * occurrs in the name. */
-                                if ((stripos($e_val, $name) !== false) ||
-                                    (stripos($display_name, $name) !== false)) {
+                                if (strlen($trimname)) {
+                                    /* Ticket #12480: Don't return email if it
+                                     * doesn't contain the search string, since
+                                     * an entry can contain multiple e-mail
+                                     * fields. Return all e-mails if it
+                                     * occurs in the name. */
+                                    if (!isset($tname)) {
+                                        $tname = Horde_String_Transliterate::toAscii($name);
+                                    }
+                                    if (!isset($tdisplay_name)) {
+                                        $tdisplay_name = Horde_String_Transliterate::toAscii($display_name);
+                                    }
+
+                                    $add = ((Horde_String::ipos(Horde_String_Transliterate::toAscii($e_val), $tname) !== false) ||
+                                            (Horde_String::ipos($tdisplay_name, $tname) !== false));
+                                } else {
+                                    $add = true;
+                                }
+
+                                if ($add) {
                                     // Multiple addresses support
                                     $email->add($rfc822->parseAddressList($e_val, array(
                                         'limit' => (isset($attributes[$key]['params']) && is_array($attributes[$key]['params']) && !empty($attributes[$key]['params']['allow_multi'])) ? 0 : 1
