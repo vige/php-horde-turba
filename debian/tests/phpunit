@@ -1,2 +1,7 @@
 #!/bin/sh
-php turba-4.2.1/test/Turba/AllTests.php
+
+set -x
+set -e
+
+cd turba*/test/./Turba
+phpunit -v .
