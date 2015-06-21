@@ -1,8 +1,8 @@
-php-horde-turba (4.2.7-1) UNRELEASED; urgency=medium
+php-horde-turba (4.2.7-1) unstable; urgency=medium
 
   * New upstream version 4.2.7
 
- -- Mathieu Parent <sathieu@debian.org>  Fri, 19 Jun 2015 20:26:06 +0200
+ -- Mathieu Parent <sathieu@debian.org>  Sun, 21 Jun 2015 15:18:58 +0200
 
 php-horde-turba (4.2.6-1) unstable; urgency=medium
 
