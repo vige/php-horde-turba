@@ -1,3 +1,9 @@
+php-horde-turba (4.2.8-1) UNRELEASED; urgency=medium
+
+  * New upstream version 4.2.8
+
+ -- Mathieu Parent <sathieu@debian.org>  Sun, 16 Aug 2015 21:29:10 +0200
+
 php-horde-turba (4.2.7-2) unstable; urgency=medium
 
   * Remove XS-Testsuite header in d/control
