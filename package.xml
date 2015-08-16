@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.5" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
  <name>turba</name>
  <channel>pear.horde.org</channel>
  <summary>A web based address book</summary>
@@ -28,10 +28,10 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2015-06-18</date>
- <time>20:17:50</time>
+ <date>2015-07-31</date>
+ <time>23:14:44</time>
  <version>
-  <release>4.2.7</release>
+  <release>4.2.8</release>
   <api>4.0.0</api>
  </version>
  <stability>
@@ -40,7 +40,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/apache">ASL</license>
  <notes>
-* [jan] Fix error when removing user data.
+* [mjr] Fix issue where sidebar links point to incorrect address book.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -87,11 +87,11 @@
    <file baseinstalldir="/" md5sum="576bc1dfe876eb052034042022a8b8cf" name="docs/vcf/README" role="doc" />
    <file baseinstalldir="/" md5sum="aecb277cc4cc75e910d16904a7dc05e2" name="docs/vcf/sfg.vcf" role="doc" />
    <file baseinstalldir="/" md5sum="f8c7dc9f4ebb417c02f42320f4e0a49b" name="docs/vcf/test.vcf" role="doc" />
-   <file baseinstalldir="/" md5sum="a383a317a78af23632aea84395bc7ef9" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="ae23b7c67b6612ca569122aff4c24ffc" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="1898ad776b37f49f11d6ad362362092a" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="d51f1691fa3ed8e2b66fba046765c8a3" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="90cfcfb21bfa7bb5531cb162f6f514c7" name="docs/LDAP" role="doc" />
-   <file baseinstalldir="/" md5sum="5d7d3cc9de9a2dafd8d4352e16ec7ee9" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="1434c43decadf4b2004909ef23921187" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="2e74bc2d5d76f516d80547e97ba8dab9" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="72a21d175ba190cba9494b0f2d05d8fa" name="js/browse.js" role="horde" />
    <file baseinstalldir="/" md5sum="aa62e3e066bfc85a7fdf783648fd950c" name="js/columnprefs.js" role="horde" />
@@ -143,7 +143,7 @@
    <file baseinstalldir="/" md5sum="4c6092b445e8a013f16a3e4ddc6e0880" name="lib/View/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="lib/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="0343723a8f79c515f2f2c837c421d63f" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="68a341ce820b437955efc890d3af3802" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="3f43339e60661b38a782eae9bbaac035" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="064aeb266c0f577fa8bd058a3cc35209" name="lib/Driver.php" role="horde" />
    <file baseinstalldir="/" md5sum="5eadf6f57d3e35b724abd29223eff47b" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="2031d019df66f99b9c3d60902dc8aed9" name="lib/List.php" role="horde" />
@@ -1810,6 +1810,21 @@
    <license uri="http://www.horde.org/licenses/apache">ASL</license>
    <notes>
 * [jan] Fix error when removing user data.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.8</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-08-01</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [mjr] Fix issue where sidebar links point to incorrect address book.
    </notes>
   </release>
  </changelog>
