@@ -1,3 +1,9 @@
+php-horde-turba (4.2.8-3) UNRELEASED; urgency=medium
+
+  * Upgaded to debhelper compat 9
+
+ -- Mathieu Parent <sathieu@debian.org>  Wed, 21 Oct 2015 07:54:47 +0200
+
 php-horde-turba (4.2.8-2) unstable; urgency=medium
 
   * Added php5-sqlite depends to phpunit test
