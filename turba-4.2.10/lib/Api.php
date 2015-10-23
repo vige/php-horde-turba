@@ -631,13 +631,19 @@ class Turba_Api extends Horde_Registry_Api
      *                             text/x-vcard, and activesync.
      * @param string $source       The source into which the contact will be
      *                             imported.
+     * @param array $options       Additional options:
+     *     - match_on_email: (boolean)  If true, will detect entry as duplicate
+     *                                  if ANY email field matches. Useful for
+     *                                  automatically adding contacts from an
+     *                                  email application, such as IMP.
+     *                                  @since 4.2.9
      *
      * @return string  The new UID.
      *
      * @throws Turba_Exception
      * @throws Turba_Exception_ObjectExists
      */
-    public function import($content, $contentType = 'array', $source = null)
+    public function import($content, $contentType = 'array', $source = null, array $options = array())
     {
         global $cfgSources, $injector, $prefs;
 
@@ -727,8 +733,23 @@ class Turba_Api extends Horde_Registry_Api
             $content = $driver->toHash($content);
         }
 
+        if (!empty($options['match_on_email'])) {
+            $content_copy = array();
+            foreach (Turba::getAvailableEmailFields() as $field) {
+                if (!empty($content[$field])) {
+                    $rfc = new Horde_Mail_Rfc822();
+                    $email = $rfc->parseAddressList($content[$field]);
+                    $content_copy[$field] = (string)$email;
+                }
+            }
+        } else {
+            $content_copy = $content;
+        }
+
         // Check if the entry already exists in the data source.
-        $result = $driver->search($content);
+        $result = $driver->search(
+            $content_copy, null, !empty($options['match_on_email']) ? 'OR' : 'AND');
+
         if (count($result)) {
             throw new Turba_Exception_ObjectExists(_("Already Exists"));
         }
@@ -1723,7 +1744,7 @@ class Turba_Api extends Horde_Registry_Api
     public function getField($address = '', $field = '', $sources = array(),
                              $strict = false, $multiple = false)
     {
-        global $cfgSources;
+        global $cfgSources, $attributes;
 
         if (empty($address)) {
             throw new Turba_Exception(_("Invalid email"));
@@ -1744,19 +1765,17 @@ class Turba_Api extends Horde_Registry_Api
             if (!isset($cfgSources[$source])) {
                 continue;
             }
-
+            $criterium = array();
             $sdriver = $driver->create($source);
-            $criterium = array('email' => $address);
-            if (!isset($sdriver->map['email'])) {
-                if (isset($sdriver->map['emails'])) {
-                    $criterium = array('emails' => $address);
-                } else {
-                    continue;
+            foreach (Turba::getAvailableEmailFields() as $cfgField) {
+                if (in_array($cfgField, array_keys($sdriver->map)) &&
+                    in_array($cfgField, $cfgSources[$source]['search'])) {
+                    $criterium[$cfgField] = $address;
                 }
             }
 
             try {
-                $list = $sdriver->search($criterium, null, 'AND', array(), $strict ? array('email') : array());
+                $list = $sdriver->search($criterium, null, 'OR', array(), $strict ? array_keys($criterium) : array());
             } catch (Turba_Exception $e) {
                 Horde::log($e, 'ERR');
             }
