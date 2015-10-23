@@ -28,10 +28,10 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2015-07-31</date>
- <time>23:14:44</time>
+ <date>2015-10-21</date>
+ <time>23:20:29</time>
  <version>
-  <release>4.2.8</release>
+  <release>4.2.10</release>
   <api>4.0.0</api>
  </version>
  <stability>
@@ -40,7 +40,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/apache">ASL</license>
  <notes>
-* [mjr] Fix issue where sidebar links point to incorrect address book.
+* [mjr] Fix fatal test error related to Content_Tagger.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -87,11 +87,11 @@
    <file baseinstalldir="/" md5sum="576bc1dfe876eb052034042022a8b8cf" name="docs/vcf/README" role="doc" />
    <file baseinstalldir="/" md5sum="aecb277cc4cc75e910d16904a7dc05e2" name="docs/vcf/sfg.vcf" role="doc" />
    <file baseinstalldir="/" md5sum="f8c7dc9f4ebb417c02f42320f4e0a49b" name="docs/vcf/test.vcf" role="doc" />
-   <file baseinstalldir="/" md5sum="ae23b7c67b6612ca569122aff4c24ffc" name="docs/CHANGES" role="doc" />
-   <file baseinstalldir="/" md5sum="1898ad776b37f49f11d6ad362362092a" name="docs/CREDITS" role="doc" />
+   <file baseinstalldir="/" md5sum="2d2d112c488eaa41179e76d5fb6507c2" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="46d8a3b0b88410cabf481469747613a8" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="d51f1691fa3ed8e2b66fba046765c8a3" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="90cfcfb21bfa7bb5531cb162f6f514c7" name="docs/LDAP" role="doc" />
-   <file baseinstalldir="/" md5sum="1434c43decadf4b2004909ef23921187" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="408b3517b132f8a3ab26be9702a54590" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="2e74bc2d5d76f516d80547e97ba8dab9" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="72a21d175ba190cba9494b0f2d05d8fa" name="js/browse.js" role="horde" />
    <file baseinstalldir="/" md5sum="aa62e3e066bfc85a7fdf783648fd950c" name="js/columnprefs.js" role="horde" />
@@ -113,7 +113,7 @@
    <file baseinstalldir="/" md5sum="7be62863ba227aace05e8ca7c10255d4" name="lib/Driver/Ldap.php" role="horde" />
    <file baseinstalldir="/" md5sum="ab6f910c247530192eca8ac2dd816fe5" name="lib/Driver/Prefs.php" role="horde" />
    <file baseinstalldir="/" md5sum="f1b7b072a09235641a2abab8c8d8078a" name="lib/Driver/Share.php" role="horde" />
-   <file baseinstalldir="/" md5sum="c413d8b2b98e5c2956dd70058acacdfd" name="lib/Driver/Sql.php" role="horde" />
+   <file baseinstalldir="/" md5sum="4da107530f97183e9a7a6728fb1b5d56" name="lib/Driver/Sql.php" role="horde" />
    <file baseinstalldir="/" md5sum="be86431e20b91d5130ae1040c0fbd2aa" name="lib/Driver/Vbook.php" role="horde" />
    <file baseinstalldir="/" md5sum="fcc7c62ea6d681dc68295be208464995" name="lib/Exception/NotSupported.php" role="horde" />
    <file baseinstalldir="/" md5sum="2270f0e06ef8ca9fbe48101c6964ef39" name="lib/Exception/ObjectExists.php" role="horde" />
@@ -130,7 +130,7 @@
    <file baseinstalldir="/" md5sum="e2280e479ec3b39bbaf3f59d8e95b6ca" name="lib/Form/EditContact.php" role="horde" />
    <file baseinstalldir="/" md5sum="460917cbac54ea3b919f14b78e23a54b" name="lib/Form/EditContactGroup.php" role="horde" />
    <file baseinstalldir="/" md5sum="b0f705098c224bf7ec7c0b6784e5d955" name="lib/LoginTasks/SystemTask/Upgrade.php" role="horde" />
-   <file baseinstalldir="/" md5sum="a1d484391cd8a2222c9a3fa91f5fe42d" name="lib/Object/Group.php" role="horde" />
+   <file baseinstalldir="/" md5sum="9605f62dde6aa6c96c5393a135d1547a" name="lib/Object/Group.php" role="horde" />
    <file baseinstalldir="/" md5sum="81c015e86877f439376870f89acd55d9" name="lib/Prefs/Special/Columnselect.php" role="horde" />
    <file baseinstalldir="/" md5sum="9f4db89865e1233b0056ff167957ab53" name="lib/Ui/VarRenderer/Turba.php" role="horde" />
    <file baseinstalldir="/" md5sum="60e3748b7efaa3d8d3c513780ccf0f65" name="lib/View/List/AlphaFilter.php" role="horde" />
@@ -142,16 +142,16 @@
    <file baseinstalldir="/" md5sum="220bfca7815bc0d67f6b6030511bd3ed" name="lib/View/EditContact.php" role="horde" />
    <file baseinstalldir="/" md5sum="4c6092b445e8a013f16a3e4ddc6e0880" name="lib/View/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="lib/.htaccess" role="horde" />
-   <file baseinstalldir="/" md5sum="0343723a8f79c515f2f2c837c421d63f" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="3f43339e60661b38a782eae9bbaac035" name="lib/Application.php" role="horde" />
-   <file baseinstalldir="/" md5sum="064aeb266c0f577fa8bd058a3cc35209" name="lib/Driver.php" role="horde" />
+   <file baseinstalldir="/" md5sum="90921227eaa11643c90a4d517c1312cd" name="lib/Api.php" role="horde" />
+   <file baseinstalldir="/" md5sum="9f3d12d3c6cb35343c39ed0dafe79b4a" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="cfe47932a09bdcbee3d601089a88b221" name="lib/Driver.php" role="horde" />
    <file baseinstalldir="/" md5sum="5eadf6f57d3e35b724abd29223eff47b" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="2031d019df66f99b9c3d60902dc8aed9" name="lib/List.php" role="horde" />
-   <file baseinstalldir="/" md5sum="9b809c188254ad5c0c2fb09898b1b078" name="lib/Object.php" role="horde" />
+   <file baseinstalldir="/" md5sum="52ed6c2328ff3060f45af7edcc7bd5f7" name="lib/Object.php" role="horde" />
    <file baseinstalldir="/" md5sum="0647ca002f2e5514a89dcc42efd39c82" name="lib/Smartmobile.php" role="horde" />
    <file baseinstalldir="/" md5sum="fb24575ab20a999ab0ba10bab91d185c" name="lib/Tagger.php" role="horde" />
    <file baseinstalldir="/" md5sum="5d0be7689bae7e7d40a5add34e172120" name="lib/Test.php" role="horde" />
-   <file baseinstalldir="/" md5sum="a1fd65198868a0150190ad8328a334eb" name="lib/Turba.php" role="horde" />
+   <file baseinstalldir="/" md5sum="863f8b3128337469a4a872af8f60a236" name="lib/Turba.php" role="horde" />
    <file baseinstalldir="/" md5sum="560ebb064cd0f1bf27f33a1c9ac6c369" name="locale/ar/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="d713ffa67d023657193983f6a5dfb912" name="locale/ar/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="dc5736dfc688800547111a98591fc556" name="locale/bg/LC_MESSAGES/turba.mo" role="horde" />
@@ -195,8 +195,8 @@
    <file baseinstalldir="/" md5sum="675a4cf7daef4109c970cb42c3090e57" name="locale/hu/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="d30a5f973aae95bfc381124cbe106fc6" name="locale/is/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="61ea4f715f5eecf7808f8d5513c718c0" name="locale/is/LC_MESSAGES/turba.po" role="horde" />
-   <file baseinstalldir="/" md5sum="11bd742f4cac16f56ecbae649c917fcd" name="locale/it/LC_MESSAGES/turba.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="4a86969487822f32eec04a0c0b58f618" name="locale/it/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="a91afdeb68f002c8e03d7e128d201354" name="locale/it/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="59cbb1e45a69aea9cdf84931951d5ca8" name="locale/it/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="52853b8a769a97333cd89f43d8edda74" name="locale/ja/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="255542770130ab8bd45823a391a35542" name="locale/ja/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="fa6899c167f15d4b65b89f5a702b30ae" name="locale/ko/LC_MESSAGES/turba.mo" role="horde" />
@@ -294,6 +294,9 @@
    <file baseinstalldir="/" md5sum="cd2fecffdac770aba8d55a262d5aceb3" name="test/Turba/fixtures/import.ldif" role="test" />
    <file baseinstalldir="/" md5sum="c4609a5a5a0c20b88c160ac07eebbba8" name="test/Turba/fixtures/importCRLF.ldif" role="test" />
    <file baseinstalldir="/" md5sum="371c2880a279c01b266ad1ca64daff67" name="test/Turba/Stub/Hooks.php" role="test" />
+   <file baseinstalldir="/" md5sum="3a8f93611e68342a668a844e0415f37c" name="test/Turba/Stub/ObjectsManager.php" role="test" />
+   <file baseinstalldir="/" md5sum="d21aedabd6fd3f15593797d28881083d" name="test/Turba/Stub/Tagger.php" role="test" />
+   <file baseinstalldir="/" md5sum="dc3bb619155e0d7d5d1c6672531d1570" name="test/Turba/Stub/TypesManager.php" role="test" />
    <file baseinstalldir="/" md5sum="1f237ef350dc09895aba22937babe1a0" name="test/Turba/ToDo/ApiTest.php" role="test" />
    <file baseinstalldir="/" md5sum="22682df03783b515a742a21dd8da77a0" name="test/Turba/ToDo/BrowsePageTest.php" role="test" />
    <file baseinstalldir="/" md5sum="8f2327b14ad28a86bee5f2eaf3cc54b8" name="test/Turba/ToDo/DriverTest.php" role="test" />
@@ -307,17 +310,17 @@
    <file baseinstalldir="/" md5sum="287c3ecd3fd6b44f44286e035d7b959f" name="test/Turba/ToDo/ViewListTest.php" role="test" />
    <file baseinstalldir="/" md5sum="afbbc5de0c05310805bdab06361879c0" name="test/Turba/Unit/Driver/Sql/Pdo/SqliteTest.php" role="test" />
    <file baseinstalldir="/" md5sum="436defccb696e52622e679cc555af4a2" name="test/Turba/Unit/Driver/Sql/Base.php" role="test" />
-   <file baseinstalldir="/" md5sum="89e7583e26e8edf277621048fc99c535" name="test/Turba/Unit/Driver/Base.php" role="test" />
+   <file baseinstalldir="/" md5sum="0864048688b563170ab40b122d7e0669" name="test/Turba/Unit/Driver/Base.php" role="test" />
    <file baseinstalldir="/" md5sum="f8766f183df5c39a67d345e87805c9b7" name="test/Turba/Unit/Driver/KolabTest.php" role="test" />
    <file baseinstalldir="/" md5sum="24ca4c6a4bb1c4d152b3ca08b895789a" name="test/Turba/Unit/Turba/Sql/Pdo/SqliteTest.php" role="test" />
    <file baseinstalldir="/" md5sum="510e51d439cf9f12d766eb46fb9c42c7" name="test/Turba/Unit/Turba/Sql/Base.php" role="test" />
    <file baseinstalldir="/" md5sum="f3c852448ca8fd8397b5e27dd15b8504" name="test/Turba/Unit/Turba/Base.php" role="test" />
    <file baseinstalldir="/" md5sum="570d87730710acf98a3a2d7f16f1caab" name="test/Turba/Unit/Turba/KolabTest.php" role="test" />
    <file baseinstalldir="/" md5sum="326320abd54f461b359fae3db8c6a4d3" name="test/Turba/Unit/ExportTest.php" role="test" />
-   <file baseinstalldir="/" md5sum="f0e41196120177759417db4682a87447" name="test/Turba/Unit/ImportTest.php" role="test" />
+   <file baseinstalldir="/" md5sum="b48fc66954a7039b8610e95bfd08d88e" name="test/Turba/Unit/ImportTest.php" role="test" />
    <file baseinstalldir="/" md5sum="3d5bfe2989a874d240a7f45cb428ac0d" name="test/Turba/Unit/LdifTest.php" role="test" />
    <file baseinstalldir="/" md5sum="8bc9518b9c0576806c82d9413489d099" name="test/Turba/AllTests.php" role="test" />
-   <file baseinstalldir="/" md5sum="c66854bc5b5942ef5881082bc809659a" name="test/Turba/Autoload.php" role="test" />
+   <file baseinstalldir="/" md5sum="f67e30a734b137b8e48dc155a990c616" name="test/Turba/Autoload.php" role="test" />
    <file baseinstalldir="/" md5sum="0a5018f0726d4673850fece3ad4d72c0" name="test/Turba/bootstrap.php" role="test" />
    <file baseinstalldir="/" md5sum="fbe4252ae686d7a73d94512be32e7f23" name="test/Turba/phpunit.xml" role="test" />
    <file baseinstalldir="/" md5sum="e2519f57fcc26a5a446bf56c905ca585" name="test/Turba/TestCase.php" role="test" />
@@ -370,7 +373,7 @@
    <package>
     <name>content</name>
     <channel>pear.horde.org</channel>
-    <min>2.0.3</min>
+    <min>2.0.5</min>
     <max>3.0.0alpha1</max>
     <exclude>3.0.0alpha1</exclude>
    </package>
@@ -852,6 +855,9 @@
    <install as="Turba/fixtures/import.ldif" name="test/Turba/fixtures/import.ldif" />
    <install as="Turba/fixtures/importCRLF.ldif" name="test/Turba/fixtures/importCRLF.ldif" />
    <install as="Turba/Stub/Hooks.php" name="test/Turba/Stub/Hooks.php" />
+   <install as="Turba/Stub/ObjectsManager.php" name="test/Turba/Stub/ObjectsManager.php" />
+   <install as="Turba/Stub/Tagger.php" name="test/Turba/Stub/Tagger.php" />
+   <install as="Turba/Stub/TypesManager.php" name="test/Turba/Stub/TypesManager.php" />
    <install as="Turba/ToDo/ApiTest.php" name="test/Turba/ToDo/ApiTest.php" />
    <install as="Turba/ToDo/BrowsePageTest.php" name="test/Turba/ToDo/BrowsePageTest.php" />
    <install as="Turba/ToDo/DriverTest.php" name="test/Turba/ToDo/DriverTest.php" />
@@ -1825,6 +1831,42 @@
    <license uri="http://www.horde.org/licenses/apache">ASL</license>
    <notes>
 * [mjr] Fix issue where sidebar links point to incorrect address book.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.9</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-10-21</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [mjr] Better prevention of importing duplicate contacts with same email addresses via the API (Bug #14119).
+* [mjr] Remove object reference from Content when object is deleted (Bug #14112).
+* [mjr] Remove tags from Content when tagged object is deleted (Bug #14112).
+* [mjr] Allow API to search all email type fields when calling getField().
+* [mjr] Fix removing all contacts owned by a specific user.
+* [jan] Fix inserting and updating photos with Oracle backends.
+* [mjr] Fix incorrectly populating email field when importing vCard (Bug #14046).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.10</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-10-22</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [mjr] Fix fatal test error related to Content_Tagger.
    </notes>
   </release>
  </changelog>
