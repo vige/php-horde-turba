@@ -28,10 +28,10 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2015-10-21</date>
- <time>23:20:29</time>
+ <date>2015-10-28</date>
+ <time>14:45:46</time>
  <version>
-  <release>4.2.10</release>
+  <release>4.2.11</release>
   <api>4.0.0</api>
  </version>
  <stability>
@@ -40,7 +40,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/apache">ASL</license>
  <notes>
-* [mjr] Fix fatal test error related to Content_Tagger.
+* [mjr] Fix regression in removing all contacts from a single address book in the Sql driver (Bug #14145, Guenter Bartsch &lt;guenter.bartsch@vista-rasch.com&gt;).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -87,11 +87,11 @@
    <file baseinstalldir="/" md5sum="576bc1dfe876eb052034042022a8b8cf" name="docs/vcf/README" role="doc" />
    <file baseinstalldir="/" md5sum="aecb277cc4cc75e910d16904a7dc05e2" name="docs/vcf/sfg.vcf" role="doc" />
    <file baseinstalldir="/" md5sum="f8c7dc9f4ebb417c02f42320f4e0a49b" name="docs/vcf/test.vcf" role="doc" />
-   <file baseinstalldir="/" md5sum="2d2d112c488eaa41179e76d5fb6507c2" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="ff35aff4b201e2729fed7c4e5ea22afb" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="46d8a3b0b88410cabf481469747613a8" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="d51f1691fa3ed8e2b66fba046765c8a3" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="90cfcfb21bfa7bb5531cb162f6f514c7" name="docs/LDAP" role="doc" />
-   <file baseinstalldir="/" md5sum="408b3517b132f8a3ab26be9702a54590" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="1f3b89962c23928fbfd56d97d5dd4c3b" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="2e74bc2d5d76f516d80547e97ba8dab9" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="72a21d175ba190cba9494b0f2d05d8fa" name="js/browse.js" role="horde" />
    <file baseinstalldir="/" md5sum="aa62e3e066bfc85a7fdf783648fd950c" name="js/columnprefs.js" role="horde" />
@@ -113,7 +113,7 @@
    <file baseinstalldir="/" md5sum="7be62863ba227aace05e8ca7c10255d4" name="lib/Driver/Ldap.php" role="horde" />
    <file baseinstalldir="/" md5sum="ab6f910c247530192eca8ac2dd816fe5" name="lib/Driver/Prefs.php" role="horde" />
    <file baseinstalldir="/" md5sum="f1b7b072a09235641a2abab8c8d8078a" name="lib/Driver/Share.php" role="horde" />
-   <file baseinstalldir="/" md5sum="4da107530f97183e9a7a6728fb1b5d56" name="lib/Driver/Sql.php" role="horde" />
+   <file baseinstalldir="/" md5sum="5614668ed39cebeab7bd0dd3265cc940" name="lib/Driver/Sql.php" role="horde" />
    <file baseinstalldir="/" md5sum="be86431e20b91d5130ae1040c0fbd2aa" name="lib/Driver/Vbook.php" role="horde" />
    <file baseinstalldir="/" md5sum="fcc7c62ea6d681dc68295be208464995" name="lib/Exception/NotSupported.php" role="horde" />
    <file baseinstalldir="/" md5sum="2270f0e06ef8ca9fbe48101c6964ef39" name="lib/Exception/ObjectExists.php" role="horde" />
@@ -143,7 +143,7 @@
    <file baseinstalldir="/" md5sum="4c6092b445e8a013f16a3e4ddc6e0880" name="lib/View/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="a1751e1f10a3b96b05d0401c97e72008" name="lib/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="90921227eaa11643c90a4d517c1312cd" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="9f3d12d3c6cb35343c39ed0dafe79b4a" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="2aadd74009315624ab819961a140a854" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="cfe47932a09bdcbee3d601089a88b221" name="lib/Driver.php" role="horde" />
    <file baseinstalldir="/" md5sum="5eadf6f57d3e35b724abd29223eff47b" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="2031d019df66f99b9c3d60902dc8aed9" name="lib/List.php" role="horde" />
@@ -1867,6 +1867,21 @@
    <license uri="http://www.horde.org/licenses/apache">ASL</license>
    <notes>
 * [mjr] Fix fatal test error related to Content_Tagger.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.11</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-10-28</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [mjr] Fix regression in removing all contacts from a single address book in the Sql driver (Bug #14145, Guenter Bartsch &lt;guenter.bartsch@vista-rasch.com&gt;).
    </notes>
   </release>
  </changelog>
