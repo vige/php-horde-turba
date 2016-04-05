@@ -642,7 +642,11 @@ class Turba_Driver implements Countable
             $return_fields[] = 'emails';
         }
         if (count($return_fields)) {
-            $return_fields_pre = array_unique(array_merge(array('__key', '__type', '__owner', '__members', 'name'), $return_fields));
+            $default_fields = array('__key', '__type', '__owner', '__members', 'name');
+            if ($this->alternativeName) {
+                $default_fields[] = $this->alternativeName;
+            }
+            $return_fields_pre = array_unique(array_merge($default_fields, $return_fields));
             $return_fields = array();
             foreach ($return_fields_pre as $field) {
                 $result = $this->toDriver($field);
@@ -993,12 +997,13 @@ class Turba_Driver implements Countable
     /**
      * Deletes the specified entry from the contact source.
      *
-     * @param string $object_id  The ID of the object to delete.
+     * @param string $object_id      The ID of the object to delete.
+     * @param  boolean $remove_tags  Remove tags if true.
      *
      * @throws Turba_Exception
      * @throws Horde_Exception_NotFound
      */
-    public function delete($object_id)
+    public function delete($object_id, $remove_tags = true)
     {
         $object = $this->getObject($object_id);
 
@@ -1041,16 +1046,17 @@ class Turba_Driver implements Countable
         }
 
         /* Remove tags */
-        $GLOBALS['injector']->getInstance('Turba_Tagger')
-            ->replaceTags($object->getValue('__uid'), array(), $this->getContactOwner(), 'contact');
+        if ($remove_tags) {
+            $GLOBALS['injector']->getInstance('Turba_Tagger')
+                ->replaceTags($object->getValue('__uid'), array(), $this->getContactOwner(), 'contact');
 
-        /* Might have tags disabled, hence no Content_* objects autoloadable. */
-        try {
-            /* Tell content we removed the object */
-            $GLOBALS['injector']->getInstance('Content_Objects_Manager')
-                ->delete(array($object->getValue('__uid')), 'contact');
-        } catch (Horde_Exception $e) {}
-
+            /* Might have tags disabled, hence no Content_* objects autoloadable. */
+            try {
+                /* Tell content we removed the object */
+                $GLOBALS['injector']->getInstance('Content_Objects_Manager')
+                    ->delete(array($object->getValue('__uid')), 'contact');
+            } catch (Horde_Exception $e) {}
+        }
     }
 
     /**
@@ -2694,22 +2700,21 @@ class Turba_Driver implements Countable
                 break;
 
             case 'notes':
-                if ($options['protocolversion'] > Horde_ActiveSync::VERSION_TWOFIVE) {
+                if (strlen($value) && $options['protocolversion'] > Horde_ActiveSync::VERSION_TWOFIVE) {
                     $bp = $options['bodyprefs'];
                     $note = new Horde_ActiveSync_Message_AirSyncBaseBody();
                     // No HTML supported in Turba's notes. Always use plaintext.
                     $note->type = Horde_ActiveSync::BODYPREF_TYPE_PLAIN;
-                    if (isset($bp[Horde_ActiveSync::BODYPREF_TYPE_PLAIN]['truncationsize'])) {
-                        if (Horde_String::length($value) > $bp[Horde_ActiveSync::BODYPREF_TYPE_PLAIN]['truncationsize']) {
+                    if (isset($bp[Horde_ActiveSync::BODYPREF_TYPE_PLAIN]['truncationsize']) &&
+                        Horde_String::length($value) > $bp[Horde_ActiveSync::BODYPREF_TYPE_PLAIN]['truncationsize']) {
                             $note->data = Horde_String::substr($value, 0, $bp[Horde_ActiveSync::BODYPREF_TYPE_PLAIN]['truncationsize']);
                             $note->truncated = 1;
-                        } else {
-                            $note->data = $value;
-                        }
-                        $note->estimateddatasize = Horde_String::length($value);
+                    } else {
+                        $note->data = $value;
                     }
+                    $note->estimateddatasize = Horde_String::length($value);
                     $message->airsyncbasebody = $note;
-                } else {
+                } elseif (strlen($value)) {
                     // EAS 2.5
                     $message->body = $value;
                     $message->bodysize = strlen($message->body);
