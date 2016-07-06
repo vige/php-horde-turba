@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.5" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
  <name>turba</name>
  <channel>pear.horde.org</channel>
  <summary>A web based address book</summary>
@@ -28,10 +28,10 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2016-04-05</date>
- <time>12:02:58</time>
+ <date>2016-07-01</date>
+ <time>21:53:10</time>
  <version>
-  <release>4.2.14</release>
+  <release>4.2.15</release>
   <api>4.0.0</api>
  </version>
  <stability>
@@ -40,9 +40,10 @@
  </stability>
  <license uri="http://www.horde.org/licenses/apache">ASL</license>
  <notes>
-* [mjr] Fix persisting tags when moving or copying a contact to another address book (Bug #14312).
-* [mjr] Fix resetting state when changing sync_book prefs and device has forced multiplex.
-* [mjr] Fix synchronizing contact notes via ActiveSync when no truncation value is requested by the client (Bug #14307).
+* [jan] Update Portuguese translation.
+* [jan] Update Basque translation.
+* [mjr] Fix searching via the API when specifying fields and not specifying source.
+* [mjr] Require Horde_Perms::DELETE for including an address book  as sync-able.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -78,7 +79,7 @@
    <file baseinstalldir="/" md5sum="988dbcc250e8853edd7a715dda9ca5bc" name="config/hooks.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="2753faf3b9951a3b44b82149dc41f7eb" name="config/menu.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="22ed7f69d8df7026779a63e5a1d3ba89" name="config/mime_drivers.php" role="horde" />
-   <file baseinstalldir="/" md5sum="f773d47a0066bc9bf1fcfd66d7194225" name="config/prefs.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8ea96a131e889909021fcdc880458061" name="config/prefs.php" role="horde" />
    <file baseinstalldir="/" md5sum="6521e55dc88afbd3afdd80d80880b0dc" name="docs/vcf/brad.vcf" role="doc" />
    <file baseinstalldir="/" md5sum="bb127c85cc456fe8a4d8fda9a7dca67b" name="docs/vcf/dimitris.vcf" role="doc" />
    <file baseinstalldir="/" md5sum="3e1fae02bbfaa89a347529344c8b6e71" name="docs/vcf/dwalt.vcf" role="doc" />
@@ -89,11 +90,11 @@
    <file baseinstalldir="/" md5sum="576bc1dfe876eb052034042022a8b8cf" name="docs/vcf/README" role="doc" />
    <file baseinstalldir="/" md5sum="aecb277cc4cc75e910d16904a7dc05e2" name="docs/vcf/sfg.vcf" role="doc" />
    <file baseinstalldir="/" md5sum="f8c7dc9f4ebb417c02f42320f4e0a49b" name="docs/vcf/test.vcf" role="doc" />
-   <file baseinstalldir="/" md5sum="e20ebff7555f7435bf76f918c87117a6" name="docs/CHANGES" role="doc" />
-   <file baseinstalldir="/" md5sum="b6eb5fe1065d6c81a10384ad203a3748" name="docs/CREDITS" role="doc" />
+   <file baseinstalldir="/" md5sum="3fb6034402dda682c401aac93399da53" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="40203dacc5f83426d1541560084bd947" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="d51f1691fa3ed8e2b66fba046765c8a3" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="90cfcfb21bfa7bb5531cb162f6f514c7" name="docs/LDAP" role="doc" />
-   <file baseinstalldir="/" md5sum="6bd4a4f97597ad182c5487323f8e0a8a" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="6df8ed4c01a9a0baee3c883c19c0430c" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="2e74bc2d5d76f516d80547e97ba8dab9" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="72a21d175ba190cba9494b0f2d05d8fa" name="js/browse.js" role="horde" />
    <file baseinstalldir="/" md5sum="0ca17e8df46e5ca2c2ddf8968dded9a2" name="js/columnprefs.js" role="horde" />
@@ -119,7 +120,7 @@
    <file baseinstalldir="/" md5sum="dfedaff54623258200d3e68d8503fcd7" name="lib/Driver/Vbook.php" role="horde" />
    <file baseinstalldir="/" md5sum="fcc7c62ea6d681dc68295be208464995" name="lib/Exception/NotSupported.php" role="horde" />
    <file baseinstalldir="/" md5sum="8357950519f6f03a6e6d5f10cfa22978" name="lib/Exception/ObjectExists.php" role="horde" />
-   <file baseinstalldir="/" md5sum="29a72dd0fcb76c2ad0adc54945c8b797" name="lib/Factory/Driver.php" role="horde" />
+   <file baseinstalldir="/" md5sum="b24cae37c9b3240fa49f86c274fdf84a" name="lib/Factory/Driver.php" role="horde" />
    <file baseinstalldir="/" md5sum="243c1cdf1b27d46ca1c149719bf48800" name="lib/Factory/Shares.php" role="horde" />
    <file baseinstalldir="/" md5sum="1c369987c62f7299f4c01b66b04a1605" name="lib/Factory/Tagger.php" role="horde" />
    <file baseinstalldir="/" md5sum="d9c7e847e9c6b569544cf408f6dfb129" name="lib/Form/Type/TurbaTags.php" role="horde" />
@@ -144,8 +145,8 @@
    <file baseinstalldir="/" md5sum="220bfca7815bc0d67f6b6030511bd3ed" name="lib/View/EditContact.php" role="horde" />
    <file baseinstalldir="/" md5sum="2bc31a81c78f7922c53622528c22a405" name="lib/View/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="f5a271e285ee67261f914f7982fdfa5a" name="lib/.htaccess" role="horde" />
-   <file baseinstalldir="/" md5sum="1ca20f1aac1d87efe66107d2b5a08a79" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="ab75116b415575a458131bbc71890553" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="fd036ea1eecdbfd25d778c630bd3deb7" name="lib/Api.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e5d5b7ad9b783370ccd19d15b93e8c3f" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="162937dad11b5b07abe3f7cc96f4bf98" name="lib/Driver.php" role="horde" />
    <file baseinstalldir="/" md5sum="e7dbe17d8f65d8299e900722af5d25f9" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="3815e1d77099de213c879083272805bc" name="lib/List.php" role="horde" />
@@ -177,8 +178,8 @@
    <file baseinstalldir="/" md5sum="3b53f5b5fe771e377fa02cdcdaf64464" name="locale/es/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="15b0e3386d2095b18f31eeb3da4bf73b" name="locale/et/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="31579da51e1d4b08a8f6827bf16c8d0d" name="locale/et/LC_MESSAGES/turba.po" role="horde" />
-   <file baseinstalldir="/" md5sum="9a4de06337fd3476faa68e3d0285d651" name="locale/eu/LC_MESSAGES/turba.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="073adb2038fc473f5d3e34562931582a" name="locale/eu/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="380ee478e3bd601d28e0940426edd3e1" name="locale/eu/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="02fecffbb0905bdbf289326c27def7be" name="locale/eu/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="3db45352926d30c380037171c806acf4" name="locale/eu/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="ed31807c858b7457c6b973faf02279b8" name="locale/fa/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="d0d8789be83f79e7d96f9e6ddd156ff0" name="locale/fa/LC_MESSAGES/turba.po" role="horde" />
@@ -222,8 +223,8 @@
    <file baseinstalldir="/" md5sum="34ae48c5aa340f946a1b69a2bb9d8d0b" name="locale/pt/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="6df5e1e53383128e24c0658eccdf814d" name="locale/pt/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="c425b1c6db6b6f9df5c03afcf1100545" name="locale/pt/help.xml" role="horde" />
-   <file baseinstalldir="/" md5sum="f2017bc135f520dd12f557a2b3761483" name="locale/pt_BR/LC_MESSAGES/turba.mo" role="horde" />
-   <file baseinstalldir="/" md5sum="e4e0f39a16079cc3cabb7e62f731f0b3" name="locale/pt_BR/LC_MESSAGES/turba.po" role="horde" />
+   <file baseinstalldir="/" md5sum="5a5da41909e0d3ab5d65d1d3ee8ab4d1" name="locale/pt_BR/LC_MESSAGES/turba.mo" role="horde" />
+   <file baseinstalldir="/" md5sum="e03464f2441753a6a6c2ae06ff4bf54e" name="locale/pt_BR/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="18671f8e2caa81f75d7fc1344649e35b" name="locale/pt_BR/help.xml" role="horde" />
    <file baseinstalldir="/" md5sum="f46c4d8175280d2bdace13037d089864" name="locale/ro/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="40b3c8956005c6a4f5bacec957fef61a" name="locale/ro/LC_MESSAGES/turba.po" role="horde" />
@@ -1939,6 +1940,24 @@
 * [mjr] Fix persisting tags when moving or copying a contact to another address book (Bug #14312).
 * [mjr] Fix resetting state when changing sync_book prefs and device has forced multiplex.
 * [mjr] Fix synchronizing contact notes via ActiveSync when no truncation value is requested by the client (Bug #14307).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.15</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2016-07-02</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [jan] Update Portuguese translation.
+* [jan] Update Basque translation.
+* [mjr] Fix searching via the API when specifying fields and not specifying source.
+* [mjr] Require Horde_Perms::DELETE for including an address book  as sync-able.
    </notes>
   </release>
  </changelog>
