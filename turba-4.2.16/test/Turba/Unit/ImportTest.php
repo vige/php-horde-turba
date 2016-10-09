@@ -17,6 +17,11 @@ class Turba_Unit_ImportTest extends Turba_TestCase
         )
     );
 
+    protected static $emailMap = array(
+        'homeEmail' => 'object_homeemail',
+        'workEmail' => 'object_workemail'
+    );
+
     public static function setUpBeforeClass()
     {
         self::createBasicTurbaSetup(new Horde_Test_Setup());
@@ -388,7 +393,7 @@ Foobar, Sachsen 01234',
                 'birthday' => '',
                 'notes' => '',
             ),
-            $this->toHash($vcard)
+            $this->toHash($vcard, self::$emailMap)
         );
     }
 
@@ -501,7 +506,7 @@ END:VCARD
                 'email' => 'pref@example.com',
                 '__uid' => 'nhCnPyv0u7',
             ),
-            $this->toHash($vcard)
+            $this->toHash($vcard, self::$emailMap)
         );
     }
 
@@ -528,7 +533,7 @@ PHOTO;TYPE=JPEG;ENCODING=BASE64:wolQTkcNChoKAAAADUlIRFIAAAAJAAAACQIDAAAAwp3
 END:VCARD
 ';
 
-        $hash = $this->toHash($vcard);
+        $hash = $this->toHash($vcard, self::$emailMap);
         $this->assertEquals(136, strlen($hash['photo']));
 
         unset($hash['photo']);
@@ -586,7 +591,7 @@ EMAIL;TYPE=WORK:mrubinsk@horde.org
 N:Rubinsky;Michael;Joseph;;
 END:VCARD';
 
-    $hash = $this->toHash($vcard);
+    $hash = $this->toHash($vcard, self::$emailMap);
     $this->assertEquals($hash['workEmail'], 'mrubinsk@horde.org');
     $this->assertTrue(empty($hash['email']));
     }

@@ -1105,6 +1105,13 @@ class Turba_Api extends Horde_Registry_Api
      *   - count_only: (boolean) If true, only return the count of matching
      *                           results.
      *                 DEFAULT: false (Return the full data set).
+     *   - emailSearch: (boolean) If true, indicates this is an email search
+     *                  like e.g., for an autocompleter. Ensures that ALL email
+     *                  fields are both included in 'fields' and returned in the
+     *                  results, regardless of the requested returnFields value.
+     *                  @todo Make this a separate API method in H6 (or separate
+     *                  API "module", e.g., an 'email search' API).
+     *                  @since  4.3.0
      *
      * @return mixed  Either a hash containing the search results or a
      *                Rfc822 List object (if 'rfc822Return' is true).
@@ -1172,11 +1179,26 @@ class Turba_Api extends Horde_Registry_Api
                 continue;
             }
 
+            // Ensure we have search fields for each source.
             if (empty($opts['fields'][$source])) {
-                $opts['fields'][$source] = $GLOBALS['cfgSources'][$source]['search'];
+                $opts['fields'][$source] = $cfgSources[$source]['search'];
             }
-            $sdriver = $driver->create($source);
 
+            // If this is an email search, ensure we are searching for and
+            // returning all email-type fields.
+            if (!empty($opts['emailSearch'])) {
+                $opts['returnFields'] = array_merge(
+                    $opts['returnFields'],
+                    Turba::getAvailableEmailFields($source, false)
+                );
+
+                $opts['fields'][$source] = array_merge(
+                    $opts['fields'][$source],
+                    Turba::getAvailableEmailFields($source)
+                );
+            }
+
+            $sdriver = $driver->create($source);
             foreach ($names as $name) {
                 $trimname = trim($name);
                 $out = $criteria = array();
@@ -1272,13 +1294,13 @@ class Turba_Api extends Horde_Registry_Api
                             ? Turba::formatName($ob)
                             : $ob->getValue($ob->driver->alternativeName);
                         unset($tdisplay_name);
-
+                        $email_fields = array();
                         foreach (array_keys($att) as $key) {
                             if ($ob->getValue($key) &&
                                 isset($attributes[$key]) &&
                                 ($attributes[$key]['type'] == 'email')) {
                                 $e_val = $ob->getValue($key);
-
+                                $email_fields[$key] = $e_val;
                                 if (strlen($trimname)) {
                                     /* Ticket #12480: Don't return email if it
                                      * doesn't contain the search string, since
@@ -1307,6 +1329,17 @@ class Turba_Api extends Horde_Registry_Api
                             }
                         }
 
+                        // If we haven't added any results yet, add any available
+                        // addresses since the search term might not have matched
+                        // the display_name OR any of the email addresses.
+                        // See Bug: 13945
+                        if (!count($email)) {
+                            foreach ($email_fields as $e_field => $e_value) {
+                                $email->add($rfc822->parseAddressList($e_value, array(
+                                    'limit' => (isset($attributes[$e_field]['params']) && is_array($attributes[$e_field]['params']) && !empty($attributes[$e_field]['params']['allow_multi'])) ? 0 : 1
+                                )));
+                            }
+                        }
                         if (count($email)) {
                             foreach ($email as $val) {
                                 $seen_key = trim(Horde_String::lower($display_name)) . '/' . Horde_String::lower($val->bare_address);
@@ -1747,7 +1780,7 @@ class Turba_Api extends Horde_Registry_Api
     public function getField($address = '', $field = '', $sources = array(),
                              $strict = false, $multiple = false)
     {
-        global $cfgSources, $attributes;
+        global $cfgSources, $attributes, $injector;
 
         if (empty($address)) {
             throw new Turba_Exception(_("Invalid email"));
@@ -1761,24 +1794,19 @@ class Turba_Api extends Horde_Registry_Api
             $sources = array(Turba::getDefaultAddressbook());
         }
 
-        $driver = $GLOBALS['injector']->getInstance('Turba_Factory_Driver');
         $result = array();
 
         foreach ($sources as $source) {
             if (!isset($cfgSources[$source])) {
                 continue;
             }
-            $criterium = array();
-            $sdriver = $driver->create($source);
-            foreach (Turba::getAvailableEmailFields() as $cfgField) {
-                if (in_array($cfgField, array_keys($sdriver->map)) &&
-                    in_array($cfgField, $cfgSources[$source]['search'])) {
-                    $criterium[$cfgField] = $address;
-                }
-            }
-
+            $criterium = array_fill_keys(
+                Turba::getAvailableEmailFields($source),
+                $address
+            );
+            $driver = $injector->getInstance('Turba_Factory_Driver')->create($source);
             try {
-                $list = $sdriver->search($criterium, null, 'OR', array(), $strict ? array_keys($criterium) : array());
+                $list = $driver->search($criterium, null, 'OR', array(), $strict ? array_keys($criterium) : array());
             } catch (Turba_Exception $e) {
                 Horde::log($e, 'ERR');
                 continue;
