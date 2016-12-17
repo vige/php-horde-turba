@@ -28,10 +28,10 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2016-11-03</date>
- <time>15:40:43</time>
+ <date>2016-12-16</date>
+ <time>19:43:39</time>
  <version>
-  <release>4.2.17</release>
+  <release>4.2.18</release>
   <api>4.0.0</api>
  </version>
  <stability>
@@ -40,8 +40,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/apache">ASL</license>
  <notes>
-* [mjr] Fix regression in sorting contacts by a name field (Bug #14471).
-* [mjr] Fix regression in saving tags (Bug #14463).
+* [jan] Remove left over from 10-years-old code (Bug #14521).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -88,11 +87,11 @@
    <file baseinstalldir="/" md5sum="576bc1dfe876eb052034042022a8b8cf" name="docs/vcf/README" role="doc" />
    <file baseinstalldir="/" md5sum="aecb277cc4cc75e910d16904a7dc05e2" name="docs/vcf/sfg.vcf" role="doc" />
    <file baseinstalldir="/" md5sum="f8c7dc9f4ebb417c02f42320f4e0a49b" name="docs/vcf/test.vcf" role="doc" />
-   <file baseinstalldir="/" md5sum="8a4f7c3e1f36a080db001ad9a79a6e3d" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="04eaf1fd0db12dfc499be04b715eca28" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="40203dacc5f83426d1541560084bd947" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="9690e27a510b6d771231abcc1c7a32ef" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="90cfcfb21bfa7bb5531cb162f6f514c7" name="docs/LDAP" role="doc" />
-   <file baseinstalldir="/" md5sum="f33a4de8ac268bd45eec4cd7d9399b6a" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="769b3ed5bd718e27d25bfb0c2b589a31" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="2e74bc2d5d76f516d80547e97ba8dab9" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="72a21d175ba190cba9494b0f2d05d8fa" name="js/browse.js" role="horde" />
    <file baseinstalldir="/" md5sum="0ca17e8df46e5ca2c2ddf8968dded9a2" name="js/columnprefs.js" role="horde" />
@@ -144,7 +143,7 @@
    <file baseinstalldir="/" md5sum="2bc31a81c78f7922c53622528c22a405" name="lib/View/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="f5a271e285ee67261f914f7982fdfa5a" name="lib/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="93c8fc7d864a662d0b5e3ec05c1b5b5b" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="d216ea9285d73a35398a45e690f8f07f" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="407321220df8c800de7549936e7fb353" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="84c1a0a26c2de92f884cd320bb0e19de" name="lib/Driver.php" role="horde" />
    <file baseinstalldir="/" md5sum="e7dbe17d8f65d8299e900722af5d25f9" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="3815e1d77099de213c879083272805bc" name="lib/List.php" role="horde" />
@@ -266,7 +265,7 @@
    <file baseinstalldir="/" md5sum="a78003121681abce1655c2e0709efa8c" name="templates/browse/column_footers.inc" role="horde" />
    <file baseinstalldir="/" md5sum="6d2544bedbef400553ac35ec95330234" name="templates/browse/column_headers.inc" role="horde" />
    <file baseinstalldir="/" md5sum="145cc7ebab09e02902ee254fba1b56e1" name="templates/browse/header.inc" role="horde" />
-   <file baseinstalldir="/" md5sum="ca77166126468c5c6650bfc909394b7a" name="templates/browse/row.inc" role="horde" />
+   <file baseinstalldir="/" md5sum="60d91e95d60a40f88d4b33e4fac0e060" name="templates/browse/row.inc" role="horde" />
    <file baseinstalldir="/" md5sum="99311226da0a2a405443a61e5820f820" name="templates/data/export.inc" role="horde" />
    <file baseinstalldir="/" md5sum="51bf8329c31504a3584d656b54fbd875" name="templates/data/import.inc" role="horde" />
    <file baseinstalldir="/" md5sum="860d0c1b73885808d252ed6b0d54820b" name="templates/list/alphaPager.inc" role="horde" />
@@ -1989,6 +1988,21 @@
    <notes>
 * [mjr] Fix regression in sorting contacts by a name field (Bug #14471).
 * [mjr] Fix regression in saving tags (Bug #14463).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.18</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2016-12-16</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [jan] Remove left over from 10-years-old code (Bug #14521).
    </notes>
   </release>
  </changelog>
