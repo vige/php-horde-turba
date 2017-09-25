@@ -28,10 +28,10 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </developer>
- <date>2017-08-01</date>
- <time>13:33:10</time>
+ <date>2017-09-19</date>
+ <time>17:29:27</time>
  <version>
-  <release>4.2.20</release>
+  <release>4.2.21</release>
   <api>4.0.0</api>
  </version>
  <stability>
@@ -40,8 +40,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/apache">ASL</license>
  <notes>
-* [jan] SECURITY: Fix open redirects.
-* [jan] Fix creating address books with the external API.
+* [jan] Officially support PHP 7.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -88,11 +87,11 @@
    <file baseinstalldir="/" md5sum="576bc1dfe876eb052034042022a8b8cf" name="docs/vcf/README" role="doc" />
    <file baseinstalldir="/" md5sum="aecb277cc4cc75e910d16904a7dc05e2" name="docs/vcf/sfg.vcf" role="doc" />
    <file baseinstalldir="/" md5sum="f8c7dc9f4ebb417c02f42320f4e0a49b" name="docs/vcf/test.vcf" role="doc" />
-   <file baseinstalldir="/" md5sum="e36e856b5db2303f73462b683734a167" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="0a1bb7651183a2af47a39b5a94091bd1" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="40203dacc5f83426d1541560084bd947" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="9690e27a510b6d771231abcc1c7a32ef" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="90cfcfb21bfa7bb5531cb162f6f514c7" name="docs/LDAP" role="doc" />
-   <file baseinstalldir="/" md5sum="db23159b90aea8d32742bd3f33f0264c" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="88e0373c106a9a02a99de940601d1acd" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="2e74bc2d5d76f516d80547e97ba8dab9" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="72a21d175ba190cba9494b0f2d05d8fa" name="js/browse.js" role="horde" />
    <file baseinstalldir="/" md5sum="731400e32808b8b4f12d582d7b7b97bf" name="js/columnprefs.js" role="horde" />
@@ -144,7 +143,7 @@
    <file baseinstalldir="/" md5sum="1d93aefb1e9c44e5aaefe135263a77ab" name="lib/View/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="f5a271e285ee67261f914f7982fdfa5a" name="lib/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="242871585091f90308fc5a15f2e2d1bd" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="29ab6c09d181cc24560ae635da6e9b19" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="1f31009e76a50abd57bc36ba692be5dd" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="74e1e8ebd9e6205d811f4857a75200e9" name="lib/Driver.php" role="horde" />
    <file baseinstalldir="/" md5sum="1fc478aab6fd94a464fc9453c47e1e35" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="9c34cfd5005ac43bc0ff345d53249bd3" name="lib/List.php" role="horde" />
@@ -366,8 +365,8 @@
   <required>
    <php>
     <min>5.3.0</min>
-    <max>6.0.0alpha1</max>
-    <exclude>6.0.0alpha1</exclude>
+    <max>8.0.0alpha1</max>
+    <exclude>8.0.0alpha1</exclude>
    </php>
    <pearinstaller>
     <min>1.7.0</min>
@@ -2038,6 +2037,21 @@
    <notes>
 * [jan] SECURITY: Fix open redirects.
 * [jan] Fix creating address books with the external API.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.21</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2017-09-19</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [jan] Officially support PHP 7.
    </notes>
   </release>
  </changelog>
