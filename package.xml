@@ -28,10 +28,10 @@
   <email>slusarz@horde.org</email>
   <active>no</active>
  </developer>
- <date>2018-07-04</date>
- <time>13:49:13</time>
+ <date>2018-08-18</date>
+ <time>14:25:10</time>
  <version>
-  <release>4.2.22</release>
+  <release>4.2.23</release>
   <api>4.0.0</api>
  </version>
  <stability>
@@ -40,10 +40,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/apache">ASL</license>
  <notes>
-* [jan] Allow to use table prefixes in SQL column map.
-* [jan] Fix reading LDAP contacts if &apos;objectclass&apos; parameter is empty.
-* [mjr] Fix filtering Turba_Api::search() results by requested fields (Bug #14719).
-* [mjr] Ensure new contacts from EAS clients are given a name attribute.
+* [mjr] Remove debug output that was breaking EAS searches (Bug: 14843).
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -90,11 +87,11 @@
    <file baseinstalldir="/" md5sum="576bc1dfe876eb052034042022a8b8cf" name="docs/vcf/README" role="doc" />
    <file baseinstalldir="/" md5sum="aecb277cc4cc75e910d16904a7dc05e2" name="docs/vcf/sfg.vcf" role="doc" />
    <file baseinstalldir="/" md5sum="f8c7dc9f4ebb417c02f42320f4e0a49b" name="docs/vcf/test.vcf" role="doc" />
-   <file baseinstalldir="/" md5sum="94ee1144d181ae98e6de20a91142eecf" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="cbec4c2606ca611bdcba8c161f5b4eab" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="40203dacc5f83426d1541560084bd947" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="9690e27a510b6d771231abcc1c7a32ef" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="90cfcfb21bfa7bb5531cb162f6f514c7" name="docs/LDAP" role="doc" />
-   <file baseinstalldir="/" md5sum="5f13990d6fa0044815725305297da0ba" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="01705caade17cb471a22f08d58629f15" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="2e74bc2d5d76f516d80547e97ba8dab9" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="72a21d175ba190cba9494b0f2d05d8fa" name="js/browse.js" role="horde" />
    <file baseinstalldir="/" md5sum="731400e32808b8b4f12d582d7b7b97bf" name="js/columnprefs.js" role="horde" />
@@ -145,8 +142,8 @@
    <file baseinstalldir="/" md5sum="220bfca7815bc0d67f6b6030511bd3ed" name="lib/View/EditContact.php" role="horde" />
    <file baseinstalldir="/" md5sum="1d93aefb1e9c44e5aaefe135263a77ab" name="lib/View/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="f5a271e285ee67261f914f7982fdfa5a" name="lib/.htaccess" role="horde" />
-   <file baseinstalldir="/" md5sum="58526c8dc1edcf4826b29a02a2b43efa" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="f419c3306f97c6f66214d78633e48f37" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="28f40dc7b82a19dff88816a517aa40a6" name="lib/Api.php" role="horde" />
+   <file baseinstalldir="/" md5sum="9069b440b08b833eaf1a50390025ac42" name="lib/Application.php" role="horde" />
    <file baseinstalldir="/" md5sum="fb135068f6d2bc8c924b562f0662a5f7" name="lib/Driver.php" role="horde" />
    <file baseinstalldir="/" md5sum="1fc478aab6fd94a464fc9453c47e1e35" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="9c34cfd5005ac43bc0ff345d53249bd3" name="lib/List.php" role="horde" />
@@ -3244,6 +3241,21 @@
 * [jan] Fix reading LDAP contacts if &apos;objectclass&apos; parameter is empty.
 * [mjr] Fix filtering Turba_Api::search() results by requested fields (Bug #14719).
 * [mjr] Ensure new contacts from EAS clients are given a name attribute.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.23</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2018-08-18</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [mjr] Remove debug output that was breaking EAS searches (Bug: 14843).
    </notes>
   </release>
   <release>
