@@ -28,10 +28,10 @@
   <email>slusarz@horde.org</email>
   <active>no</active>
  </developer>
- <date>2018-08-18</date>
- <time>14:25:10</time>
+ <date>2019-05-25</date>
+ <time>13:20:40</time>
  <version>
-  <release>4.2.23</release>
+  <release>4.2.25</release>
   <api>4.0.0</api>
  </version>
  <stability>
@@ -40,7 +40,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/apache">ASL</license>
  <notes>
-* [mjr] Remove debug output that was breaking EAS searches (Bug: 14843).
+* [mjr] Fix typo that could cause tags to be lost during EAS sync, if the categories property is ghosted.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -71,7 +71,7 @@
    </file>
    <file baseinstalldir="/" md5sum="f5a271e285ee67261f914f7982fdfa5a" name="config/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="98b1b7e14c2500661d6e4028e22dcb89" name="config/attributes.php" role="horde" />
-   <file baseinstalldir="/" md5sum="df5f9c10402c1e574220832abd5ce18e" name="config/backends.php" role="horde" />
+   <file baseinstalldir="/" md5sum="b2d9c562a9c22e0a3c63154cc585f4d6" name="config/backends.php" role="horde" />
    <file baseinstalldir="/" md5sum="f449fb539a75b3e274ba6b588c38b44e" name="config/conf.xml" role="horde" />
    <file baseinstalldir="/" md5sum="988dbcc250e8853edd7a715dda9ca5bc" name="config/hooks.php.dist" role="horde" />
    <file baseinstalldir="/" md5sum="1101fe6082c3d835dcc9889e10c40140" name="config/menu.php.dist" role="horde" />
@@ -87,11 +87,11 @@
    <file baseinstalldir="/" md5sum="576bc1dfe876eb052034042022a8b8cf" name="docs/vcf/README" role="doc" />
    <file baseinstalldir="/" md5sum="aecb277cc4cc75e910d16904a7dc05e2" name="docs/vcf/sfg.vcf" role="doc" />
    <file baseinstalldir="/" md5sum="f8c7dc9f4ebb417c02f42320f4e0a49b" name="docs/vcf/test.vcf" role="doc" />
-   <file baseinstalldir="/" md5sum="cbec4c2606ca611bdcba8c161f5b4eab" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="f49b6a1d4e9fd43fedd994333cb68b9f" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="40203dacc5f83426d1541560084bd947" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="9690e27a510b6d771231abcc1c7a32ef" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="90cfcfb21bfa7bb5531cb162f6f514c7" name="docs/LDAP" role="doc" />
-   <file baseinstalldir="/" md5sum="01705caade17cb471a22f08d58629f15" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="086348c77e6d9140e0c189aa745ed642" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="2e74bc2d5d76f516d80547e97ba8dab9" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="72a21d175ba190cba9494b0f2d05d8fa" name="js/browse.js" role="horde" />
    <file baseinstalldir="/" md5sum="731400e32808b8b4f12d582d7b7b97bf" name="js/columnprefs.js" role="horde" />
@@ -132,7 +132,7 @@
    <file baseinstalldir="/" md5sum="0360826c6ef8cfec937c113f30594b94" name="lib/LoginTasks/SystemTask/Upgrade.php" role="horde" />
    <file baseinstalldir="/" md5sum="9605f62dde6aa6c96c5393a135d1547a" name="lib/Object/Group.php" role="horde" />
    <file baseinstalldir="/" md5sum="771cab535e774ff93945e8776483cde8" name="lib/Prefs/Special/Columnselect.php" role="horde" />
-   <file baseinstalldir="/" md5sum="9f4db89865e1233b0056ff167957ab53" name="lib/Ui/VarRenderer/Turba.php" role="horde" />
+   <file baseinstalldir="/" md5sum="2ed7d10dd931d50dd67b98ecb1090b39" name="lib/Ui/VarRenderer/Turba.php" role="horde" />
    <file baseinstalldir="/" md5sum="60e3748b7efaa3d8d3c513780ccf0f65" name="lib/View/List/AlphaFilter.php" role="horde" />
    <file baseinstalldir="/" md5sum="ed4d91094103734ca858fe65ef30054e" name="lib/View/List/PageFilter.php" role="horde" />
    <file baseinstalldir="/" md5sum="99595de326d84ca826fe2a4c565f0f2b" name="lib/View/Browse.php" role="horde" />
@@ -143,8 +143,8 @@
    <file baseinstalldir="/" md5sum="1d93aefb1e9c44e5aaefe135263a77ab" name="lib/View/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="f5a271e285ee67261f914f7982fdfa5a" name="lib/.htaccess" role="horde" />
    <file baseinstalldir="/" md5sum="28f40dc7b82a19dff88816a517aa40a6" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="9069b440b08b833eaf1a50390025ac42" name="lib/Application.php" role="horde" />
-   <file baseinstalldir="/" md5sum="fb135068f6d2bc8c924b562f0662a5f7" name="lib/Driver.php" role="horde" />
+   <file baseinstalldir="/" md5sum="7e492aaf4cee98b7a1aeb96b0f63b32c" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8e64e899b98e3ea260cf599ae4e24f33" name="lib/Driver.php" role="horde" />
    <file baseinstalldir="/" md5sum="1fc478aab6fd94a464fc9453c47e1e35" name="lib/Exception.php" role="horde" />
    <file baseinstalldir="/" md5sum="9c34cfd5005ac43bc0ff345d53249bd3" name="lib/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="91ee62b41a71effa14c5d4a3409e03b1" name="lib/Object.php" role="horde" />
@@ -3256,6 +3256,37 @@
    <license uri="http://www.horde.org/licenses/apache">ASL</license>
    <notes>
 * [mjr] Remove debug output that was breaking EAS searches (Bug: 14843).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.24</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2019-04-20</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [mjr] SECURITY: Fix XSS vulnerability in display of contact tags.
+* [jan] Clarify objectClass filter examples for LDAP backends (Ralf Lang &lt;lang@b1-systems.de&gt;, PR 3).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.25</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2019-05-25</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [mjr] Fix typo that could cause tags to be lost during EAS sync, if the categories property is ghosted.
    </notes>
   </release>
   <release>
