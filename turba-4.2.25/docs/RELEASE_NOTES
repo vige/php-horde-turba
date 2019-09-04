@@ -5,7 +5,7 @@ $notes['security'] = false;
 /* Mailing list release notes. */
 $notes['changes'] = <<<ML
 The Horde Team is pleased to announce the final release of the Turba Contact
-Manager version H5 (4.2.23).
+Manager version H5 (4.2.25).
 
 Turba is the Horde contact management application. Leveraging the Horde
 framework to provide seamless integration with IMP and other Horde
@@ -19,8 +19,10 @@ http://www.horde.org/apps/turba/docs/UPGRADING
 For detailed installation and configuration instructions, please see
 http://www.horde.org/apps/turba/docs/INSTALL
 
-The major changes compared to the Turba version H5 (4.2.22) are:
-    * Remove debug output that was breaking EAS searches (Bug #14843).
+The major changes compared to the Turba version H5 (4.2.24) are:
+    * Fix typo that could cause tags to be lost during EAS sync, if the
+      categories property is ghosted.
+
 ML;
 
 $notes['name'] = 'Turba';
