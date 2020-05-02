@@ -1,3 +1,10 @@
+php-horde-turba (4.2.25-2) UNRELEASED; urgency=medium
+
+  * d/control: Add to Uploaders: Mike Gabriel.
+  * d/control: Drop from Uploaders: Debian QA Group.
+
+ -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Sat, 02 May 2020 08:54:47 +0200
+
 php-horde-turba (4.2.25-1) unstable; urgency=medium
 
   * New upstream version 4.2.25
