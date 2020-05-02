@@ -1,5 +1,7 @@
 php-horde-turba (4.2.25-2) UNRELEASED; urgency=medium
 
+  * Re-upload to Debian. (Closes: #959325).
+
   * d/control: Add to Uploaders: Mike Gabriel.
   * d/control: Drop from Uploaders: Debian QA Group.
 
