@@ -17,3 +17,5 @@ override_dh_auto_install:
 	dh_auto_install -O--buildsystem=phppear
 	# Remove extra license file
 	rm -f $(DESTDIR)/usr/share/doc/php-horde-turba/LICENSE
+	chmod a+x $(DESTDIR)/usr/share/php/data/turba/scripts/ldap/addou
+	chmod a+x $(DESTDIR)/usr/share/php/data/turba/scripts/ldap/addou.pl
