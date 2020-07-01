@@ -1,4 +1,4 @@
-php-horde-turba (4.2.25-3) UNRELEASED; urgency=medium
+php-horde-turba (4.2.25-3) unstable; urgency=medium
 
   [ Mike Gabriel ]
   * d/control: Add to Uploaders: Juri Grabowski.
@@ -9,7 +9,7 @@ php-horde-turba (4.2.25-3) UNRELEASED; urgency=medium
   * d/salsa-ci.yml: enable aptly
   * d/salsa-ci.yml: allow_failure on autopkgtest.
 
- -- Mike Gabriel <sunweaver@debian.org>  Wed, 01 Jul 2020 12:33:41 +0200
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 01 Jul 2020 12:53:21 +0200
 
 php-horde-turba (4.2.25-2) unstable; urgency=medium
 
