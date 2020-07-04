@@ -1,0 +1,1 @@
+dir_to_symlink /usr/share/horde/turba/themes /etc/horde/themes-enabled.d/turba 4.2.25-4~ php-horde-turba
