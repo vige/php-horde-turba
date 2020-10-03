@@ -1,0 +1,15 @@
+Description: Add proper return value to ensureTypes() method in Content_Types_Manager stub.
+Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+
+--- a/turba-4.2.25/test/Turba/Stub/TypesManager.php
++++ b/turba-4.2.25/test/Turba/Stub/TypesManager.php
+@@ -8,7 +8,7 @@
+ 
+     public function ensureTypes()
+     {
+-
++        return array(0 => 'contact');
+     }
+ 
+ }
+\ No newline at end of file
