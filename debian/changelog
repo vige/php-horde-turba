@@ -1,3 +1,20 @@
+php-horde-turba (4.2.25-5) unstable; urgency=medium
+
+  * d/patches: Add 1010_phpunit-8.x+9.x.patch. Fix tests with PHPUnit 8.x/9.x.
+  * d/t/control: Require php-horde-test (>= 2.6.4+debian0-6~).
+  * d/patches: Add 1001_fix-missing-parentheses.patch.
+    Fix missing parentheses around 'a ? b : c ? d : e' expressions.
+  * d/patches: Add 1002_square-instead-curly-braces-for-string-offset-access.
+    patch. Access string offsets using square braces (not curly).
+  * d/patches: Add 1003_fix-ensureTypes-method-in-Contents-Manager-Stub.patch:
+    Add proper return value to ensureTypes() method of the Content_Types_Manager
+    stub.
+  * d/t/control: Require php-horde-activesync.
+  * d/t/control: Require php-horde-share.
+  * d/t/control: Require php-horde-kolab-storage.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 03 Oct 2020 19:34:17 +0000
+
 php-horde-turba (4.2.25-4) unstable; urgency=medium
 
   * d/control: Enforce versioned D on php-horde (>= 5.2.23+debian0-2~).
