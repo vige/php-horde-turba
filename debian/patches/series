@@ -1,2 +1,3 @@
 1010_phpunit-8.x+9.x.patch
 1001_fix-missing-parentheses.patch
+1002_square-instead-curly-braces-for-string-offset-access.patch
