@@ -1,4 +1,4 @@
-php-horde-turba (4.2.25-6) UNRELEASED; urgency=medium
+php-horde-turba (4.2.25-6) unstable; urgency=medium
 
   [ Mike Gabriel ]
   * d/control: Bump Standards-Version: to 4.6.1. No changes needed.
@@ -8,7 +8,7 @@ php-horde-turba (4.2.25-6) UNRELEASED; urgency=medium
   * d/patches: Add patch 1007. Fix CVE-2022-30287. (Closes: ##1012279).
   * d/patches: Add patch 1011. Disable default use_shares in backends.php.
 
- -- Mike Gabriel <sunweaver@debian.org>  Sun, 05 Jun 2022 13:36:43 +0200
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 05 Jun 2022 13:59:57 +0200
 
 php-horde-turba (4.2.25-5) unstable; urgency=medium
 
