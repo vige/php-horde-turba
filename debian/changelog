@@ -1,3 +1,17 @@
+php-horde-turba (4.2.25-6) UNRELEASED; urgency=medium
+
+  [ Mike Gabriel ]
+  * d/control: Bump Standards-Version: to 4.6.1. No changes needed.
+  * d/patches: Update patch 1007 from upstream fix proposal 784da95e to
+    9f252132.
+  * d/watch: Switch to format version 4.
+
+  [ Juri Grabowski ]
+  * fix CVE-2022-30287
+  * disable default use_shares in backends.php
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 05 Jun 2022 13:29:12 +0200
+
 php-horde-turba (4.2.25-5) unstable; urgency=medium
 
   * d/patches: Add 1010_phpunit-8.x+9.x.patch. Fix tests with PHPUnit 8.x/9.x.
