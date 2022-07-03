@@ -1,5 +1,4 @@
 1010_phpunit-8.x+9.x.patch
-1001_fix-missing-parentheses.patch
 1002_square-instead-curly-braces-for-string-offset-access.patch
 1003_fix-ensureTypes-method-in-Contents-Manager-Stub.patch
 1007_fix_CVE-2022-30287.patch
