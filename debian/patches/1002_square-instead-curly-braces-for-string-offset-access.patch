@@ -3,7 +3,7 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
 
 --- a/turba-4.2.29/lib/Driver/Ldap.php
 +++ b/turba-4.2.29/lib/Driver/Ldap.php
-@@ -696,7 +696,7 @@
+@@ -698,7 +698,7 @@
  
          /* Syntaxes we want to allow, i.e. no integers.
           * Syntaxes have the form:
