@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.10.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.10.13" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
  <name>turba</name>
  <channel>pear.horde.org</channel>
  <summary>Address book application</summary>
@@ -28,10 +28,10 @@
   <email>slusarz@horde.org</email>
   <active>no</active>
  </developer>
- <date>2019-05-25</date>
- <time>13:20:40</time>
+ <date>2022-06-18</date>
+ <time>21:31:09</time>
  <version>
-  <release>4.2.25</release>
+  <release>4.2.29</release>
   <api>4.0.0</api>
  </version>
  <stability>
@@ -40,7 +40,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/apache">ASL</license>
  <notes>
-* [mjr] Fix typo that could cause tags to be lost during EAS sync, if the categories property is ghosted.
+* [mjr] Fix regression in accessing virtual address books.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -54,7 +54,7 @@
    <file baseinstalldir="/" md5sum="e5416a729b34008c01550d84e7a3617d" name="bin/turba-convert-sql-shares-to-sqlng" role="script">
     <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
    </file>
-   <file baseinstalldir="/" md5sum="e264c8c7f77e5020e635d998f6aaa691" name="bin/turba-import-openxchange" role="script">
+   <file baseinstalldir="/" md5sum="0fa565e556128fcec9f4ba87756855c5" name="bin/turba-import-openxchange" role="script">
     <tasks:replace from="/usr/bin/env php" to="php_bin" type="pear-config" />
    </file>
    <file baseinstalldir="/" md5sum="2e71212963b7e07a76c61a71c75d99fe" name="bin/turba-import-squirrelmail-file-abook" role="script">
@@ -87,11 +87,11 @@
    <file baseinstalldir="/" md5sum="576bc1dfe876eb052034042022a8b8cf" name="docs/vcf/README" role="doc" />
    <file baseinstalldir="/" md5sum="aecb277cc4cc75e910d16904a7dc05e2" name="docs/vcf/sfg.vcf" role="doc" />
    <file baseinstalldir="/" md5sum="f8c7dc9f4ebb417c02f42320f4e0a49b" name="docs/vcf/test.vcf" role="doc" />
-   <file baseinstalldir="/" md5sum="f49b6a1d4e9fd43fedd994333cb68b9f" name="docs/CHANGES" role="doc" />
+   <file baseinstalldir="/" md5sum="561a936ba3997848cf951fbddfc27c55" name="docs/CHANGES" role="doc" />
    <file baseinstalldir="/" md5sum="40203dacc5f83426d1541560084bd947" name="docs/CREDITS" role="doc" />
    <file baseinstalldir="/" md5sum="9690e27a510b6d771231abcc1c7a32ef" name="docs/INSTALL" role="doc" />
    <file baseinstalldir="/" md5sum="90cfcfb21bfa7bb5531cb162f6f514c7" name="docs/LDAP" role="doc" />
-   <file baseinstalldir="/" md5sum="086348c77e6d9140e0c189aa745ed642" name="docs/RELEASE_NOTES" role="doc" />
+   <file baseinstalldir="/" md5sum="486e370df0aec9bd84d80fd85976b309" name="docs/RELEASE_NOTES" role="doc" />
    <file baseinstalldir="/" md5sum="2e74bc2d5d76f516d80547e97ba8dab9" name="docs/UPGRADING" role="doc" />
    <file baseinstalldir="/" md5sum="72a21d175ba190cba9494b0f2d05d8fa" name="js/browse.js" role="horde" />
    <file baseinstalldir="/" md5sum="731400e32808b8b4f12d582d7b7b97bf" name="js/columnprefs.js" role="horde" />
@@ -108,23 +108,23 @@
    <file baseinstalldir="/" md5sum="7b30e44c64cadfac024259b60551ba43" name="lib/Driver/Facebook.php" role="horde" />
    <file baseinstalldir="/" md5sum="7d8c081dc13060db3d393239d9a77c42" name="lib/Driver/Favourites.php" role="horde" />
    <file baseinstalldir="/" md5sum="3032b6eb12288cd0f2a76a3ae81e421c" name="lib/Driver/Group.php" role="horde" />
-   <file baseinstalldir="/" md5sum="f11b8f401a44662dfa0be4d6e9faeb21" name="lib/Driver/Imsp.php" role="horde" />
+   <file baseinstalldir="/" md5sum="8ff2c2b9817775e9c7f161af2b7ec397" name="lib/Driver/Imsp.php" role="horde" />
    <file baseinstalldir="/" md5sum="f0d0bad4198f22244ad2468c9d9c7a10" name="lib/Driver/Kolab.php" role="horde" />
-   <file baseinstalldir="/" md5sum="0aa1eea1a69b9fe64264b628ece05aed" name="lib/Driver/Ldap.php" role="horde" />
-   <file baseinstalldir="/" md5sum="ef9461032fa45bb599bed90f69f16761" name="lib/Driver/Prefs.php" role="horde" />
-   <file baseinstalldir="/" md5sum="4463852898a6b019edbbdf4b1e4fa82e" name="lib/Driver/Share.php" role="horde" />
-   <file baseinstalldir="/" md5sum="d796e8319a917a3e07982cb085ec88c6" name="lib/Driver/Sql.php" role="horde" />
-   <file baseinstalldir="/" md5sum="7f951e81436e658db217790967877458" name="lib/Driver/Vbook.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e0ba66cd5a01c2f047965a1f3d1adf91" name="lib/Driver/Ldap.php" role="horde" />
+   <file baseinstalldir="/" md5sum="ff366ca8b2a303eca0a8b9f848dd5d3f" name="lib/Driver/Prefs.php" role="horde" />
+   <file baseinstalldir="/" md5sum="7fdb1f3c9c79c933f692b2d2f312f340" name="lib/Driver/Share.php" role="horde" />
+   <file baseinstalldir="/" md5sum="d7506c83985c85ce52e2a7991c05a61a" name="lib/Driver/Sql.php" role="horde" />
+   <file baseinstalldir="/" md5sum="57935810590a0d1f10e3911d6e8f9606" name="lib/Driver/Vbook.php" role="horde" />
    <file baseinstalldir="/" md5sum="fcc7c62ea6d681dc68295be208464995" name="lib/Exception/NotSupported.php" role="horde" />
    <file baseinstalldir="/" md5sum="1de82a4c550e123189c73ffa1edd1561" name="lib/Exception/ObjectExists.php" role="horde" />
-   <file baseinstalldir="/" md5sum="ef07bb8112d8c8b9ed7ad1446dec2dde" name="lib/Factory/Driver.php" role="horde" />
+   <file baseinstalldir="/" md5sum="b84c26ab5148eaf0cdb53d5c3cd61c8d" name="lib/Factory/Driver.php" role="horde" />
    <file baseinstalldir="/" md5sum="243c1cdf1b27d46ca1c149719bf48800" name="lib/Factory/Shares.php" role="horde" />
    <file baseinstalldir="/" md5sum="f6eb8a40ed79489b5a17cb50eb3b6b2f" name="lib/Factory/Tagger.php" role="horde" />
    <file baseinstalldir="/" md5sum="81188f247bd39f1c7dc328cb3a4e3b8f" name="lib/Form/Type/TurbaTags.php" role="horde" />
    <file baseinstalldir="/" md5sum="d5de23af6e2f083510c74fd051d8df66" name="lib/Form/AddContact.php" role="horde" />
    <file baseinstalldir="/" md5sum="3c0d785ea88bf647a9c55c229e341087" name="lib/Form/Contact.php" role="horde" />
    <file baseinstalldir="/" md5sum="8e6dd56372efe22b76360917391be724" name="lib/Form/ContactBase.php" role="horde" />
-   <file baseinstalldir="/" md5sum="faca32e117d4ed7a4591da7892308619" name="lib/Form/CreateAddressBook.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e33617a467a6edb1753d2dd7efa64451" name="lib/Form/CreateAddressBook.php" role="horde" />
    <file baseinstalldir="/" md5sum="05eabc31846027b316977e0946d1c4d0" name="lib/Form/DeleteAddressBook.php" role="horde" />
    <file baseinstalldir="/" md5sum="0a9b10fa534535ad34249c7670a6a20a" name="lib/Form/EditAddressBook.php" role="horde" />
    <file baseinstalldir="/" md5sum="d0a4989bad93af20aba2ce75225f2ddd" name="lib/Form/EditContact.php" role="horde" />
@@ -142,16 +142,16 @@
    <file baseinstalldir="/" md5sum="220bfca7815bc0d67f6b6030511bd3ed" name="lib/View/EditContact.php" role="horde" />
    <file baseinstalldir="/" md5sum="1d93aefb1e9c44e5aaefe135263a77ab" name="lib/View/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="f5a271e285ee67261f914f7982fdfa5a" name="lib/.htaccess" role="horde" />
-   <file baseinstalldir="/" md5sum="28f40dc7b82a19dff88816a517aa40a6" name="lib/Api.php" role="horde" />
-   <file baseinstalldir="/" md5sum="7e492aaf4cee98b7a1aeb96b0f63b32c" name="lib/Application.php" role="horde" />
-   <file baseinstalldir="/" md5sum="8e64e899b98e3ea260cf599ae4e24f33" name="lib/Driver.php" role="horde" />
+   <file baseinstalldir="/" md5sum="e34ebf71630beb19a8ef972907c70c11" name="lib/Api.php" role="horde" />
+   <file baseinstalldir="/" md5sum="fc1bf608e7e0217a7a350cba9e192dc4" name="lib/Application.php" role="horde" />
+   <file baseinstalldir="/" md5sum="adce370ac9f21214b6f556e32236ce89" name="lib/Driver.php" role="horde" />
    <file baseinstalldir="/" md5sum="1fc478aab6fd94a464fc9453c47e1e35" name="lib/Exception.php" role="horde" />
-   <file baseinstalldir="/" md5sum="9c34cfd5005ac43bc0ff345d53249bd3" name="lib/List.php" role="horde" />
+   <file baseinstalldir="/" md5sum="5fd0b1060a674d519ccf29f68391fc88" name="lib/List.php" role="horde" />
    <file baseinstalldir="/" md5sum="91ee62b41a71effa14c5d4a3409e03b1" name="lib/Object.php" role="horde" />
    <file baseinstalldir="/" md5sum="4ba340dfc02d0b29e2a81273daba9ff3" name="lib/Smartmobile.php" role="horde" />
    <file baseinstalldir="/" md5sum="592fc730c8daf4e42ecf3076f0fad36c" name="lib/Tagger.php" role="horde" />
    <file baseinstalldir="/" md5sum="6531a54e5c31a95111b383a0acbf3129" name="lib/Test.php" role="horde" />
-   <file baseinstalldir="/" md5sum="39d8491709edeb834bca5998f9d7127b" name="lib/Turba.php" role="horde" />
+   <file baseinstalldir="/" md5sum="c7e5dba891f73d938c33aa5d2ac54892" name="lib/Turba.php" role="horde" />
    <file baseinstalldir="/" md5sum="560ebb064cd0f1bf27f33a1c9ac6c369" name="locale/ar/LC_MESSAGES/turba.mo" role="horde" />
    <file baseinstalldir="/" md5sum="d713ffa67d023657193983f6a5dfb912" name="locale/ar/LC_MESSAGES/turba.po" role="horde" />
    <file baseinstalldir="/" md5sum="dc5736dfc688800547111a98591fc556" name="locale/bg/LC_MESSAGES/turba.mo" role="horde" />
@@ -3287,6 +3287,69 @@
    <license uri="http://www.horde.org/licenses/apache">ASL</license>
    <notes>
 * [mjr] Fix typo that could cause tags to be lost during EAS sync, if the categories property is ghosted.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.26</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2022-06-06</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [jan] SECURITY: Fix remote code execution by an unserialization attack (CVE-2022-30287).
+* [jan] Fix deprecation warnings about each() with PHP 7.2+.
+* [mjr] Fix setting LDAP_OPT_REFERRALS to 0.
+* [jan] Fix exporting contacts to LDIF (Bug #14934).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.27</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2022-06-07</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [jan] Fix method call when removing user data.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.28</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2022-06-12</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [mjr] Fix regressions in configuring address book sources.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>4.2.29</release>
+    <api>4.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2022-06-12</date>
+   <license uri="http://www.horde.org/licenses/apache">ASL</license>
+   <notes>
+* [mjr] Fix regression in accessing virtual address books.
    </notes>
   </release>
   <release>
