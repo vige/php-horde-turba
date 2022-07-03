@@ -1,3 +1,9 @@
+php-horde-turba (4.2.29-1) UNRELEASED; urgency=medium
+
+  * New upstream version 4.2.29
+
+ -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Sun, 03 Jul 2022 13:46:19 +0200
+
 php-horde-turba (4.2.25-6) unstable; urgency=medium
 
   [ Mike Gabriel ]
