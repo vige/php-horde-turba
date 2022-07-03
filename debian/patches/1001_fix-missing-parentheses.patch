@@ -1,8 +1,8 @@
 Description: Add parentheses around 'a ? b : c ? d : e' expressions.
 Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
 
---- a/turba-4.2.25/lib/Driver.php
-+++ b/turba-4.2.25/lib/Driver.php
+--- a/turba-4.2.29/lib/Driver.php
++++ b/turba-4.2.29/lib/Driver.php
 @@ -2632,25 +2632,28 @@
              case 'homeCountry':
                  $message->homecountry = !empty($hash['homeCountryFree'])

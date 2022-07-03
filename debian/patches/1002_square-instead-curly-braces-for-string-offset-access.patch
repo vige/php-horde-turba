@@ -1,8 +1,8 @@
 Description: Use square braces for string offset access.
 Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
 
---- a/turba-4.2.25/lib/Driver/Ldap.php
-+++ b/turba-4.2.25/lib/Driver/Ldap.php
+--- a/turba-4.2.29/lib/Driver/Ldap.php
++++ b/turba-4.2.29/lib/Driver/Ldap.php
 @@ -696,7 +696,7 @@
  
          /* Syntaxes we want to allow, i.e. no integers.
@@ -12,8 +12,8 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
           * ... where $n is the integer used below and $y is a sizelimit. */
          $okSyntax = array(
              44 => 1, /* Printable string. */
---- a/turba-4.2.25/test/Turba/ToDo/ListViewTest.php
-+++ b/turba-4.2.25/test/Turba/ToDo/ListViewTest.php
+--- a/turba-4.2.29/test/Turba/ToDo/ListViewTest.php
++++ b/turba-4.2.29/test/Turba/ToDo/ListViewTest.php
 @@ -71,7 +71,7 @@
          $this->callView_List('getAlpha', $numDisplayed, 'j');
          $count = 0;
@@ -23,8 +23,8 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
                  $this->assertWantedPattern('/' . preg_quote($name, '/') . '/',
                                             $this->_output);
                  $count++;
---- a/turba-4.2.25/test/Turba/ToDo/ViewListTest.php
-+++ b/turba-4.2.25/test/Turba/ToDo/ViewListTest.php
+--- a/turba-4.2.29/test/Turba/ToDo/ViewListTest.php
++++ b/turba-4.2.29/test/Turba/ToDo/ViewListTest.php
 @@ -71,7 +71,7 @@
          $this->callView_List('getAlpha', $numDisplayed, 'j');
          $count = 0;

@@ -1,7 +1,7 @@
-diff --git a/turba-4.2.25/config/backends.php b/turba-4.2.25/config/backends.php
+diff --git a/turba-4.2.29/config/backends.php b/turba-4.2.29/config/backends.php
 index d14ec23..80e34f6 100644
---- a/turba-4.2.25/config/backends.php
-+++ b/turba-4.2.25/config/backends.php
+--- a/turba-4.2.29/config/backends.php
++++ b/turba-4.2.29/config/backends.php
 @@ -399,7 +399,7 @@ $cfgSources['localsql'] = array(
      ),
      'export' => true,
