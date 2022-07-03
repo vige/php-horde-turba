@@ -57,7 +57,7 @@ class Turba_Application extends Horde_Registry_Application
 
     /**
      */
-    public $version = 'H5 (4.2.25)';
+    public $version = 'H5 (4.2.29)';
 
     /**
      */
@@ -357,7 +357,7 @@ class Turba_Application extends Horde_Registry_Application
                 try {
                     $driver = $GLOBALS['injector']
                         ->getInstance('Turba_Factory_Driver')
-                        ->create($source, $sourceId);
+                        ->createFromConfig($source, $sourceId);
                 } catch (Turba_Exception $e) {
                     Horde::log($e, 'ERR');
                     continue;
@@ -397,7 +397,7 @@ class Turba_Application extends Horde_Registry_Application
             try {
                 $driver = $GLOBALS['injector']
                     ->getInstance('Turba_Factory_Driver')
-                    ->create($config, $share->getName(), $sources);
+                    ->createFromConfig($config, $share->getName(), $sources);
             } catch (Turba_Exception $e) {
                 continue;
             }
@@ -623,11 +623,14 @@ class Turba_Application extends Horde_Registry_Application
                 exit;
 
             case 'ldif':
-                $ldif = new Turba_Data_Ldif(array(
-                    'browser' => $injector->getInstance('Horde_Browser'),
-                    'vars' => Horde_Variables::getDefaultVariables(),
-                    'cleanup' => array($this, 'cleanupData')
-                ));
+                $ldif = new Turba_Data_Ldif(
+                    $injector->getInstance('Horde_Core_Data_Storage'),
+                    array(
+                        'browser' => $injector->getInstance('Horde_Browser'),
+                        'vars' => Horde_Variables::getDefaultVariables(),
+                        'cleanup' => array($this, 'cleanupData')
+                    )
+                );
                 $ldif->exportFile(_("contacts.ldif"), $data, true);
                 exit;
             }
