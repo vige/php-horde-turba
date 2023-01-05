@@ -1,2 +1,3 @@
 Tests: phpunit
 Depends: @, php-cli, php-horde-test (>= 2.6.4+debian0-6~), php-sqlite3, php-horde-share, php-horde-activesync, php-horde-kolab-storage
+Restrictions: allow-stderr
