@@ -1,6 +1,15 @@
-Description: _use_shares false
- diff --git a/turba-4.2.29/config/backends.php b/turba-4.2.29/config/backends.php
- index d14ec23..80e34f6 100644
+From: Horde Maintainers <team+debian-horde-team@tracker.debian.org>
+Date: Fri, 10 Nov 2023 13:23:25 +0200
+Subject: _use_shares false
+
+diff --git a/turba-4.2.29/config/backends.php b/turba-4.2.29/config/backends.php
+index d14ec23..80e34f6 100644
+---
+ turba-4.2.29/config/backends.php | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/turba-4.2.29/config/backends.php b/turba-4.2.29/config/backends.php
+index d14ec23..80e34f6 100644
 --- a/turba-4.2.29/config/backends.php
 +++ b/turba-4.2.29/config/backends.php
 @@ -399,7 +399,7 @@ $cfgSources['localsql'] = array(

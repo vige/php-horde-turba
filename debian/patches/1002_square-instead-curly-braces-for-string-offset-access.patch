@@ -1,9 +1,18 @@
-Description: Use square braces for string offset access.
-Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+From: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+Date: Fri, 10 Nov 2023 13:23:25 +0200
+Subject: Use square braces for string offset access.
 
+---
+ turba-4.2.29/lib/Driver/Ldap.php              | 2 +-
+ turba-4.2.29/test/Turba/ToDo/ListViewTest.php | 2 +-
+ turba-4.2.29/test/Turba/ToDo/ViewListTest.php | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/turba-4.2.29/lib/Driver/Ldap.php b/turba-4.2.29/lib/Driver/Ldap.php
+index c182535..730b99d 100644
 --- a/turba-4.2.29/lib/Driver/Ldap.php
 +++ b/turba-4.2.29/lib/Driver/Ldap.php
-@@ -698,7 +698,7 @@
+@@ -698,7 +698,7 @@ class Turba_Driver_Ldap extends Turba_Driver
  
          /* Syntaxes we want to allow, i.e. no integers.
           * Syntaxes have the form:
@@ -12,9 +21,11 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
           * ... where $n is the integer used below and $y is a sizelimit. */
          $okSyntax = array(
              44 => 1, /* Printable string. */
+diff --git a/turba-4.2.29/test/Turba/ToDo/ListViewTest.php b/turba-4.2.29/test/Turba/ToDo/ListViewTest.php
+index e174928..8aace53 100644
 --- a/turba-4.2.29/test/Turba/ToDo/ListViewTest.php
 +++ b/turba-4.2.29/test/Turba/ToDo/ListViewTest.php
-@@ -71,7 +71,7 @@
+@@ -71,7 +71,7 @@ class Turba_ToDo_ListViewTest extends Turba_TestBase {
          $this->callView_List('getAlpha', $numDisplayed, 'j');
          $count = 0;
          foreach ($this->_sortedByLastname as $name) {
@@ -23,9 +34,11 @@ Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
                  $this->assertWantedPattern('/' . preg_quote($name, '/') . '/',
                                             $this->_output);
                  $count++;
+diff --git a/turba-4.2.29/test/Turba/ToDo/ViewListTest.php b/turba-4.2.29/test/Turba/ToDo/ViewListTest.php
+index 724b331..03aef61 100644
 --- a/turba-4.2.29/test/Turba/ToDo/ViewListTest.php
 +++ b/turba-4.2.29/test/Turba/ToDo/ViewListTest.php
-@@ -71,7 +71,7 @@
+@@ -71,7 +71,7 @@ class Turba_ToDo_ViewListTest extends Turba_TestBase {
          $this->callView_List('getAlpha', $numDisplayed, 'j');
          $count = 0;
          foreach ($this->_sortedByLastname as $name) {

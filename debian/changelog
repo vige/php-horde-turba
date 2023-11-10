@@ -1,3 +1,11 @@
+php-horde-turba (4.2.29-3~1.gbp60eca3) UNRELEASED; urgency=medium
+
+  ** SNAPSHOT build @60eca3e2f08fb6c5b1518cbb646fa34f7157edce **
+
+  * UNRELEASED
+
+ -- Ville Nummela <ville@nummela.org>  Fri, 10 Nov 2023 13:40:52 +0200
+
 php-horde-turba (4.2.29-2) unstable; urgency=medium
 
   * Team upload.

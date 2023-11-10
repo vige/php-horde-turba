@@ -1,10 +1,37 @@
-Description: Adapt to PHPUnit 8.x and 9.x API.
-Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+From: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+Date: Fri, 10 Nov 2023 13:23:25 +0200
+Subject: Adapt to PHPUnit 8.x and 9.x API.
 
-Index: php-horde-turba/turba-4.2.29/test/Turba/TestCase.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/TestCase.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/TestCase.php
+---
+ turba-4.2.29/test/Turba/TestCase.php                       |  2 +-
+ turba-4.2.29/test/Turba/ToDo/ApiTest.php                   |  2 +-
+ turba-4.2.29/test/Turba/ToDo/BrowsePageTest.php            |  2 +-
+ turba-4.2.29/test/Turba/ToDo/DriverTest.php                |  2 +-
+ turba-4.2.29/test/Turba/ToDo/GroupTest.php                 |  2 +-
+ turba-4.2.29/test/Turba/ToDo/KolabTest.php                 |  2 +-
+ turba-4.2.29/test/Turba/ToDo/ListTest.php                  |  2 +-
+ turba-4.2.29/test/Turba/ToDo/ListViewTest.php              |  2 +-
+ turba-4.2.29/test/Turba/ToDo/TestBase.php                  |  4 ++--
+ turba-4.2.29/test/Turba/ToDo/ViewBrowseTest.php            |  2 +-
+ turba-4.2.29/test/Turba/ToDo/ViewListTest.php              |  2 +-
+ turba-4.2.29/test/Turba/Unit/Driver/Base.php               | 10 +++++-----
+ turba-4.2.29/test/Turba/Unit/Driver/KolabTest.php          |  4 ++--
+ turba-4.2.29/test/Turba/Unit/Driver/Sql/Base.php           |  2 +-
+ turba-4.2.29/test/Turba/Unit/Driver/Sql/Pdo/SqliteTest.php |  2 +-
+ turba-4.2.29/test/Turba/Unit/ExportTest.php                |  6 +++---
+ turba-4.2.29/test/Turba/Unit/ImportTest.php                |  4 ++--
+ turba-4.2.29/test/Turba/Unit/Turba/Base.php                |  8 ++++----
+ turba-4.2.29/test/Turba/Unit/Turba/KolabTest.php           |  4 ++--
+ turba-4.2.29/test/Turba/Unit/Turba/Sql/Base.php            |  2 +-
+ turba-4.2.29/test/Turba/Unit/Turba/Sql/Pdo/SqliteTest.php  |  2 +-
+ turba-4.2.29/test/Turba/phpunit.xml                        |  1 +
+ 22 files changed, 35 insertions(+), 34 deletions(-)
+ create mode 100644 turba-4.2.29/test/Turba/phpunit.xml
+
+diff --git a/turba-4.2.29/test/Turba/TestCase.php b/turba-4.2.29/test/Turba/TestCase.php
+index 5401358..8aa3cf6 100644
+--- a/turba-4.2.29/test/Turba/TestCase.php
++++ b/turba-4.2.29/test/Turba/TestCase.php
 @@ -29,7 +29,7 @@ require __DIR__ . '/Stub/Hooks.php';
   * @link       http://www.horde.org/apps/turba
   * @license    http://www.horde.org/licenses/apache Apache-like
@@ -14,10 +41,10 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/TestCase.php
  {
      protected function getInjector()
      {
-Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/ApiTest.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/ToDo/ApiTest.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/ToDo/ApiTest.php
+diff --git a/turba-4.2.29/test/Turba/ToDo/ApiTest.php b/turba-4.2.29/test/Turba/ToDo/ApiTest.php
+index 1f77245..85c8e46 100644
+--- a/turba-4.2.29/test/Turba/ToDo/ApiTest.php
++++ b/turba-4.2.29/test/Turba/ToDo/ApiTest.php
 @@ -31,7 +31,7 @@
   */
  class Turba_ToDo_ApiTest extends Turba_TestCase
@@ -27,10 +54,10 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/ApiTest.php
      {
          $this->markTestIncomplete('Convert to use Horde_Test.');
      }
-Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/BrowsePageTest.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/ToDo/BrowsePageTest.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/ToDo/BrowsePageTest.php
+diff --git a/turba-4.2.29/test/Turba/ToDo/BrowsePageTest.php b/turba-4.2.29/test/Turba/ToDo/BrowsePageTest.php
+index da115f1..06fbdc6 100644
+--- a/turba-4.2.29/test/Turba/ToDo/BrowsePageTest.php
++++ b/turba-4.2.29/test/Turba/ToDo/BrowsePageTest.php
 @@ -8,7 +8,7 @@ require_once __DIR__ . '/TestBase.php';
   */
  class Turba_Todo_BrowsePageTest extends Turba_TestBase {
@@ -40,10 +67,10 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/BrowsePageTest.php
      {
          $this->markTestIncomplete('Convert to use Horde_Test.');
          parent::setUp();
-Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/DriverTest.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/ToDo/DriverTest.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/ToDo/DriverTest.php
+diff --git a/turba-4.2.29/test/Turba/ToDo/DriverTest.php b/turba-4.2.29/test/Turba/ToDo/DriverTest.php
+index b2fb0ef..ba552eb 100644
+--- a/turba-4.2.29/test/Turba/ToDo/DriverTest.php
++++ b/turba-4.2.29/test/Turba/ToDo/DriverTest.php
 @@ -11,7 +11,7 @@ require_once __DIR__ . '/TestBase.php';
   */
  class Turba_ToDo_DriverTest extends Turba_TestBase {
@@ -53,11 +80,11 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/DriverTest.php
      {
          $this->markTestIncomplete('Convert to use Horde_Test.');
          parent::setUp();
-Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/GroupTest.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/ToDo/GroupTest.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/ToDo/GroupTest.php
-@@ -11,7 +11,7 @@ class Turba_ToDo_GroupTest extends Turba
+diff --git a/turba-4.2.29/test/Turba/ToDo/GroupTest.php b/turba-4.2.29/test/Turba/ToDo/GroupTest.php
+index e811b19..f3cff20 100644
+--- a/turba-4.2.29/test/Turba/ToDo/GroupTest.php
++++ b/turba-4.2.29/test/Turba/ToDo/GroupTest.php
+@@ -11,7 +11,7 @@ class Turba_ToDo_GroupTest extends Turba_TestBase {
  
      var $group;
  
@@ -66,11 +93,11 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/GroupTest.php
      {
          $this->markTestIncomplete('Convert to use Horde_Test.');
          parent::setUp();
-Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/KolabTest.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/ToDo/KolabTest.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/ToDo/KolabTest.php
-@@ -14,7 +14,7 @@ class Turba_ToDo_KolabTest extends Turba
+diff --git a/turba-4.2.29/test/Turba/ToDo/KolabTest.php b/turba-4.2.29/test/Turba/ToDo/KolabTest.php
+index 06ec504..39bf76c 100644
+--- a/turba-4.2.29/test/Turba/ToDo/KolabTest.php
++++ b/turba-4.2.29/test/Turba/ToDo/KolabTest.php
+@@ -14,7 +14,7 @@ class Turba_ToDo_KolabTest extends Turba_KolabTestBase {
       *
       * @return NULL
       */
@@ -79,10 +106,10 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/KolabTest.php
      {
          $this->markTestIncomplete('Convert to use Horde_Test.');
          $this->prepareTurba();
-Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/ListTest.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/ToDo/ListTest.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/ToDo/ListTest.php
+diff --git a/turba-4.2.29/test/Turba/ToDo/ListTest.php b/turba-4.2.29/test/Turba/ToDo/ListTest.php
+index 6dae3d2..03a1e01 100644
+--- a/turba-4.2.29/test/Turba/ToDo/ListTest.php
++++ b/turba-4.2.29/test/Turba/ToDo/ListTest.php
 @@ -9,7 +9,7 @@ require_once __DIR__ . '/TestBase.php';
   */
  class Turba_ToDo_ListTest extends Turba_TestBase {
@@ -92,10 +119,10 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/ListTest.php
      {
          $this->markTestIncomplete('Convert to use Horde_Test.');
          parent::setUp();
-Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/ListViewTest.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/ToDo/ListViewTest.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/ToDo/ListViewTest.php
+diff --git a/turba-4.2.29/test/Turba/ToDo/ListViewTest.php b/turba-4.2.29/test/Turba/ToDo/ListViewTest.php
+index dc14192..e174928 100644
+--- a/turba-4.2.29/test/Turba/ToDo/ListViewTest.php
++++ b/turba-4.2.29/test/Turba/ToDo/ListViewTest.php
 @@ -9,7 +9,7 @@ require_once __DIR__ . '/TestBase.php';
   */
  class Turba_ToDo_ListViewTest extends Turba_TestBase {
@@ -105,10 +132,10 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/ListViewTest.php
      {
          $this->markTestIncomplete('Convert to use Horde_Test.');
          parent::setUp();
-Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/TestBase.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/ToDo/TestBase.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/ToDo/TestBase.php
+diff --git a/turba-4.2.29/test/Turba/ToDo/TestBase.php b/turba-4.2.29/test/Turba/ToDo/TestBase.php
+index 849dc3f..e642974 100644
+--- a/turba-4.2.29/test/Turba/ToDo/TestBase.php
++++ b/turba-4.2.29/test/Turba/ToDo/TestBase.php
 @@ -6,7 +6,7 @@
   * @package Turba
   * @subpackage UnitTests
@@ -118,7 +145,7 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/TestBase.php
  
      var $_driver;
      var $_driverConfig = array(
-@@ -158,7 +158,7 @@ class Turba_TestBase extends PHPUnit_Fra
+@@ -158,7 +158,7 @@ class Turba_TestBase extends PHPUnit_Framework_TestCase {
          return true;
      }
  
@@ -127,10 +154,10 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/TestBase.php
      {
          @define('TURBA_BASE', __DIR__ . '/../..');
          @define('TURBA_TEMPLATES', $GLOBALS['registry']->get('templates', 'turba'));
-Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/ViewBrowseTest.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/ToDo/ViewBrowseTest.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/ToDo/ViewBrowseTest.php
+diff --git a/turba-4.2.29/test/Turba/ToDo/ViewBrowseTest.php b/turba-4.2.29/test/Turba/ToDo/ViewBrowseTest.php
+index 6dcb357..3144239 100644
+--- a/turba-4.2.29/test/Turba/ToDo/ViewBrowseTest.php
++++ b/turba-4.2.29/test/Turba/ToDo/ViewBrowseTest.php
 @@ -9,7 +9,7 @@ require_once __DIR__ . '/TestBase.php';
   */
  class Turba_ToDo_ViewBrowseTest extends Turba_TestBase {
@@ -140,10 +167,10 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/ViewBrowseTest.php
      {
          $this->markTestIncomplete('Convert to use Horde_Test.');
          parent::setUp();
-Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/ViewListTest.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/ToDo/ViewListTest.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/ToDo/ViewListTest.php
+diff --git a/turba-4.2.29/test/Turba/ToDo/ViewListTest.php b/turba-4.2.29/test/Turba/ToDo/ViewListTest.php
+index 21a7f15..724b331 100644
+--- a/turba-4.2.29/test/Turba/ToDo/ViewListTest.php
++++ b/turba-4.2.29/test/Turba/ToDo/ViewListTest.php
 @@ -9,7 +9,7 @@ require_once __DIR__ . '/TestBase.php';
   */
  class Turba_ToDo_ViewListTest extends Turba_TestBase {
@@ -153,11 +180,11 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/ToDo/ViewListTest.php
      {
          $this->markTestIncomplete('Convert to use Horde_Test.');
          parent::setUp();
-Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Driver/Base.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/Unit/Driver/Base.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/Unit/Driver/Base.php
-@@ -51,14 +51,14 @@ class Turba_Unit_Driver_Base extends Tur
+diff --git a/turba-4.2.29/test/Turba/Unit/Driver/Base.php b/turba-4.2.29/test/Turba/Unit/Driver/Base.php
+index 0cf76ef..88cb3aa 100644
+--- a/turba-4.2.29/test/Turba/Unit/Driver/Base.php
++++ b/turba-4.2.29/test/Turba/Unit/Driver/Base.php
+@@ -51,14 +51,14 @@ class Turba_Unit_Driver_Base extends Turba_TestCase
       */
      private $_added = array();
  
@@ -174,7 +201,7 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Driver/Base.php
      {
          self::$driver = null;
          self::tearDownBasicTurbaSetup();
-@@ -66,7 +66,7 @@ class Turba_Unit_Driver_Base extends Tur
+@@ -66,7 +66,7 @@ class Turba_Unit_Driver_Base extends Turba_TestCase
          parent::tearDownAfterClass();
      }
  
@@ -183,7 +210,7 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Driver/Base.php
      {
          $error = self::$setup->getError();
          if (!empty($error)) {
-@@ -75,7 +75,7 @@ class Turba_Unit_Driver_Base extends Tur
+@@ -75,7 +75,7 @@ class Turba_Unit_Driver_Base extends Turba_TestCase
          $GLOBALS['injector']->setInstance('Turba_Tagger', new Turba_Tagger());
      }
  
@@ -192,7 +219,7 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Driver/Base.php
      {
          parent::tearDown();
          foreach ($this->_added as $added) {
-@@ -113,7 +113,7 @@ class Turba_Unit_Driver_Base extends Tur
+@@ -113,7 +113,7 @@ class Turba_Unit_Driver_Base extends Turba_TestCase
          if (!class_exists('Horde_ActiveSync')){
              $this->markTestSkipped('ActiveSync not installed.');
          }
@@ -201,11 +228,11 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Driver/Base.php
          $fixture = array(
              'userAgent' => 'Apple-iPad3C6/1202.435',
              'properties' => array(Horde_ActiveSync_Device::OS => 'iOS 8.1.1')
-Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Driver/KolabTest.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/Unit/Driver/KolabTest.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/Unit/Driver/KolabTest.php
-@@ -36,14 +36,14 @@ class Turba_Unit_Driver_KolabTest extend
+diff --git a/turba-4.2.29/test/Turba/Unit/Driver/KolabTest.php b/turba-4.2.29/test/Turba/Unit/Driver/KolabTest.php
+index f665655..2ec8716 100644
+--- a/turba-4.2.29/test/Turba/Unit/Driver/KolabTest.php
++++ b/turba-4.2.29/test/Turba/Unit/Driver/KolabTest.php
+@@ -36,14 +36,14 @@ class Turba_Unit_Driver_KolabTest extends Turba_Unit_Driver_Base
  {
      protected $backupGlobals = false;
  
@@ -222,11 +249,11 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Driver/KolabTest.php
      {
          $this->markTestIncomplete("No query of type 'Share' registered!");
      }
-Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Driver/Sql/Base.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/Unit/Driver/Sql/Base.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/Unit/Driver/Sql/Base.php
-@@ -36,7 +36,7 @@ class Turba_Unit_Driver_Sql_Base extends
+diff --git a/turba-4.2.29/test/Turba/Unit/Driver/Sql/Base.php b/turba-4.2.29/test/Turba/Unit/Driver/Sql/Base.php
+index 6fe79c2..f49014a 100644
+--- a/turba-4.2.29/test/Turba/Unit/Driver/Sql/Base.php
++++ b/turba-4.2.29/test/Turba/Unit/Driver/Sql/Base.php
+@@ -36,7 +36,7 @@ class Turba_Unit_Driver_Sql_Base extends Turba_Unit_Driver_Base
  {
      static $callback;
  
@@ -235,11 +262,11 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Driver/Sql/Base.php
      {
          parent::setUpBeforeClass();
          self::getDb();
-Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Driver/Sql/Pdo/SqliteTest.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/Unit/Driver/Sql/Pdo/SqliteTest.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/Unit/Driver/Sql/Pdo/SqliteTest.php
-@@ -36,7 +36,7 @@ class Turba_Unit_Driver_Sql_Pdo_SqliteTe
+diff --git a/turba-4.2.29/test/Turba/Unit/Driver/Sql/Pdo/SqliteTest.php b/turba-4.2.29/test/Turba/Unit/Driver/Sql/Pdo/SqliteTest.php
+index f1e3960..a237e55 100644
+--- a/turba-4.2.29/test/Turba/Unit/Driver/Sql/Pdo/SqliteTest.php
++++ b/turba-4.2.29/test/Turba/Unit/Driver/Sql/Pdo/SqliteTest.php
+@@ -36,7 +36,7 @@ class Turba_Unit_Driver_Sql_Pdo_SqliteTest extends Turba_Unit_Driver_Sql_Base
  {
      protected $backupGlobals = false;
  
@@ -248,10 +275,10 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Driver/Sql/Pdo/SqliteTest.ph
      {
          self::$callback = array(__CLASS__, 'getDb');
          parent::setUpBeforeClass();
-Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/ExportTest.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/Unit/ExportTest.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/Unit/ExportTest.php
+diff --git a/turba-4.2.29/test/Turba/Unit/ExportTest.php b/turba-4.2.29/test/Turba/Unit/ExportTest.php
+index 7ac7bfc..44f7ec0 100644
+--- a/turba-4.2.29/test/Turba/Unit/ExportTest.php
++++ b/turba-4.2.29/test/Turba/Unit/ExportTest.php
 @@ -8,21 +8,21 @@
   */
  class Turba_Unit_ExportTest extends Turba_TestCase
@@ -277,11 +304,11 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/ExportTest.php
      {
          $GLOBALS['injector']->setInstance(
              'Turba_Tagger',
-Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/ImportTest.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/Unit/ImportTest.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/Unit/ImportTest.php
-@@ -22,14 +22,14 @@ class Turba_Unit_ImportTest extends Turb
+diff --git a/turba-4.2.29/test/Turba/Unit/ImportTest.php b/turba-4.2.29/test/Turba/Unit/ImportTest.php
+index 1951066..8cc489c 100644
+--- a/turba-4.2.29/test/Turba/Unit/ImportTest.php
++++ b/turba-4.2.29/test/Turba/Unit/ImportTest.php
+@@ -22,14 +22,14 @@ class Turba_Unit_ImportTest extends Turba_TestCase
          'workEmail' => 'object_workemail'
      );
  
@@ -298,11 +325,11 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/ImportTest.php
      {
          self::tearDownBasicTurbaSetup();
          parent::tearDownAfterClass();
-Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Turba/Base.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/Unit/Turba/Base.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/Unit/Turba/Base.php
-@@ -48,20 +48,20 @@ class Turba_Unit_Turba_Base extends Turb
+diff --git a/turba-4.2.29/test/Turba/Unit/Turba/Base.php b/turba-4.2.29/test/Turba/Unit/Turba/Base.php
+index a65112c..423c28c 100644
+--- a/turba-4.2.29/test/Turba/Unit/Turba/Base.php
++++ b/turba-4.2.29/test/Turba/Unit/Turba/Base.php
+@@ -48,20 +48,20 @@ class Turba_Unit_Turba_Base extends Turba_TestCase
       */
      protected $default_name = 'Address book of test@example.com';
  
@@ -326,7 +353,7 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Turba/Base.php
      {
          $error = self::$setup->getError();
          if (!empty($error)) {
-@@ -69,7 +69,7 @@ class Turba_Unit_Turba_Base extends Turb
+@@ -69,7 +69,7 @@ class Turba_Unit_Turba_Base extends Turba_TestCase
          }
      }
  
@@ -335,11 +362,11 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Turba/Base.php
      {
          $turba_shares = $GLOBALS['injector']->getInstance('Turba_Shares');
          foreach ($turba_shares->listShares('test@example.com') as $share) {
-Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Turba/KolabTest.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/Unit/Turba/KolabTest.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/Unit/Turba/KolabTest.php
-@@ -43,14 +43,14 @@ class Turba_Unit_Turba_KolabTest extends
+diff --git a/turba-4.2.29/test/Turba/Unit/Turba/KolabTest.php b/turba-4.2.29/test/Turba/Unit/Turba/KolabTest.php
+index 0a430fc..38c399b 100644
+--- a/turba-4.2.29/test/Turba/Unit/Turba/KolabTest.php
++++ b/turba-4.2.29/test/Turba/Unit/Turba/KolabTest.php
+@@ -43,14 +43,14 @@ class Turba_Unit_Turba_KolabTest extends Turba_Unit_Turba_Base
       */
      protected $default_name = 'Contacts';
  
@@ -356,10 +383,10 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Turba/KolabTest.php
      {
          $this->markTestIncomplete("No query of type 'Share' registered!");
      }
-Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Turba/Sql/Base.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/Unit/Turba/Sql/Base.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/Unit/Turba/Sql/Base.php
+diff --git a/turba-4.2.29/test/Turba/Unit/Turba/Sql/Base.php b/turba-4.2.29/test/Turba/Unit/Turba/Sql/Base.php
+index 21a4e20..6f325da 100644
+--- a/turba-4.2.29/test/Turba/Unit/Turba/Sql/Base.php
++++ b/turba-4.2.29/test/Turba/Unit/Turba/Sql/Base.php
 @@ -34,7 +34,7 @@ require_once __DIR__ . '/../Base.php';
   */
  class Turba_Unit_Turba_Sql_Base extends Turba_Unit_Turba_Base
@@ -369,11 +396,11 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Turba/Sql/Base.php
      {
          parent::setUpBeforeClass();
          self::createSqlShares(self::$setup);
-Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Turba/Sql/Pdo/SqliteTest.php
-===================================================================
---- php-horde-turba.orig/turba-4.2.29/test/Turba/Unit/Turba/Sql/Pdo/SqliteTest.php
-+++ php-horde-turba/turba-4.2.29/test/Turba/Unit/Turba/Sql/Pdo/SqliteTest.php
-@@ -36,7 +36,7 @@ class Turba_Unit_Turba_Sql_Pdo_SqliteTes
+diff --git a/turba-4.2.29/test/Turba/Unit/Turba/Sql/Pdo/SqliteTest.php b/turba-4.2.29/test/Turba/Unit/Turba/Sql/Pdo/SqliteTest.php
+index 0454786..9901133 100644
+--- a/turba-4.2.29/test/Turba/Unit/Turba/Sql/Pdo/SqliteTest.php
++++ b/turba-4.2.29/test/Turba/Unit/Turba/Sql/Pdo/SqliteTest.php
+@@ -36,7 +36,7 @@ class Turba_Unit_Turba_Sql_Pdo_SqliteTest extends Turba_Unit_Turba_Sql_Base
  {
      protected $backupGlobals = false;
  
@@ -382,9 +409,10 @@ Index: php-horde-turba/turba-4.2.29/test/Turba/Unit/Turba/Sql/Pdo/SqliteTest.php
      {
          self::$setup = new Horde_Test_Setup();
          self::createSqlPdoSqlite(self::$setup);
-Index: php-horde-turba/turba-4.2.29/test/Turba/phpunit.xml
-===================================================================
+diff --git a/turba-4.2.29/test/Turba/phpunit.xml b/turba-4.2.29/test/Turba/phpunit.xml
+new file mode 100644
+index 0000000..5dcbab2
 --- /dev/null
-+++ php-horde-turba/turba-4.2.29/test/Turba/phpunit.xml
++++ b/turba-4.2.29/test/Turba/phpunit.xml
 @@ -0,0 +1 @@
 +<phpunit bootstrap="bootstrap.php"></phpunit>

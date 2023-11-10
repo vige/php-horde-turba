@@ -2,3 +2,4 @@
 1002_square-instead-curly-braces-for-string-offset-access.patch
 1003_fix-ensureTypes-method-in-Contents-Manager-Stub.patch
 1011_use_shares-false.patch
+0005-More-PHP-8-related-signature-fixes.patch

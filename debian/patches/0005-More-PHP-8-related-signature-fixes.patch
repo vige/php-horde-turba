@@ -1,0 +1,25 @@
+From: Ville Nummela <ville@nummela.org>
+Date: Fri, 10 Nov 2023 13:35:06 +0200
+Subject: More PHP 8 related signature fixes
+
+Signed-off-by: Ville Nummela <ville@nummela.org>
+---
+ turba-4.2.29/lib/Form/EditContact.php | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/turba-4.2.29/lib/Form/EditContact.php b/turba-4.2.29/lib/Form/EditContact.php
+index 2e1b160..7b89d4d 100644
+--- a/turba-4.2.29/lib/Form/EditContact.php
++++ b/turba-4.2.29/lib/Form/EditContact.php
+@@ -110,9 +110,9 @@ class Turba_Form_EditContact extends Turba_Form_ContactBase
+ 
+     /**
+      */
+-    public function renderActive($renderer, $vars, $action, $method)
++    public function renderActive($renderer = null, $vars = null, $action = '', $method = 'get', $enctype = null, $focus = true)
+     {
+-        parent::renderActive($renderer, $vars, $action, $method);
++        parent::renderActive($renderer, $vars, $action, $method, $enctype, $focus);
+ 
+         if ($this->_contact->isGroup()) {
+             $edit_url = Horde::url('browse.php')->add(array(
